@@ -43,7 +43,7 @@ define('field_location', 'Asia/Kolkata');
 
 //////////////////////////////////////////////__URL
 
-define('BASE_URL', 'http://localhost/Shapath/');
+define('BASE_URL', 'http://localhost/Damiano/');
 
 //////////////////////////////////////////////__PAGEDATA
 define('PAGE_DATA_WEB', ['data_page' => [], 'data_header' => ['header_link' => [], 'title' => '', 'projects' => [], 'header' => [], 'sidebar' => [], 'site' => 'web'], 'data_footer' => ['footer_link' => [], 'footer' => [], 'site' => 'web']]);
