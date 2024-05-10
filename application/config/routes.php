@@ -14,6 +14,7 @@ $route['about']                     = 'web/load/about';
 
 // ============================ admin routes
 $route['admin']                     = 'admin/Admin/index';
+$route['admin/home']                = 'admin/pages/home';
 $route['admin/login']               = 'admin/Admin/login';
 $route['admin/logout']              = 'admin/Admin/logout';
 

@@ -19,7 +19,7 @@ class Admin extends Common
         ) {
             redirect('/admin/login');
         } else {
-            redirect('/admin/pages/home');
+            redirect('/admin/home');
         }
     }
 
