@@ -9,6 +9,8 @@ $route['translate_uri_dashes']  = FALSE;
 
 // ============================ web routes
 $route['home']                      = 'web/load';
+$route['contact-us']                = 'web/load/contact_us';
+$route['about']                     = 'web/load/about';
 
 // ============================ admin routes
 $route['admin']                     = 'admin/Admin/index';

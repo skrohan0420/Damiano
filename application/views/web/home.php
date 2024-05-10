@@ -2771,7 +2771,7 @@
                 <i class="fa fa-times" aria-hidden="true"></i>
             </div>
             <a href="#" target="_blank" class="img-and-content">
-                <img src="./images/logo.png" alt="International School Gurgaon">
+                <img src="<?= base_url()?>assets/images/logo.png" alt="International School Gurgaon">
                 <span class="content__popup">
                     <span class="topheadingpopup">Damiano</span>
                     <span class="text-popup">Your Update Message 1</span>
