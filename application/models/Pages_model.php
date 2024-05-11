@@ -26,6 +26,20 @@ class Pages_model extends Admin_model
         return isset($banner) ? $banner[0] : [];
     }
 
+    public function get_all_about_text()
+    {
+        $about = $this->db
+            ->select('*')
+            ->from('home_about_text')
+            ->where(['uid' => 'ABT143276SRHDSH'])
+            ->get();
+
+
+        $about = $about->result_array();
+        //$this->prd($banner);
+        return isset($about) ? $about[0] : [];
+    }
+
     public function get_all_banner_img()
     {
         $banner = $this->db
@@ -36,12 +50,26 @@ class Pages_model extends Admin_model
         //$this->prd($banner);
         return isset($banner) ? $banner : [];
     }
-
+    public function get_all_about_imag(){
+        $banner = $this->db
+            ->select('*')
+            ->from('home_about_img')
+            ->get();
+        $banner = $banner->result_array();
+        //$this->prd($banner);
+        return isset($banner) ? $banner : [];
+    }
 
     public function update_banner_text($data)
     {
         $update = $this->db->where(['uid' => 'BNR90678546498'])
             ->update('home_banner_text', $data);
+        return $update;
+    }
+    public function update_about_text($data)
+    {
+        $update = $this->db->where(['uid' => 'ABT143276SRHDSH'])
+            ->update('home_about_text', $data);
         return $update;
     }
     public function insert_home_banner_img($path)
@@ -54,7 +82,8 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function delete_banner_img($uid){
+    public function delete_banner_img($uid)
+    {
         $this->db->where('uid', $uid);
         $this->db->delete('home_banner_img');
         return $this->db->affected_rows() > 0;

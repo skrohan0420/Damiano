@@ -21,7 +21,7 @@ class Pages extends Admin
         ) {
             redirect('/admin/login');
         } else {
-            redirect('/admin/pages/home');
+            redirect('/admin/home');
         }
     }
 
@@ -37,6 +37,8 @@ class Pages extends Admin
         $data['data_header']['sidebar']['home'] = true;
         $data['data_page']['banner_text'] = $this->Pages_model->get_all_banner_text();
         $data['data_page']['banner_images'] = $this->Pages_model->get_all_banner_img();
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
+        $data['data_page']['about_img'] = $this->Pages_model->get_all_about_imag();
         $this->is_auth('admin/pages_home.php', $data);
 
     }
@@ -45,6 +47,11 @@ class Pages extends Admin
     {
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->update_banner_text($this->input->post());
+        redirect('/admin/home');
+    }
+    public function update_about_text(){
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->update_about_text($this->input->post());
         redirect('/admin/home');
     }
 

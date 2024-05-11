@@ -1,3 +1,8 @@
+<?php
+   // echo "<pre>";
+   // print_r($about_img);
+   // die()
+?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -128,7 +133,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body row">
-                    <div class="col-xl-12 col-lg-12 card shadow">
+                    <div class="col-xl-12 col-lg-12 card shadow mb-4">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">About</h6>
                         </div>
@@ -136,15 +141,15 @@
                             <form action="<?= base_url('admin/pages/update_about_text') ?>" method="POST">
                                 <div class="form-group">
                                 <label for="formGroupExampleInput2">About text </label>
-                                    <textarea type="text" class="form-control" name="about_text"  required></textarea>
+                                    <textarea type="text" class="form-control" name="about_text"  required><?= $about_text['about_text']?></textarea>
                                 </div>
                                 <div class="form-group">
                                 <label for="formGroupExampleInput2">Vision text </label>
-                                    <textarea type="text" class="form-control" name="vision_text" required></textarea>
+                                    <textarea type="text" class="form-control" name="vision_text" required><?= $about_text['vision_text']?></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">Mission text </label>
-                                    <textarea type="text" class="form-control" name="mission_text" required></textarea>
+                                    <textarea type="text" class="form-control" name="mission_text" required><?= $about_text['mission_text']?></textarea>
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-success" id="" value="Update">
@@ -152,28 +157,38 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-xl-12 col-lg-12 card shadow">
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Banner Image</h6>
-                        </div>
-                        <div class="card-body">
-                            <form enctype="multipart/form-data" action="<?= base_url('admin/pages/upload_home_banner_img') ?>" method="POST">
-                                <div class='form-group'>
-                                    <div>
-                                        <label for="formGroupExampleInput2">Upload image</label>
-                                    </div>     
-                                    <div id="imagePreview"></div>
+
+                    <?php
+                                    
+                        if(!empty($about_img)){
+                            foreach($about_img as $index => $item){
+                                ?>
+                                <div class="col-xl-6 col-lg-6 card shadow mb-4">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Banner Image <?=$index + 1?></h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form enctype="multipart/form-data" action="<?= base_url('admin/pages/upload_home_about_img?uid=' .$item['uid'] ) ?>" method="POST">
+                                            <div class='form-group'>
+                                                <div>
+                                                    <label for="formGroupExampleInput2">Upload image</label>
+                                                </div>     
+                                                <div id="imagePreview"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="file" class="form-control-file" placeholder="Banner image" name="home_banner_img[]" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" hidden value="" name="uid">
+                                                <input type="submit" class="btn btn-success" id="" value="Update">
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" placeholder="Banner image" name="home_banner_img[]" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" hidden value="" name="uid">
-                                    <input type="submit" class="btn btn-success" id="" value="Upload">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                                <?php
+                            }
+                        }   
+                    ?>
                 </div>
             </div>
 
