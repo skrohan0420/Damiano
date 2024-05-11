@@ -1,3 +1,4 @@
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -23,25 +24,25 @@
                             <h6 class="m-0 font-weight-bold text-primary">Banners Text</h6>
                         </div>
                         <div class="card-body">
-                            <form action="<?= base_url('admin/Pages/update_quotes') ?>" method="POST">
+                            <form action="<?= base_url('admin/pages/update_banner_text') ?>" method="POST">
                                 <div class="form-group">
                                     <label for="formGroupExampleInput">Heading</label>
-                                   <input type="text" class="form-control" name="Heading" value=""
+                                   <input type="text" class="form-control" name="heading" value="<?= $banner_text['heading']?>"
                                         placeholder="Heading" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">Second Heading</label>
-                                    <input type="text" class="form-control" name="Heading_two" value=""
+                                    <input type="text" class="form-control" name="heading_two" value="<?= $banner_text['heading_two']?>"
                                         placeholder="Second Heading" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">Corner text </label>
-                                    <input type="text" class="form-control" name="corner_text" value=""
+                                    <input type="text" class="form-control" name="corner_text" value="<?= $banner_text['corner_text']?>"
                                         placeholder="corner text " required>
                                 </div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">Second Corner text</label>
-                                    <input type="text" class="form-control" name="corner_text_two" value=""
+                                    <input type="text" class="form-control" name="corner_text_two" value="<?= $banner_text['corner_text_two']?>"
                                         placeholder="Second Corner text" required>
                                 </div>
                                 <div class="form-group">
@@ -55,16 +56,15 @@
                             <h6 class="m-0 font-weight-bold text-primary">Banner Image</h6>
                         </div>
                         <div class="card-body">
-                            <form enctype="multipart/form-data" action="" method="POST">
-                                <div class='form-group' id="imagePreview">
+                            <form enctype="multipart/form-data" action="<?= base_url('admin/pages/upload_home_banner_img') ?>" method="POST">
+                                <div class='form-group'>
                                     <div>
                                         <label for="formGroupExampleInput2">Upload image</label>
-                                    </div>
-                                    <img src="" height="100" id="home_banner_img" />
+                                    </div>     
+                                    <div id="imagePreview"></div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="file" class="form-control-file" placeholder="Banner image"
-                                        name="home_banner_img[]" />
+                                    <input type="file" class="form-control-file" placeholder="Banner image" name="home_banner_img[]" />
                                 </div>
                                 <div class="form-group">
                                     <input type="text" hidden value="" name="uid">
@@ -93,8 +93,86 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                    if(!empty($banner_images)){
+                                       foreach($banner_images as $index => $item){
+                                            ?>
+                                                <tr>
+                                                    <td><?= $index + 1 ?></td>
+                                                    <td>
+                                                        <img src="<?= base_url().$item['img_path'] ?>" alt="" height="100px">
+                                                    </td>
+                                                    <td>
+                                                        <a 
+                                                            href="<?= base_url('admin/pages/delete_banner_img?uid=').$item['uid']?>" 
+                                                            class="btn btn-danger">
+                                                            DELETE
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                       }
+                                    }
+                                ?>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h5 class="m-0 font-weight-bold text-primary">About</h5>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body row">
+                    <div class="col-xl-12 col-lg-12 card shadow">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">About</h6>
+                        </div>
+                        <div class="card-body">
+                            <form action="<?= base_url('admin/pages/update_about_text') ?>" method="POST">
+                                <div class="form-group">
+                                <label for="formGroupExampleInput2">About text </label>
+                                    <textarea type="text" class="form-control" name="about_text"  required></textarea>
+                                </div>
+                                <div class="form-group">
+                                <label for="formGroupExampleInput2">Vision text </label>
+                                    <textarea type="text" class="form-control" name="vision_text" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Mission text </label>
+                                    <textarea type="text" class="form-control" name="mission_text" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-success" id="" value="Update">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 card shadow">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Banner Image</h6>
+                        </div>
+                        <div class="card-body">
+                            <form enctype="multipart/form-data" action="<?= base_url('admin/pages/upload_home_banner_img') ?>" method="POST">
+                                <div class='form-group'>
+                                    <div>
+                                        <label for="formGroupExampleInput2">Upload image</label>
+                                    </div>     
+                                    <div id="imagePreview"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" class="form-control-file" placeholder="Banner image" name="home_banner_img[]" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" hidden value="" name="uid">
+                                    <input type="submit" class="btn btn-success" id="" value="Upload">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
