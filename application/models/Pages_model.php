@@ -60,6 +60,15 @@ class Pages_model extends Admin_model
         return isset($banner) ? $banner : [];
     }
 
+    public function update_home_about_img($path, $uid){
+        $data = [
+            'img_path' => $path
+        ];
+        $update = $this->db->where(['uid' => $uid])
+                        ->update('home_about_img', $data);
+        return $update;
+    }
+
     public function update_banner_text($data)
     {
         $update = $this->db->where(['uid' => 'BNR90678546498'])

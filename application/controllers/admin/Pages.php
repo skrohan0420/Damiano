@@ -43,28 +43,46 @@ class Pages extends Admin
 
     }
 
+
     public function update_banner_text()
     {
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->update_banner_text($this->input->post());
         redirect('/admin/home');
     }
-    public function update_about_text(){
+    public function update_about_text()
+    {
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->update_about_text($this->input->post());
         redirect('/admin/home');
     }
 
-    public function upload_home_banner_img(){
+    public function upload_home_banner_img()
+    {
         $upload_data = $this->upload_files('./uploads/home_banner_img/', 'home_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
-        if($upload_data){
+        if ($upload_data) {
             $this->init_model(MODEL_PAGES);
             $this->Pages_model->insert_home_banner_img('/uploads/home_banner_img/' . $upload_data['file_name']);
         }
         redirect('/admin/home');
     }
 
-    public function delete_banner_img(){
+    public function upload_home_about_img()
+    {
+        $upload_data = $this->upload_files('./uploads/home_about_img/', 'home_about_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $uid = $this->input->get('uid');
+            $this->Pages_model->update_home_about_img('/uploads/home_about_img/' . $upload_data['file_name'], $uid);
+        }
+        redirect('/admin/home');
+
+    }
+
+
+    public function delete_banner_img()
+    {
         $uid = $this->input->get('uid');
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_banner_img($uid);

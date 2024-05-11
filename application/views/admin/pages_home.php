@@ -173,10 +173,12 @@
                                                 <div>
                                                     <label for="formGroupExampleInput2">Upload image</label>
                                                 </div>     
-                                                <div id="imagePreview"></div>
+                                                <div id="<?=$item['uid']?>">
+                                                    <img src="<?=base_url().$item['img_path']?>" height="100" />
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="file" class="form-control-file" placeholder="Banner image" name="home_banner_img[]" />
+                                                <input type="file" class="form-control-file" placeholder="Banner image" id="inp_<?=$item['uid']?>" name="home_about_img[]" />
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" hidden value="" name="uid">
