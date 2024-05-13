@@ -51,7 +51,7 @@ define('PAGE_DATA_ADMIN', ['data_page' => [], 'data_header' => ['header_link' =>
 
 /////////////////////////////////////////////__IMG_UPLOAD_CONFIG
 define('IMG_FILE_TYPES', 'gif|jpg|png|JPG|jpeg|JPEG|PNG|pdf');
-define('IMG_FILE_SIZE', 5048);
+define('IMG_FILE_SIZE', 50000);
 
 /////////////////////////////////////////////__MODELS
 define('MODEL_COMMON', 'Common_model');
