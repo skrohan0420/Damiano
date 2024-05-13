@@ -38,7 +38,9 @@ class Pages extends Admin
         $data['data_page']['banner_text'] = $this->Pages_model->get_all_banner_text();
         $data['data_page']['banner_images'] = $this->Pages_model->get_all_banner_img();
         $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
-        $data['data_page']['about_img'] = $this->Pages_model->get_all_about_imag();
+        $data['data_page']['about_img'] = $this->Pages_model->get_all_about_img();
+        $data['data_page']['update_img'] = $this->Pages_model->get_update_img();
+        $data['data_page']['announcement'] = $this->Pages_model->get_announcement();
         $this->is_auth('admin/pages_home.php', $data);
 
     }
@@ -67,6 +69,25 @@ class Pages extends Admin
         redirect('/admin/home');
     }
 
+    public function upload_announcement_file(){
+        $upload_data = $this->upload_files('./uploads/home_announcement_file/', 'home_announcement_file', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        //$this->prd($upload_data);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->insert_home_announcement_file('/uploads/home_announcement_file/' . $upload_data['file_name']);
+        }
+        redirect('/admin/home');
+    }
+
+    public function upload_home_update_img(){
+        $upload_data = $this->upload_files('./uploads/home_update_img/', 'home_update_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->update_home_update_img('/uploads/home_update_img/' . $upload_data['file_name']);
+        }
+        redirect('/admin/home');
+    }
+
     public function upload_home_about_img()
     {
         $upload_data = $this->upload_files('./uploads/home_about_img/', 'home_about_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
@@ -86,6 +107,14 @@ class Pages extends Admin
         $uid = $this->input->get('uid');
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_banner_img($uid);
+
+        redirect('/admin/home');
+    }
+
+    public function delete_announcement_file(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_announcement_file($uid);
 
         redirect('/admin/home');
     }

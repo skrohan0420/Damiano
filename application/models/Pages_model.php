@@ -50,7 +50,8 @@ class Pages_model extends Admin_model
         //$this->prd($banner);
         return isset($banner) ? $banner : [];
     }
-    public function get_all_about_imag(){
+    public function get_all_about_img()
+    {
         $banner = $this->db
             ->select('*')
             ->from('home_about_img')
@@ -60,14 +61,47 @@ class Pages_model extends Admin_model
         return isset($banner) ? $banner : [];
     }
 
-    public function update_home_about_img($path, $uid){
+    public function get_update_img(){
+        $banner = $this->db
+            ->select('*')
+            ->from('home_updates_img')
+            ->get();
+        $banner = $banner->result_array();
+        //$this->prd($banner);
+        return isset($banner) ? $banner[0] : [];
+    }
+
+    public function get_announcement(){
+        $banner = $this->db
+            ->select('*')
+            ->from('home_announcement_file')
+            ->get();
+        $banner = $banner->result_array();
+        //$this->prd($banner);
+        return isset($banner) ? $banner: [];
+    }
+
+    public function update_home_about_img($path, $uid)
+    {
         $data = [
             'img_path' => $path
         ];
         $update = $this->db->where(['uid' => $uid])
-                        ->update('home_about_img', $data);
+            ->update('home_about_img', $data);
         return $update;
     }
+
+    public function update_home_update_img($path)
+    {
+
+        $data = [
+            'img_path' => $path
+        ];
+        $update = $this->db->where(['uid' => 'UBNH86967F20240511'])
+            ->update('home_updates_img', $data);
+        return $update;
+    }
+
 
     public function update_banner_text($data)
     {
@@ -91,12 +125,27 @@ class Pages_model extends Admin_model
         return $add;
     }
 
+    public function insert_home_announcement_file($path){
+        $data = [
+            'uid' => $this->generate_uid('BNHU'),
+            'path' => $path
+        ];
+        $add = $this->db->insert('home_announcement_file', $data);
+        return $add;
+    }
+
     public function delete_banner_img($uid)
     {
         $this->db->where('uid', $uid);
         $this->db->delete('home_banner_img');
         return $this->db->affected_rows() > 0;
 
+    }
+
+    public function delete_announcement_file($uid){
+        $this->db->where('uid', $uid);
+        $this->db->delete('home_announcement_file');
+        return $this->db->affected_rows() > 0;
     }
 
 }
