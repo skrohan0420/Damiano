@@ -749,8 +749,7 @@ if (false) {
                         <div class="mb-3">
                             <label class="form-label">First Name*</label>
                             <div>
-                                <input type="text" class="form-control" placeholder="" maxlength="100"
-                                    id="txtstudentname">
+                                <input type="text" class="form-control" placeholder="" maxlength="100" id="txtstudentname" name="f_name">
                                 <div class="icon">
                                     <img src="https://cdn-icons-png.flaticon.com/512/9187/9187475.png" alt="#" />
                                 </div>
@@ -760,8 +759,7 @@ if (false) {
                         <div class="mb-3">
                             <label class="form-label">Last Name*</label>
                             <div>
-                                <input type="text" class="form-control" placeholder="" maxlength="100"
-                                    id="txtparentname">
+                                <input type="text" class="form-control" placeholder="" maxlength="100" id="txtparentname" name="l_name">
                                 <div class="icon">
                                     <img src="https://cdn-icons-png.flaticon.com/512/547/547551.png" alt="#" />
                                 </div>
@@ -771,15 +769,14 @@ if (false) {
                         <div class="mb-3">
                             <label class="form-label">Phone Number*</label>
                             <div>
-                                <input type="tel" class="form-control" maxlength="10" id="txtmobile"
-                                    onkeypress="return isNumberKey(event)">
+                                <input type="tel" class="form-control" maxlength="10" id="txtmobile" onkeypress="return isNumberKey(event)" name="mobile">
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Email*</label>
                             <div>
-                                <input type="email" class="form-control" placeholder="" maxlength="100" id="txtemail">
+                                <input type="email" class="form-control" placeholder="" maxlength="100" id="txtemail" name="email">
                                 <div class="icon">
                                     <img style="width:27px;"
                                         src="https://cdn-icons-png.flaticon.com/512/2549/2549872.png" alt="#" />
@@ -790,8 +787,7 @@ if (false) {
                         <div class="mb-3">
                             <label class="form-label">Your Inquiry*</label>
                             <div>
-                                <input type="subject" class="form-control" placeholder="" maxlength="100" id="txtemail"
-                                    style="height: 150px;">
+                                <input type="subject" class="form-control" placeholder="" maxlength="100" id="txtemail" style="height: 150px;" name="msg">
                                 <div class="icon">
                                     <img style="width:27px;"
                                         src="https://cdn-icons-png.flaticon.com/512/9987/9987254.png" alt="#" />
@@ -801,8 +797,9 @@ if (false) {
 
 
                         <div class="mb-3 fullviewpart text-center">
-                            <button type="submit" class="allbtnview"
-                                onclick="getintouchValidate(this);"><span>Submit</span></button>
+                            <button type="submit" class="allbtnview" onclick="getintouchValidate(this);">
+                                <span>Submit</span>
+                            </button>
                         </div>
 
                         <div class="mb-3 fullviewpart d-none" id="div_message">

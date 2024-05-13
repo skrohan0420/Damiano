@@ -143,6 +143,18 @@ class Pages_model extends Admin_model
         $add = $this->db->insert('home_infrastructure', $data);
         return $add;
     }
+    public function save_user_message($data){
+        $insert_data = [
+            'uid' => $this->generate_uid('MSG'),
+            'name'=> $data['f_name'].' '.$data['l_name'],
+            'email' => $data['email'],
+            'phone' => $data['mobile'],
+            'message' => $data['msg']
+        ];
+
+        $add = $this->db->insert('user_message', $insert_data);
+        return $add;
+    }
 
     public function get_infrastructure(){
         $data = $this->db

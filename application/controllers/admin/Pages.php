@@ -46,6 +46,15 @@ class Pages extends Admin
 
     }
 
+    public function save_user_message(){
+        $data = $this->input->post();
+        $this->init_model(MODEL_PAGES);
+
+        //$this->prd($data);
+        $this->Pages_model->save_user_message($data);
+        redirect('/home');
+    }
+
 
     public function update_banner_text()
     {
