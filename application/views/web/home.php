@@ -1,5 +1,19 @@
-<!DOCTYPE html>
+<?php
+if (false) {
+    echo "<pre>";
+    print_r($banner_text);
+    print_r($banner_images);
+    print_r($about_text);
+    print_r($about_img);
+    print_r($update_img);
+    print_r($announcement);
+    print_r($infrastructure);
+    exit();
+}
 
+
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -389,26 +403,30 @@
     <section class="banner_main">
         <div class="bg-shadows"></div>
         <div class="bannerslider owl-carousel owl-theme">
-            <div class="item">
-                <img src="<?= base_url() ?>assets/images/banner/slider1.jpg" alt="SCIS-Banner" />
-            </div>
-            <div class="item">
-                <img src="<?= base_url() ?>assets/images/banner/slider2.jpg" alt="SCIS-Banner" />
-            </div>
-            <div class="item">
-                <img src="<?= base_url() ?>assets/images/banner/slider3.jpg" alt="SCIS-Banner" />
-            </div>
-            <div class="item">
-                <img src="<?= base_url() ?>assets/images/banner/slider5.jpg" alt="SCIS-Banner" />
-            </div>
+
+            <?php
+            if (!empty($banner_images)) {
+                foreach ($banner_images as $index => $item) {
+                    ?>
+                    <div class="item">
+                        <img src="<?= base_url() . $item['img_path'] ?>" alt="SCIS-Banner" />
+                    </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
         <div class="bannertextviewcurve">
-            <div id="curved2" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Add text</div>
-            <div id="curved1" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Add Text</div>
+            <div id="curved2" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <?= $banner_text['heading'] ?>
+            </div>
+            <div id="curved1" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <?= $banner_text['heading_two'] ?>
+            </div>
         </div>
         <div class="fixtextbanner">
 
-            <p>Add some text over here<br /> Add some text over here</p>
+            <p><?= $banner_text['corner_text'] ?><br /> <?= $banner_text['corner_text_two'] ?></p>
         </div>
         <div class="toptobottomfixed">
             <a href="#aboutus">
@@ -434,13 +452,13 @@
                         <div class="patternleftright"
                             style="background-image:url(<?= base_url() ?>assets/images/pattern-4.png)"></div>
                         <div class="image-one" data-aos="fade-down" data-aos-duration="1000">
-                            <img src="<?= base_url() ?>assets/images/qu-1.jpg" />
+                            <img src="<?= base_url() . $about_img[0]['img_path'] ?>" />
                         </div>
                         <div class="image-two" data-aos="fade-right" data-aos-duration="1000">
-                            <img src="<?= base_url() ?>assets/images/qu-2.jpg" />
+                            <img src="<?= base_url() . $about_img[1]['img_path'] ?>" />
                         </div>
                         <div class="image-three" data-aos="fade-up" data-aos-duration="1000">
-                            <img src="<?= base_url() ?>assets/images/qu-4.jpg" />
+                            <img src="<?= base_url() . $about_img[2]['img_path'] ?>" />
                         </div>
                     </div>
                 </div>
@@ -450,24 +468,8 @@
                             <h2 data-aos="fade-up" data-aos-duration="1000">Welcome To <span
                                     class="hedingone">Damiano</span></h2>
                         </div>
-                        <div class="dark-text" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">Damiano
-                            traces its origin as early as 1922. The company was representing the European companies for
-                            their procurement activities in India and was a part of the CTC Group which was a dominant
-                            player in the jute industry in India. Damiano underwent restructuring in late 1960's and
-                            re-established itself in its present form by diversifying into manufacturing in 1968 and has
-                            been manufacturing Pole Line Hardware's, Steel structures, insulator and Conductor
-                            accessories, Clamps and Connectors, Aerial Cable Accessories, Fuse Cutouts and
-                            Telecommunications OSP Hardware.
-                            The steps were small but firm and the company expanded from cottage scale manufacturer to a
-                            large industry within house facilities for fabrication, forging, machining, wire forming,
-                            moulding, die casting, hot dip galvanizing (including centrifuge) and electroplating. The
-                            company started exporting from 1972 and has niche presence not only in the domestic market
-                            but also across the globe.
-
-                            Damiano prides itself to be small and slow but never lacking in its commitment towards
-                            quality and ethics.
-                            The steps have been slow but steady and the foundation based on hard work, commitment and
-                            integrity which makes us different.
+                        <div class="dark-text" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
+                            <?= $about_text['about_text'] ?>
                         </div>
                         <div class="row">
 
@@ -479,9 +481,7 @@
                                     </div>
                                     <strong>Vision</strong>
                                     <div class="showlinethree">
-                                        <p>Damiano was established in 1968 for manufacturing Pole Line Hardware's, Steel
-                                            structures, Insulator and Conductor accessories, Clamps and Connectors, ABC
-                                            accessories...</p>
+                                        <p><?= $about_text['vision_text'] ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -489,12 +489,11 @@
                             <div class="feature-column col-lg-12">
                                 <div class="feature-inner" data-aos="fade-up" data-aos-duration="2000"
                                     data-aos-offset="0">
-                                    <div class="icon"><img src="<?= base_url() ?>assets/images/mission.png" alt="#"></div>
+                                    <div class="icon"><img src="<?= base_url() ?>assets/images/mission.png" alt="#">
+                                    </div>
                                     <strong>Mission</strong>
                                     <div class="showlinethree">
-                                        <p>Damiano was established in 1968 for manufacturing Pole Line Hardware's, Steel
-                                            structures, Insulator and Conductor accessories, Clamps and Connectors, ABC
-                                            accessories...</p>
+                                        <p><?= $about_text['mission_text'] ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -528,65 +527,22 @@
                     <div class="col-lg-6 col-sm-6 announcement-leftmain">
                         <div class="announcement-left" data-aos="fade-left" data-aos-duration="1500">
                             <ul>
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/syllabus/half-yearly-examination-time-table.pdf"><i
-                                            class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Yours Announcement 1
-                                            <span class="newtag">New</span> </span></a></li>
+                                <?php
+                                if (!empty($announcement)) {
+                                    foreach ($announcement as $index => $item) {
+                                        ?>
+                                        <li>
+                                            <a href="javascript:;" data-fancybox data-type="iframe"
+                                                data-src="<?= base_url() . $item['path'] ?>">
+                                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                                                <span>Yours Announcement 1 <span class="newtag">New</span> </span>
+                                            </a>
+                                        </li>
+                                        <?php
+                                    }
+                                }
+                                ?>
 
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/syllabus/half-yearly-syllabus-for-class-V-2023-24.pdf"><i
-                                            class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Yours Announcement 2
-                                            <span class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/syllabus/half-yearly-syllabus-for-class-IV-2023-24.pdf"><i
-                                            class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Yours Announcement 3
-                                            <span class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/syllabus/half-yearly-syllabus-for-class-III-2023-24.pdf"><i
-                                            class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Yours Announcement 4
-                                            <span class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/ptm/ptm-time-slots-for-class-11-12.pdf"><i
-                                            class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Yours Announcement 5
-                                            <span class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/ptm/ptm-time-slots-for-class-8.pdf"><i class="fa fa-file-pdf-o"
-                                            aria-hidden="true"></i> <span>Yours Announcement 6 <span
-                                                class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/ptm/ptm-time-slots-for-class-7.pdf"><i class="fa fa-file-pdf-o"
-                                            aria-hidden="true"></i> <span>Yours Announcement 7 <span
-                                                class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/ptm/ptm-time-slots-for-class-6.pdf"><i class="fa fa-file-pdf-o"
-                                            aria-hidden="true"></i> <span>Yours Announcement 8 <span
-                                                class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/ptm/ptm-time-slots-for-class-5a.pdf"><i
-                                            class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Yours Announcement 9
-                                            <span class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/ptm/ptm-time-slots-for-class-5b.pdf"><i
-                                            class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Yours Announcement 10
-                                            <span class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/ptm/ptm-time-slots-for-class-5c.pdf"><i
-                                            class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Yours Announcement 11
-                                            <span class="newtag">New</span> </span></a></li>
-
-                                <li><a href="javascript:;" data-fancybox data-type="iframe"
-                                        data-src="../pdf/ptm/ptm-time-slots-for-class-5d.pdf"><i
-                                            class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Yours Announcement 12
-                                            <span class="newtag">New</span> </span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -602,10 +558,10 @@
                         <div class="inner-column">
                             <div class="slider" data-aos="fade-down" data-aos-duration="1000">
                                 <div class="slide">
-                                    <img src="<?= base_url() ?>assets/images/qu-1.jpg" alt="Slide 1">
+                                    <img src="<?= base_url() . $update_img['img_path'] ?>" alt="Slide 1">
                                 </div>
                                 <div class="slide">
-                                    <img src="<?= base_url() ?>assets/images/qu-2.jpg" alt="Slide 2">
+                                    <img src="<?= base_url() . $update_img['img_path'] ?>" alt="Slide 1">
                                 </div>
                             </div>
                         </div>
@@ -624,30 +580,23 @@
         <div class="subheding" data-aos="fade-up" data-aos-duration="1500">Infrastructure</div>
         <div class="auto-container">
             <div class="toppers">
-                <div class="toppersbox" data-aos="fade-left" data-aos-duration="1600">
-                    <div class="toppesrimgbox">
-                        <img src="<?= base_url() ?>assets/images/round/1.png" />
-                    </div>
-                    <div class="studentname">Name</div>
-                </div>
-                <div class="toppersbox" data-aos="fade-up" data-aos-duration="1700">
-                    <div class="toppesrimgbox">
-                        <img src="<?= base_url() ?>assets/images/round/2.jpg" />
-                    </div>
-                    <div class="studentname">Name</div>
-                </div>
-                <div class="toppersbox" data-aos="fade-down" data-aos-duration="1800">
-                    <div class="toppesrimgbox">
-                        <img src="<?= base_url() ?>assets/images/round/3.jpg" />
-                    </div>
-                    <div class="studentname">Name</div>
-                </div>
-                <div class="toppersbox" data-aos="fade-down" data-aos-duration="1800">
-                    <div class="toppesrimgbox">
-                        <img src="<?= base_url() ?>assets/images/round/4.jpg" />
-                    </div>
-                    <div class="studentname">Name</div>
-                </div>
+
+                <?php
+
+                if (!empty($infrastructure)) {
+                    foreach ($infrastructure as $index => $item) {
+                        ?>
+                        <div class="toppersbox" data-aos="fade-left" data-aos-duration="1600">
+                            <div class="toppesrimgbox">
+                                <img src="<?= base_url() . $item['img_path'] ?>" />
+                            </div>
+                            <div class="studentname"><?= $item['title'] ?></div>
+                        </div>
+                        <?php
+                    }
+                }
+
+                ?>
             </div>
             <a href="#" class="arrowtopagetopper"></a>
             <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
@@ -772,14 +721,16 @@
                     </div>
                     <ul class="gitmainclass" data-aos="fade-up" data-aos-duration="2000">
                         <li><a href="#" target="_blank"><img class="addressview"
-                                    src="<?= base_url() ?>assets/images/location.png" alt="#">53, Dr. Meghnad Saha Sarani,
+                                    src="<?= base_url() ?>assets/images/location.png" alt="#">53, Dr. Meghnad Saha
+                                Sarani,
                                 Southern Avenue
                                 <br>Kolkata-700 029, West Bengal, India.</a></li>
                         <li class="gitleftbox">
                             Admission Inquiry Number & Email<br />
                             <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/739/739247.png"
                                     alt="#"> +91 33 4063 0070</a>
-                            <a href="mailto:info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png" alt="#">
+                            <a href="mailto:info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png"
+                                    alt="#">
                                 info@adamiano.com</a>
                         </li>
                     </ul>
@@ -792,9 +743,9 @@
                 </div>
                 <div class="col-lg-6 contactus-right">
                     <div class="gettouch" data-aos="fade-up" data-aos-duration="2000">Get In Touch</div>
-                    <div class="gettouchtext" data-aos="fade-up" data-aos-duration="2200">Drop us your details for a
-                        quick response.</div>
-                    <div class="form" data-aos="fade-up" data-aos-duration="2400">
+                    <div class="gettouchtext" data-aos="fade-up" data-aos-duration="2200">Drop us your details for a quick response.</div>
+                    <form class="form" data-aos="fade-up" data-aos-duration="2400"
+                        action="<?= base_url('admin/pages/save_user_message') ?>" method="POST">
                         <div class="mb-3">
                             <label class="form-label">First Name*</label>
                             <div>
@@ -858,7 +809,7 @@
                             <!--append validation message-->
                         </div>
 
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -2304,7 +2255,7 @@
                             </div>
                             <div class="border-layer"></div>
                             <div class="newsinnertext">
-                                <img src="<?=base_url()?>assets/images/newspage/1.jpg" />
+                                <img src="<?= base_url() ?>assets/images/newspage/1.jpg" />
                                 <div class="hovertext">
                                     <a href="#">
                                         <div class="newsmoreview">
@@ -2326,7 +2277,7 @@
                                     </div>
                                     <div class="border-layer"></div>
                                     <div class="newsinnertext">
-                                        <img src="<?=base_url()?>assets/images/newspage/2.jpg" />
+                                        <img src="<?= base_url() ?>assets/images/newspage/2.jpg" />
                                         <div class="hovertext">
                                             <a href="#">
                                                 <div class="newsmoreview">
@@ -2344,7 +2295,7 @@
                                     </div>
                                     <div class="border-layer"></div>
                                     <div class="newsinnertext">
-                                        <img src="<?=base_url()?>assets/images/newspage/3.jpg" />
+                                        <img src="<?= base_url() ?>assets/images/newspage/3.jpg" />
                                         <div class="hovertext">
                                             <a href="#">
                                                 <div class="newsmoreview">
@@ -2364,7 +2315,7 @@
                                     </div>
                                     <div class="border-layer"></div>
                                     <div class="newsinnertext">
-                                        <img src="<?=base_url()?>assets/images/newspage/4.jpg" />
+                                        <img src="<?= base_url() ?>assets/images/newspage/4.jpg" />
                                         <div class="hovertext">
                                             <a href="#">
                                                 <div class="newsmoreview">
@@ -2382,7 +2333,7 @@
                                     </div>
                                     <div class="border-layer"></div>
                                     <div class="newsinnertext">
-                                        <img src="<?=base_url()?>assets/images/newspage/5.jpg" />
+                                        <img src="<?= base_url() ?>assets/images/newspage/5.jpg" />
                                         <div class="hovertext">
                                             <a href="#">
                                                 <div class="newsmoreview">
@@ -2540,7 +2491,7 @@
             <div class="row footer_top">
                 <div class="col-lg-4 col-sm-12" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                     <div class="footerlogo">
-                        <a href="index.html"><img src="<?=base_url()?>assets/images/logo.png" alt="#" /></a>
+                        <a href="index.html"><img src="<?= base_url() ?>assets/images/logo.png" alt="#" /></a>
                     </div>
                     <p>Damiano was established in 1968 for manufacturing Pole Line Hardware's, Steel structures,
                         Insulator and Conductor accessories, Clamps and Connectors, ABC accessories, Fuse Cutouts and
@@ -2569,15 +2520,17 @@
                         <div class="footerheading">Connect with us</div>
                         <ul>
 
-                            <li><a href="#" target="_blank"><img class="addressview" src="<?=base_url()?>assets/images/location.png"
-                                        alt="#">53, Dr. Meghnad Saha Sarani, Southern Avenue
+                            <li><a href="#" target="_blank"><img class="addressview"
+                                        src="<?= base_url() ?>assets/images/location.png" alt="#">53, Dr. Meghnad Saha
+                                    Sarani, Southern Avenue
                                     <br>Kolkata-700 029, West Bengal, India.</a></li>
                             <li>
                                 Inquiry Number & Email<br />
                                 <a href="#" target="_blank"><img
                                         src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> +91 33 4063
                                     0070</a>
-                                <a href="mailto: info@adamiano.com"><img src="<?=base_url()?>assets/images/mail.png" alt="#">
+                                <a href="mailto: info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png"
+                                        alt="#">
                                     info@adamiano.com</a>
                             </li>
 
@@ -2601,7 +2554,7 @@
         <div class="footerbottom">
             <a href="#topview">
                 <div class="arrowtoptobottom">
-                    <img src="<?=base_url()?>assets/images/navigation.png" alt="#" />
+                    <img src="<?= base_url() ?>assets/images/navigation.png" alt="#" />
                 </div>
             </a>
             <div class="auto-container">
@@ -2771,7 +2724,7 @@
                 <i class="fa fa-times" aria-hidden="true"></i>
             </div>
             <a href="#" target="_blank" class="img-and-content">
-                <img src="<?= base_url()?>assets/images/logo.png" alt="International School Gurgaon">
+                <img src="<?= base_url() ?>assets/images/logo.png" alt="International School Gurgaon">
                 <span class="content__popup">
                     <span class="topheadingpopup">Damiano</span>
                     <span class="text-popup">Your Update Message 1</span>
@@ -2848,7 +2801,8 @@
 
 
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
     <script>
         $.fn.circleType = function (options) {
 
