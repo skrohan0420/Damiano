@@ -134,6 +134,27 @@ class Pages_model extends Admin_model
         return $add;
     }
 
+    public function add_infrastructure($path, $title){
+        $data = [
+            'uid' => $this->generate_uid('INF'),
+            'title' => $title,
+            'img_path' => $path,
+        ];
+        $add = $this->db->insert('home_infrastructure', $data);
+        return $add;
+    }
+
+    public function get_infrastructure(){
+        $data = $this->db
+            ->select('*')
+            ->from('home_infrastructure')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];   
+    }
+
+
     public function delete_banner_img($uid)
     {
         $this->db->where('uid', $uid);
@@ -145,6 +166,12 @@ class Pages_model extends Admin_model
     public function delete_announcement_file($uid){
         $this->db->where('uid', $uid);
         $this->db->delete('home_announcement_file');
+        return $this->db->affected_rows() > 0;
+    }
+
+    public function delete_infrastructure($uid){
+        $this->db->where('uid', $uid);
+        $this->db->delete('home_infrastructure');
         return $this->db->affected_rows() > 0;
     }
 
