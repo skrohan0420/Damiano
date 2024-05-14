@@ -168,6 +168,20 @@ class Pages_model extends Admin_model
         return $add;
     }
 
+    public function add_new_product($path, $data){
+        $insert_data = [
+            'uid' => $this->generate_uid('PRD'),
+            'name'=> $data['product_name'],
+            'details' => $data['product_details'],
+            'img_path' => $path,
+        ];
+
+        $add = $this->db->insert('product', $insert_data);
+        return $add;
+
+    }
+
+
     public function get_infrastructure(){
         $data = $this->db
             ->select('*')
@@ -176,6 +190,18 @@ class Pages_model extends Admin_model
         $data = $data->result_array();
         //$this->prd($banner);
         return isset($data) ? $data : [];   
+    }
+
+    public function get_product(){
+
+        $data = $this->db
+            ->select('*')
+            ->from('product')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];   
+
     }
 
     public function get_appreciation(){

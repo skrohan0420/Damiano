@@ -2,7 +2,12 @@
 <?php
 
 ?>
-
+<style>
+    .nav-link{
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+</style>
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -55,9 +60,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link"
-                    href="<?= base_url('/admin/product') ?>">
-                    <i class="fas fa-fw fa-envelope mr-1"></i>
-                    <span>product</span>
+                    href="<?= base_url('/admin/products') ?>">
+                    <i class="fas fa-fw fa-box-open mr-1"></i>
+                    <span>Product</span>
                 </a>
             </li>
             <!-- Divider -->

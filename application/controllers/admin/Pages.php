@@ -54,7 +54,21 @@ class Pages extends Admin
         $data['data_header']['title'] = 'Admin | Pages';
         $data['data_header']['sidebar']['pages'] = true;
         $data['data_header']['sidebar']['product'] = true;
+        $data['data_page']['product'] = $this->Pages_model->get_product();
+
         $this->is_auth('admin/product.php', $data);
+
+    }
+
+    public function product_add()
+    {
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['product_add_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['product'] = true;
+        $this->is_auth('admin/product_add.php', $data);
 
     }
 
@@ -69,6 +83,16 @@ class Pages extends Admin
         //$this->prd($data);
         $this->Pages_model->save_user_message($data);
         redirect('/home');
+    }
+
+    public function add_new_product(){
+        $data = $this->input->post();
+        $upload_data = $this->upload_files('./uploads/product_img/', 'product_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_new_product('/uploads/product_img/' . $upload_data['file_name'], $data);
+        }
+        redirect('/admin/products');
     }
 
 
