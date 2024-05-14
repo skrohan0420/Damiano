@@ -94,6 +94,19 @@ class Admin extends Common
 
     }
 
+    public function messages()
+    {
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['messages_js.php'];
+        $data['data_header']['title'] = 'Admin | Dashboard';
+        $data['data_header']['sidebar']['dashboard'] = true;
+        $data['data_page']['messages'] = $this->Pages_model->get_messages();
+
+        $this->is_auth('admin/messages.php', $data);
+
+    }
+
 
 
     public function is_auth($page, $data)

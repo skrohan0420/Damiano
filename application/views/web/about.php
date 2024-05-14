@@ -192,7 +192,8 @@
 
     <header id="home">
         <div class="topheaderlogo">
-            <a href="index.html"><img data-aos="fade-up" data-aos-duration="1500" src="<?= base_url() ?>assets/images/logo.png" alt="logo"></a>
+            <a href="index.html"><img data-aos="fade-up" data-aos-duration="1500"
+                    src="<?= base_url() ?>assets/images/logo.png" alt="logo"></a>
         </div>
         <div class="headertop">
             <div class="headertop_left" onclick="menuopneview();" data-aos="fade-right" data-aos-duration="1500">
@@ -201,7 +202,7 @@
                     <span></span>
                 </div>
             </div>
-            <a href="contact.html" onclick="activateGetInTouch();">
+            <a href="<?=base_url('contact-us')?>" onclick="activateGetInTouch();">
                 <div class="headertop_right" data-aos="fade-left" data-aos-duration="1500">
                     <p>Contact</p>
                     <img src="<?= base_url() ?>assets/images/mail.png" alt="#">
@@ -211,25 +212,24 @@
         <div class="intSchMenu">
             <div class="intSchMenu__overflow-area">
                 <div class="intSchMenu__overflow-area-inner">
-
                     <div class="intSchMenu__menusWrapper">
-
                         <div class="first-level-navigation">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li data-tab="aboutmenu"><a href="about.html">About Us</a></li>
-                                <li data-tab="academicsmenu"><a href="javascript:;">Products<span><i class="fa fa-angle-right"></i></span></a></li>
+                                <li><a href="#">Home</a></li>
+                                <li data-tab="aboutmenu"><a href="<?=base_url('about')?>">About Us</a></li>
+                                <li data-tab="academicsmenu"><a href="javascript:;">Products<span><i
+                                                class="fa fa-angle-right"></i></span></a></li>
                                 <li data-tab="beyondclassroom"><a href="javascript:;">Updates</a></li>
                                 <li data-tab="infrastructure"><a href="javascript:;">Quality</a></li>
                                 <li data-tab="admissionmenu"><a href="javascript:;">Infrastructure</a></li>
                                 <li><a href="#">Career</a></li>
-                                <li data-tab="#"><a href="contact.html">Contact us </a></li>
+                                <li data-tab=""><a href="<?=base_url('contact-us')?>">Contact us </a></li>
                             </ul>
                         </div>
 
                         <div class="second-level-navigation">
 
-                            
+
                             <div id="academicsmenu" class="tab-content">
                                 <ul>
                                     <li><a href="#">Abc Accessories</a></li>
@@ -241,11 +241,12 @@
                                     <li><a href="#">Telecommunication Accessories</a></li>
                                 </ul>
                             </div>
-                            
+
                             <div id="contact" class="tab-content">
                                 <ul>
                                     <li><a href="/getintouch">Get In touch</a></li>
-                                    <li><a href="https://maps.app.goo.gl/kWGu2T7zF4SM1oFw9" target="_blank">Driving Directions</a></li>
+                                    <li><a href="https://maps.app.goo.gl/kWGu2T7zF4SM1oFw9" target="_blank">Driving
+                                            Directions</a></li>
                                     <li><a href="/workwithus">Work with us</a></li>
                                 </ul>
                             </div>
@@ -262,7 +263,6 @@
                         <ul class="navmobile">
                             <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
                             <li class="nav__item"><a class="nav__link" href="#">About Us</a></li>
-
                             <li class="nav__item">
                                 <a class="nav__link" href="#">Products <i class="fas fa-chevron-right"></i></a>
                                 <ul class="nav__sub">
@@ -271,8 +271,10 @@
                                     <li class="nav__item"><a class="nav__link" href="#">Fuse Cutouts</a></li>
                                     <li class="nav__item"><a class="nav__link" href="#">Helical Fittings</a></li>
                                     <li class="nav__item"><a class="nav__link" href="#">Insulator Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Pole lien Hardware and Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Telecommunication Accessories</a></li>
+                                    <li class="nav__item"><a class="nav__link" href="#">Pole lien Hardware and
+                                            Accessories</a></li>
+                                    <li class="nav__item"><a class="nav__link" href="#">Telecommunication
+                                            Accessories</a></li>
                                 </ul>
                             </li>
                             <li class="nav__item"><a href="/" class="nav__link">Updates</a></li>

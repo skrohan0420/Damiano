@@ -232,7 +232,7 @@ if (false) {
                     <span></span>
                 </div>
             </div>
-            <a href="javascript:;" onclick="activateGetInTouch();">
+            <a href="<?=base_url('contact-us')?>" onclick="activateGetInTouch();">
                 <div class="headertop_right" data-aos="fade-left" data-aos-duration="1500">
                     <p>Contact</p>
                     <img src="<?= base_url() ?>assets/images/mail.png" alt="#">
@@ -246,14 +246,14 @@ if (false) {
                         <div class="first-level-navigation">
                             <ul>
                                 <li><a href="#">Home</a></li>
-                                <li data-tab="aboutmenu"><a href="about.html">About Us</a></li>
+                                <li data-tab="aboutmenu"><a href="<?=base_url('about')?>">About Us</a></li>
                                 <li data-tab="academicsmenu"><a href="javascript:;">Products<span><i
                                                 class="fa fa-angle-right"></i></span></a></li>
                                 <li data-tab="beyondclassroom"><a href="javascript:;">Updates</a></li>
                                 <li data-tab="infrastructure"><a href="javascript:;">Quality</a></li>
                                 <li data-tab="admissionmenu"><a href="javascript:;">Infrastructure</a></li>
                                 <li><a href="#">Career</a></li>
-                                <li data-tab=""><a href="contact.html">Contact us </a></li>
+                                <li data-tab=""><a href="<?=base_url('contact-us')?>">Contact us </a></li>
                             </ul>
                         </div>
 
@@ -293,7 +293,6 @@ if (false) {
                         <ul class="navmobile">
                             <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
                             <li class="nav__item"><a class="nav__link" href="#">About Us</a></li>
-
                             <li class="nav__item">
                                 <a class="nav__link" href="#">Products <i class="fas fa-chevron-right"></i></a>
                                 <ul class="nav__sub">

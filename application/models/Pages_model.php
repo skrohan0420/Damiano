@@ -188,6 +188,17 @@ class Pages_model extends Admin_model
         return isset($data) ? $data : [];   
     }
 
+    public function get_messages(){
+        $data = $this->db
+            ->select('*')
+            ->from('user_message')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];   
+
+    }
+
 
     public function delete_banner_img($uid)
     {

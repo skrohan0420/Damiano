@@ -9,14 +9,14 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#6bbc53;">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#2596be;">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Shapath</div>
+                <div class="sidebar-brand-text mx-3">Damiano</div>
             </a>
 
             <!-- Divider -->
@@ -40,10 +40,17 @@
 
 
             <li class="nav-item">
-                <a class="nav-link collapsed"
-                    href="<?= base_url('/admin/pages/home') ?>">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/home') ?>">
                     <i class="fas fa-fw fa-home mr-1"></i>
                     <span> Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/messages') ?>">
+                    <i class="fas fa-fw fa-envelope mr-1"></i>
+                    <span> Messages</span>
                 </a>
             </li>
             <!-- Divider -->
