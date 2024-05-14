@@ -19,6 +19,8 @@ class Load extends Common {
         $data['data_page']['update_img'] = $this->Pages_model->get_update_img();
         $data['data_page']['announcement'] = $this->Pages_model->get_announcement();
         $data['data_page']['infrastructure'] = $this->Pages_model->get_infrastructure();
+        $data['data_page']['appreciation'] = $this->Pages_model->get_appreciation();
+
         $this->load_page('web/home.php',$data);
     }
 

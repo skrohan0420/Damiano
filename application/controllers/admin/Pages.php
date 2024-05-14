@@ -42,6 +42,7 @@ class Pages extends Admin
         $data['data_page']['update_img'] = $this->Pages_model->get_update_img();
         $data['data_page']['announcement'] = $this->Pages_model->get_announcement();
         $data['data_page']['infrastructure'] = $this->Pages_model->get_infrastructure();
+        $data['data_page']['appreciation'] = $this->Pages_model->get_appreciation();
         $this->is_auth('admin/pages_home.php', $data);
 
     }
@@ -121,6 +122,16 @@ class Pages extends Admin
 
     }
 
+    public function add_appreciation(){
+        $upload_data = $this->upload_files('./uploads/home_appreciation_img/', 'home_appreciation_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_appreciation('/uploads/home_appreciation_img/' . $upload_data['file_name'], $this->input->post('home_appreciation_text'));
+        }
+        redirect('/admin/home');
+
+    }
+
 
 
     public function delete_banner_img()
@@ -145,6 +156,14 @@ class Pages extends Admin
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_infrastructure($uid);
         redirect('/admin/home');
+    }
+
+    public function delete_appreciation(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_appreciation($uid);
+        redirect('/admin/home');
+
     }
 
 }

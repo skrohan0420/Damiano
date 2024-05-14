@@ -143,6 +143,18 @@ class Pages_model extends Admin_model
         $add = $this->db->insert('home_infrastructure', $data);
         return $add;
     }
+
+    public function add_appreciation($path, $title){
+        $data = [
+            'uid' => $this->generate_uid('APR'),
+            'title' => $title,
+            'img_path' => $path,
+        ];
+        $add = $this->db->insert('home_appreciation_img', $data);
+        return $add;
+
+    }
+
     public function save_user_message($data){
         $insert_data = [
             'uid' => $this->generate_uid('MSG'),
@@ -160,6 +172,16 @@ class Pages_model extends Admin_model
         $data = $this->db
             ->select('*')
             ->from('home_infrastructure')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];   
+    }
+
+    public function get_appreciation(){
+        $data = $this->db
+            ->select('*')
+            ->from('home_appreciation_img')
             ->get();
         $data = $data->result_array();
         //$this->prd($banner);
@@ -184,6 +206,12 @@ class Pages_model extends Admin_model
     public function delete_infrastructure($uid){
         $this->db->where('uid', $uid);
         $this->db->delete('home_infrastructure');
+        return $this->db->affected_rows() > 0;
+    }
+
+    public function delete_appreciation($uid){
+        $this->db->where('uid', $uid);
+        $this->db->delete('home_appreciation_img');
         return $this->db->affected_rows() > 0;
     }
 

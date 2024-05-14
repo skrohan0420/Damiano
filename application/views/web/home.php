@@ -8,6 +8,7 @@ if (false) {
     print_r($update_img);
     print_r($announcement);
     print_r($infrastructure);
+    print_r($appreciation);
     exit();
 }
 
@@ -502,9 +503,9 @@ if (false) {
 
 
                         <!-- Button Box -->
-                        <div class="button-box" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="0">
+                        <!-- <div class="button-box" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="0">
                             <a class="allbtnview" href="about.html"><span>View More</span></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -567,9 +568,9 @@ if (false) {
                         </div>
                     </div>
 
-                    <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
+                    <!-- <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
                         <a href="#" class="allbtnview"><span>View All</span></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
     </section>
@@ -599,9 +600,9 @@ if (false) {
                 ?>
             </div>
             <a href="#" class="arrowtopagetopper"></a>
-            <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
+            <!-- <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
                 <a href="#" class="allbtnview"><span>VIEW ALL</span></a>
-            </div>
+            </div> -->
         </div>
     </section>
     <!--achievement-->
@@ -612,15 +613,25 @@ if (false) {
         <div class="auto-container">
             <div class="subheding" data-aos="fade-up" data-aos-duration="1000">Damiano Appreciation</div>
             <div class="appreciation owl-carousel owl-theme" data-aos="fade-up" data-aos-duration="2000">
-                <div class="item">
-                    <div class="lower-content">
-                        <div class="border-layer"></div>
-                        <a href="<?= base_url() ?>assets/images/awards/certificate1.jpg" data-fancybox="">
-                            <img src="<?= base_url() ?>assets/images/awards/certificate1.jpg" alt="#" />
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
+
+                <?php
+                    if(!empty($appreciation)){
+                        foreach($appreciation as $index => $item){
+                            ?>
+                            <div class="item">
+                                <div class="lower-content">
+                                    <div class="border-layer"></div>
+                                    <a href="<?= base_url() . $item['img_path'] ?>" data-fancybox="">
+                                        <img src="<?= base_url() . $item['img_path'] ?>" alt="#" />
+                                    </a>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                ?>
+               
+                <!-- <div class="item">
                     <div class="lower-content">
                         <div class="border-layer"></div>
                         <a href="<?= base_url() ?>assets/images/awards/certificate2.jpg" data-fancybox="">
@@ -643,12 +654,12 @@ if (false) {
                             <img src="<?= base_url() ?>assets/images/awards/certificate4.jpg" alt="#" />
                         </a>
                     </div>
-                </div>
+                </div> -->
 
             </div>
-            <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
+            <!-- <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
                 <a href="" class="allbtnview"><span>View All</span></a>
-            </div>
+            </div> -->
         </div>
     </section>
     <!--Appreciation-->
