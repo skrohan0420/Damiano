@@ -22,16 +22,44 @@
                                 <tr>
                                     <th>Date</th>
                                     <th>Name</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th>message</th>
+                                    <th>Image</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    if(!empty()){
+                                if (!empty($product)) {
+                                    foreach ($product as $index => $item) {
+                                        ?>
 
+                                        <tr>
+                                            <td>
+                                                <?= $item['created_at'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $item['name'] ?>
+                                            </td>
+                                            <td>
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="" height="100px">
+                                            </td>
+                                            <td>
+                                                <a href="<?= base_url('admin/pages/view_product?uid=') . $item['uid'] ?>"
+                                                    class="btn btn-info">
+                                                    VIEW
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="<?= base_url('admin/pages/delete_product?uid=') . $item['uid'] ?>"
+                                                    class="btn btn-danger">
+                                                    DELETE
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                        <?php
                                     }
+                                }
                                 ?>
                             </tbody>
                         </table>

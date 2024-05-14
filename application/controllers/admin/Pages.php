@@ -60,6 +60,19 @@ class Pages extends Admin
 
     }
 
+    public function view_product(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $uid = $this->input->get('uid');
+        $data['data_footer']['footer_link'] = ['product_single_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['product'] = true;
+        $data['data_page']['product'] = $this->Pages_model->get_product_by_id($uid);
+
+        $this->is_auth('admin/product_single.php', $data);
+    } 
+
     public function product_add()
     {
         $this->init_model(MODEL_PAGES);

@@ -62,7 +62,7 @@
                 <a class="nav-link"
                     href="<?= base_url('/admin/products') ?>">
                     <i class="fas fa-fw fa-box-open mr-1"></i>
-                    <span>Product</span>
+                    <span>Products</span>
                 </a>
             </li>
             <!-- Divider -->

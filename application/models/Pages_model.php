@@ -61,7 +61,8 @@ class Pages_model extends Admin_model
         return isset($banner) ? $banner : [];
     }
 
-    public function get_update_img(){
+    public function get_update_img()
+    {
         $banner = $this->db
             ->select('*')
             ->from('home_updates_img')
@@ -71,14 +72,15 @@ class Pages_model extends Admin_model
         return isset($banner) ? $banner[0] : [];
     }
 
-    public function get_announcement(){
+    public function get_announcement()
+    {
         $banner = $this->db
             ->select('*')
             ->from('home_announcement_file')
             ->get();
         $banner = $banner->result_array();
         //$this->prd($banner);
-        return isset($banner) ? $banner: [];
+        return isset($banner) ? $banner : [];
     }
 
     public function update_home_about_img($path, $uid)
@@ -125,7 +127,8 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function insert_home_announcement_file($path){
+    public function insert_home_announcement_file($path)
+    {
         $data = [
             'uid' => $this->generate_uid('BNHU'),
             'path' => $path
@@ -134,7 +137,8 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function add_infrastructure($path, $title){
+    public function add_infrastructure($path, $title)
+    {
         $data = [
             'uid' => $this->generate_uid('INF'),
             'title' => $title,
@@ -144,7 +148,8 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function add_appreciation($path, $title){
+    public function add_appreciation($path, $title)
+    {
         $data = [
             'uid' => $this->generate_uid('APR'),
             'title' => $title,
@@ -155,10 +160,11 @@ class Pages_model extends Admin_model
 
     }
 
-    public function save_user_message($data){
+    public function save_user_message($data)
+    {
         $insert_data = [
             'uid' => $this->generate_uid('MSG'),
-            'name'=> $data['f_name'].' '.$data['l_name'],
+            'name' => $data['f_name'] . ' ' . $data['l_name'],
             'email' => $data['email'],
             'phone' => $data['mobile'],
             'message' => $data['msg']
@@ -168,10 +174,11 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function add_new_product($path, $data){
+    public function add_new_product($path, $data)
+    {
         $insert_data = [
             'uid' => $this->generate_uid('PRD'),
-            'name'=> $data['product_name'],
+            'name' => $data['product_name'],
             'details' => $data['product_details'],
             'img_path' => $path,
         ];
@@ -182,17 +189,19 @@ class Pages_model extends Admin_model
     }
 
 
-    public function get_infrastructure(){
+    public function get_infrastructure()
+    {
         $data = $this->db
             ->select('*')
             ->from('home_infrastructure')
             ->get();
         $data = $data->result_array();
         //$this->prd($banner);
-        return isset($data) ? $data : [];   
+        return isset($data) ? $data : [];
     }
 
-    public function get_product(){
+    public function get_product()
+    {
 
         $data = $this->db
             ->select('*')
@@ -200,31 +209,42 @@ class Pages_model extends Admin_model
             ->get();
         $data = $data->result_array();
         //$this->prd($banner);
-        return isset($data) ? $data : [];   
+        return isset($data) ? $data : [];
 
     }
 
-    public function get_appreciation(){
+    public function get_appreciation()
+    {
         $data = $this->db
             ->select('*')
             ->from('home_appreciation_img')
             ->get();
         $data = $data->result_array();
         //$this->prd($banner);
-        return isset($data) ? $data : [];   
+        return isset($data) ? $data : [];
     }
 
-    public function get_messages(){
+    public function get_messages()
+    {
         $data = $this->db
             ->select('*')
             ->from('user_message')
             ->get();
         $data = $data->result_array();
         //$this->prd($banner);
-        return isset($data) ? $data : [];   
+        return isset($data) ? $data : [];
 
     }
 
+    public function get_product_by_id($uid)
+    {
+        $this->db->where('uid', $uid);
+        $query = $this->db->get('product');
+        $query = $query->result_array();
+        return !empty($query) ? $query[0] : [];
+
+
+    }
 
     public function delete_banner_img($uid)
     {
@@ -234,19 +254,22 @@ class Pages_model extends Admin_model
 
     }
 
-    public function delete_announcement_file($uid){
+    public function delete_announcement_file($uid)
+    {
         $this->db->where('uid', $uid);
         $this->db->delete('home_announcement_file');
         return $this->db->affected_rows() > 0;
     }
 
-    public function delete_infrastructure($uid){
+    public function delete_infrastructure($uid)
+    {
         $this->db->where('uid', $uid);
         $this->db->delete('home_infrastructure');
         return $this->db->affected_rows() > 0;
     }
 
-    public function delete_appreciation($uid){
+    public function delete_appreciation($uid)
+    {
         $this->db->where('uid', $uid);
         $this->db->delete('home_appreciation_img');
         return $this->db->affected_rows() > 0;
