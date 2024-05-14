@@ -43,14 +43,21 @@
                 <a class="nav-link"
                     href="<?= base_url('/admin/home') ?>">
                     <i class="fas fa-fw fa-home mr-1"></i>
-                    <span> Home</span>
+                    <span>Home</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link"
                     href="<?= base_url('/admin/messages') ?>">
                     <i class="fas fa-fw fa-envelope mr-1"></i>
-                    <span> Messages</span>
+                    <span>Messages</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/product') ?>">
+                    <i class="fas fa-fw fa-envelope mr-1"></i>
+                    <span>product</span>
                 </a>
             </li>
             <!-- Divider -->

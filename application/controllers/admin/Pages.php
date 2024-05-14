@@ -46,6 +46,21 @@ class Pages extends Admin
         $this->is_auth('admin/pages_home.php', $data);
 
     }
+    public function product()
+    {
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['product_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['product'] = true;
+        $this->is_auth('admin/product.php', $data);
+
+    }
+
+
+
+
 
     public function save_user_message(){
         $data = $this->input->post();

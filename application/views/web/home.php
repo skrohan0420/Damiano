@@ -245,10 +245,13 @@ if (false) {
                     <div class="intSchMenu__menusWrapper">
                         <div class="first-level-navigation">
                             <ul>
-                                <li><a href="#">Home</a></li>
+                                <li><a href="<?=base_url('home')?>">Home</a></li>
                                 <li data-tab="aboutmenu"><a href="<?=base_url('about')?>">About Us</a></li>
-                                <li data-tab="academicsmenu"><a href="javascript:;">Products<span><i
-                                                class="fa fa-angle-right"></i></span></a></li>
+                                <li data-tab="academicsmenu">
+                                    <a href="javascript:;">
+                                        Products<span><i class="fa fa-angle-right"></i></span>
+                                    </a>
+                                </li>
                                 <li data-tab="beyondclassroom"><a href="javascript:;">Updates</a></li>
                                 <li data-tab="infrastructure"><a href="javascript:;">Quality</a></li>
                                 <li data-tab="admissionmenu"><a href="javascript:;">Infrastructure</a></li>
