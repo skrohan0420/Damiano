@@ -155,6 +155,19 @@ class Pages_model extends Admin_model
         return $add;
     }
 
+    public function add_product_feature($path, $data){
+        //$this->prd($data);
+        $insert_data = [
+            'uid' => $this->generate_uid('FTR'),
+            'product_id'=> $data['product_id'],
+            'title' => $data['title'],
+            'details' => $data['details'],
+            'img_path' => $path
+        ];
+        $add = $this->db->insert('features', $insert_data);
+        return $add;
+    }
+
     public function insert_home_announcement_file($path)
     {
         $data = [
@@ -275,6 +288,16 @@ class Pages_model extends Admin_model
 
     }
 
+    public function get_product_features_by_id($uid){
+        $this->db->where('product_id', $uid);
+        $query = $this->db->get('features');
+        $query = $query->result_array();
+        return !empty($query) ? $query : [];
+
+
+    }
+
+
     public function delete_banner_img($uid)
     {
         $this->db->where('uid', $uid);
@@ -310,5 +333,11 @@ class Pages_model extends Admin_model
         return $this->db->affected_rows() > 0;
     }
 
+    public function delete_product_features($uid){
+        $this->db->where('uid', $uid);
+        $this->db->delete('features');
+        return $this->db->affected_rows() > 0;
+
+    }
 
 }

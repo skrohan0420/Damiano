@@ -69,6 +69,7 @@ class Pages extends Admin
         $data['data_header']['sidebar']['pages'] = true;
         $data['data_header']['sidebar']['product'] = true;
         $data['data_page']['product'] = $this->Pages_model->get_product_by_id($uid);
+        $data['data_page']['features'] = $this->Pages_model->get_product_features_by_id($uid);
 
         $this->is_auth('admin/product_single.php', $data);
     } 
@@ -85,6 +86,15 @@ class Pages extends Admin
 
     }
 
+    public function product_feature_add(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['product_feature_add_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['product'] = true;
+        $this->is_auth('admin/product_feature_add.php', $data);
+    }
 
 
 
@@ -209,6 +219,18 @@ class Pages extends Admin
 
     }
 
+    public function add_product_feature(){
+        //$this->prd($this->input->post());
+
+        $upload_data = $this->upload_files('./uploads/feature_img/', 'feature_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_product_feature('/uploads/feature_img/' . $upload_data['file_name'], $this->input->post());
+        }
+        redirect('admin/pages/view_product?uid='.$this->input->post('product_id'));
+
+    }
+
 
 
     public function delete_banner_img()
@@ -249,6 +271,13 @@ class Pages extends Admin
         $this->Pages_model->delete_product($uid);
         redirect('/admin/products');
 
+    }
+
+    public function delete_product_features(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_product_features($uid);
+        redirect('/admin/pages/view_product?uid='.$this->input->get('p_id'));
     }
 
 }
