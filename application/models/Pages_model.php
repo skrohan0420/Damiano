@@ -104,6 +104,34 @@ class Pages_model extends Admin_model
         return $update;
     }
 
+    public function update_product_img($path, $uid){
+        $data = [
+            'img_path' => $path
+        ];
+        $update = $this->db->where(['uid' => $uid])
+            ->update('product', $data);
+        return $update;
+    }
+
+    public function update_product_banner_img($path, $uid){
+        $data = [
+            'banner_img_path' => $path
+        ];
+        $update = $this->db->where(['uid' => $uid])
+            ->update('product', $data);
+        return $update;
+
+    }
+
+    public function update_product($data){
+        $insert_data = [
+            'name' => $data['product_name'],
+            'details' => $data['product_details']
+        ];
+        $update = $this->db->where(['uid' => $data['product_uid']])
+            ->update('product', $insert_data);
+        return $update;
+    }
 
     public function update_banner_text($data)
     {
@@ -174,13 +202,14 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function add_new_product($path, $data)
+    public function add_new_product($path,$banner_path, $data)
     {
         $insert_data = [
             'uid' => $this->generate_uid('PRD'),
             'name' => $data['product_name'],
             'details' => $data['product_details'],
             'img_path' => $path,
+            'banner_img_path' => $banner_path
         ];
 
         $add = $this->db->insert('product', $insert_data);
@@ -274,5 +303,12 @@ class Pages_model extends Admin_model
         $this->db->delete('home_appreciation_img');
         return $this->db->affected_rows() > 0;
     }
+
+    public function delete_product($uid){
+        $this->db->where('uid', $uid);
+        $this->db->delete('product');
+        return $this->db->affected_rows() > 0;
+    }
+
 
 }

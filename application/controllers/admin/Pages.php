@@ -101,12 +101,35 @@ class Pages extends Admin
     public function add_new_product(){
         $data = $this->input->post();
         $upload_data = $this->upload_files('./uploads/product_img/', 'product_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
-        if ($upload_data) {
+        $upload_banner_data = $this->upload_files('./uploads/product_banner_img/', 'product_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_data && $upload_banner_data) {
             $this->init_model(MODEL_PAGES);
-            $this->Pages_model->add_new_product('/uploads/product_img/' . $upload_data['file_name'], $data);
+            $this->Pages_model->add_new_product('/uploads/product_img/' . $upload_data['file_name'],'/uploads/product_banner_img/' . $upload_banner_data['file_name'], $data);
         }
         redirect('/admin/products');
     }
+
+    public function update_product(){
+        //$this->prd($_FILES);
+        $this->init_model(MODEL_PAGES);
+
+        if(!empty($_FILES['product_img']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/product_img/', 'product_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $this->Pages_model->update_product_img('/uploads/product_img/' . $upload_data['file_name'], $this->input->post('product_uid'));
+            }
+        }
+        if(!empty($_FILES['product_banner_img']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/product_banner_img/', 'product_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $this->Pages_model->update_product_banner_img('/uploads/product_banner_img/' . $upload_data['file_name'], $this->input->post('product_uid'));
+            }
+        }
+
+        $update = $this->Pages_model->update_product($this->input->post());
+        redirect('/admin/products');
+    }
+
 
 
     public function update_banner_text()
@@ -115,6 +138,8 @@ class Pages extends Admin
         $this->Pages_model->update_banner_text($this->input->post());
         redirect('/admin/home');
     }
+
+  
     public function update_about_text()
     {
         $this->init_model(MODEL_PAGES);
@@ -215,6 +240,14 @@ class Pages extends Admin
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_appreciation($uid);
         redirect('/admin/home');
+
+    }
+
+    public function delete_product(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_product($uid);
+        redirect('/admin/products');
 
     }
 
