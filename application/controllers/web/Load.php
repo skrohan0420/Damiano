@@ -20,9 +20,22 @@ class Load extends Common {
         $data['data_page']['announcement'] = $this->Pages_model->get_announcement();
         $data['data_page']['infrastructure'] = $this->Pages_model->get_infrastructure();
         $data['data_page']['appreciation'] = $this->Pages_model->get_appreciation();
+        $data['data_page']['products'] = $this->Pages_model->get_product();
 
         $this->load_page('web/home.php',$data);
     }
+
+    public function product(){
+        $this->init_model(MODEL_PAGES);
+        $p_id = $this->input->get('p_id');
+        $data = PAGE_DATA_WEB;
+        $data['data_header']['product'] = true;
+        $data['data_page']['products'] = $this->Pages_model->get_product();
+        $data['data_page']['product_details'] = $this->Pages_model->get_product_by_id($p_id);
+        $data['data_page']['product_features'] = $this->Pages_model->get_product_features_by_id($p_id);
+        $this->load_page('web/product.php',$data);
+    }
+
 
     public function contact_us(){
         $this->init_model(MODEL_PAGES);

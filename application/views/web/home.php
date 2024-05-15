@@ -1,14 +1,7 @@
 <?php
 if (false) {
     echo "<pre>";
-    print_r($banner_text);
-    print_r($banner_images);
-    print_r($about_text);
-    print_r($about_img);
-    print_r($update_img);
-    print_r($announcement);
-    print_r($infrastructure);
-    print_r($appreciation);
+    print_r($products);
     exit();
 }
 
@@ -265,13 +258,17 @@ if (false) {
 
                             <div id="academicsmenu" class="tab-content">
                                 <ul>
-                                    <li><a href="#">Abc Accessories</a></li>
-                                    <li><a href="#">Conductor Accessories</a></li>
-                                    <li><a href="#">Fuse Cutouts</a></li>
-                                    <li><a href="#">Helical Fittings</a></li>
-                                    <li><a href="#">Insulator Accessories</a></li>
-                                    <li><a href="#">Pole lien Hardware and Accessories</a></li>
-                                    <li><a href="#">Telecommunication Accessories</a></li>
+                                    <?php
+                                        if($products){
+                                            foreach($products as $index => $item){
+                                                ?>
+                                                    <li>
+                                                        <a href="<?=base_url('product?p_id=').$item['uid']?>"><?=$item['name']?></a>
+                                                    </li>
+                                                <?php
+                                            }
+                                        }
+                                    ?>
                                 </ul>
                             </div>
 
