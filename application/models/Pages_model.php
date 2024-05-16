@@ -40,7 +40,8 @@ class Pages_model extends Admin_model
         return isset($about) ? $about[0] : [];
     }
 
-    public function get_aproduct_banner_images($p_id){
+    public function get_aproduct_banner_images($p_id)
+    {
         $data = $this->db
             ->select('*')
             ->from('product_banner_img')
@@ -117,7 +118,8 @@ class Pages_model extends Admin_model
         return $update;
     }
 
-    public function update_product_img($path, $uid){
+    public function update_product_img($path, $uid)
+    {
         $data = [
             'img_path' => $path
         ];
@@ -126,7 +128,8 @@ class Pages_model extends Admin_model
         return $update;
     }
 
-    public function update_product_banner_img($path, $uid){
+    public function update_product_banner_img($path, $uid)
+    {
         $data = [
             'banner_img_path' => $path
         ];
@@ -136,7 +139,8 @@ class Pages_model extends Admin_model
 
     }
 
-    public function update_product($data){
+    public function update_product($data)
+    {
         $insert_data = [
             'name' => $data['product_name'],
             'details' => $data['product_details']
@@ -168,11 +172,12 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function add_product_feature($path, $data){
+    public function add_product_feature($path, $data)
+    {
         //$this->prd($data);
         $insert_data = [
             'uid' => $this->generate_uid('FTR'),
-            'product_id'=> $data['product_id'],
+            'product_id' => $data['product_id'],
             'title' => $data['title'],
             'details' => $data['details'],
             'img_path' => $path
@@ -228,7 +233,7 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function add_new_product($path,$banner_data, $data)
+    public function add_new_product($path, $banner_data, $data)
     {
         $insert_data = [
             'uid' => $this->generate_uid('PRD'),
@@ -236,10 +241,10 @@ class Pages_model extends Admin_model
             'details' => $data['product_details'],
         ];
 
-        if(!empty($banner_data)){
-            foreach($banner_data as $index => $item ){
+        if (!empty($banner_data)) {
+            foreach ($banner_data as $index => $item) {
                 $banner_insert_data = [
-                    'uid' => $this->generate_uid('PRBN')  ,
+                    'uid' => $this->generate_uid('PRBN'),
                     'product_id' => $insert_data['uid'],
                     'img_path' => $path . $item['file_name']
                 ];
@@ -250,6 +255,16 @@ class Pages_model extends Admin_model
         $add = $this->db->insert('product', $insert_data);
         return $add;
 
+    }
+
+    public function add_new_product_banner($path, $p_id)
+    {
+        $banner_insert_data = [
+            'uid' => $this->generate_uid('PRBN'),
+            'product_id' => $p_id,
+            'img_path' => $path
+        ];
+        $this->db->insert('product_banner_img', $banner_insert_data);
     }
 
 
@@ -310,7 +325,8 @@ class Pages_model extends Admin_model
 
     }
 
-    public function get_product_features_by_id($uid){
+    public function get_product_features_by_id($uid)
+    {
         $this->db->where('product_id', $uid);
         $query = $this->db->get('features');
         $query = $query->result_array();
@@ -349,17 +365,27 @@ class Pages_model extends Admin_model
         return $this->db->affected_rows() > 0;
     }
 
-    public function delete_product($uid){
+    public function delete_product($uid)
+    {
         $this->db->where('uid', $uid);
         $this->db->delete('product');
         return $this->db->affected_rows() > 0;
     }
 
-    public function delete_product_features($uid){
+    public function delete_product_features($uid)
+    {
         $this->db->where('uid', $uid);
         $this->db->delete('features');
         return $this->db->affected_rows() > 0;
 
+    }
+
+
+    public function delete_product_banner_img($uid)
+    {
+        $this->db->where('uid', $uid);
+        $this->db->delete('product_banner_img');
+        return $this->db->affected_rows() > 0;
     }
 
 }

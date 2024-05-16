@@ -70,6 +70,7 @@ class Pages extends Admin
         $data['data_header']['sidebar']['product'] = true;
         $data['data_page']['product'] = $this->Pages_model->get_product_by_id($uid);
         $data['data_page']['features'] = $this->Pages_model->get_product_features_by_id($uid);
+        $data['data_page']['product_banner_images'] = $this->Pages_model->get_aproduct_banner_images($uid);
 
         $this->is_auth('admin/product_single.php', $data);
     } 
@@ -118,6 +119,17 @@ class Pages extends Admin
             $this->Pages_model->add_new_product('/uploads/product_banner_img/',$upload_banner_data,$data);
         }
         redirect('/admin/products');
+    }
+
+    public function add_new_product_banner(){
+        $p_id = $this->input->post('p_id');
+        $upload_banner_data = $this->upload_files('./uploads/product_banner_img/', 'product_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        //$this->prd($upload_banner_data);
+        if ($upload_banner_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_new_product_banner('/uploads/product_banner_img/'.$upload_banner_data['file_name'],$p_id);
+        }
+        redirect('admin/pages/view_product?uid='.$p_id);
     }
 
     public function update_product(){
@@ -278,6 +290,13 @@ class Pages extends Admin
         $uid = $this->input->get('uid');
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_product_features($uid);
+        redirect('/admin/pages/view_product?uid='.$this->input->get('p_id'));
+    }
+
+    public function delete_product_banner_img(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_product_banner_img($uid);
         redirect('/admin/pages/view_product?uid='.$this->input->get('p_id'));
     }
 
