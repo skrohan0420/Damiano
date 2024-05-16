@@ -13,6 +13,7 @@ $route['contact-us']                    = 'web/load/contact_us';
 $route['about']                         = 'web/load/about';
 $route['product']                       = 'web/load/product';
 $route['updates']                       = 'web/load/updates';
+$route['infrastructure']                = 'web/load/infrastructure';
 
 // ============================ admin routes
 $route['admin']                         = 'admin/Admin/index';
