@@ -21,6 +21,8 @@ $route['admin/product/add']             = 'admin/pages/product_add';
 $route['admin/login']                   = 'admin/Admin/login';
 $route['admin/logout']                  = 'admin/Admin/logout';
 $route['admin/messages']                = 'admin/Admin/messages';
+$route['admin/alerts']                  = 'admin/Admin/alerts';
+$route['admin/infrastructure']          = 'admin/Admin/infrastructure';
 $route['admin/product/features/add']    = 'admin/pages/product_feature_add';
 
 

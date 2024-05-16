@@ -65,6 +65,28 @@
                     <span>Products</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/alerts') ?>">
+                    <i class="fas fa-fw fa-bell mr-1"></i>
+                    <span>Alerts</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/infrastructure') ?>">
+                    <i class="fas fa-building mr-1"></i>
+                    <span>Infrastructure</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/updates') ?>">
+                    <i class="fas fa-fw fa-info mr-1"></i>
+                    <span>Updates</span>
+                </a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

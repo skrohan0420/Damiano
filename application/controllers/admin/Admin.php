@@ -107,6 +107,42 @@ class Admin extends Common
 
     }
 
+    public function alerts()
+    {
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['alerts_js.php'];
+        $data['data_header']['title'] = 'Admin | Dashboard';
+        $data['data_header']['sidebar']['dashboard'] = true;
+
+        $this->is_auth('admin/alerts.php', $data);
+
+    }
+
+    public function infrastructure()
+    {
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['infrastructure_js.php'];
+        $data['data_header']['title'] = 'Admin | Dashboard';
+        $data['data_header']['sidebar']['dashboard'] = true;
+
+        $this->is_auth('admin/infrastructure.php', $data);
+
+    }
+
+    public function updates(){
+
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['updates_js.php'];
+        $data['data_header']['title'] = 'Admin | Dashboard';
+        $data['data_header']['sidebar']['dashboard'] = true;
+
+        $this->is_auth('admin/updates.php', $data);
+
+
+    }
 
 
     public function is_auth($page, $data)
