@@ -215,15 +215,24 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function add_new_product($path,$banner_path, $data)
+    public function add_new_product($path,$banner_data, $data)
     {
         $insert_data = [
             'uid' => $this->generate_uid('PRD'),
             'name' => $data['product_name'],
             'details' => $data['product_details'],
-            'img_path' => $path,
-            'banner_img_path' => $banner_path
         ];
+
+        if(!empty($banner_data)){
+            foreach($banner_data as $index => $item ){
+                $banner_insert_data = [
+                    'uid' => $this->generate_uid('PRBN')  ,
+                    'product_id' => $insert_data['uid'],
+                    'img_path' => $path . $item['file_name']
+                ];
+                $this->db->insert('product_banner_img', $banner_insert_data);
+            }
+        }
 
         $add = $this->db->insert('product', $insert_data);
         return $add;

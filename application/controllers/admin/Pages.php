@@ -110,11 +110,12 @@ class Pages extends Admin
 
     public function add_new_product(){
         $data = $this->input->post();
-        $upload_data = $this->upload_files('./uploads/product_img/', 'product_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        //$upload_data = $this->upload_files('./uploads/product_img/', 'product_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
         $upload_banner_data = $this->upload_files('./uploads/product_banner_img/', 'product_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
-        if ($upload_data && $upload_banner_data) {
+        //$this->prd($upload_banner_data);
+        if ($upload_banner_data) {
             $this->init_model(MODEL_PAGES);
-            $this->Pages_model->add_new_product('/uploads/product_img/' . $upload_data['file_name'],'/uploads/product_banner_img/' . $upload_banner_data['file_name'], $data);
+            $this->Pages_model->add_new_product('/uploads/product_banner_img/',$upload_banner_data,$data);
         }
         redirect('/admin/products');
     }

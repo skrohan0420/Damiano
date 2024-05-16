@@ -22,7 +22,7 @@
                                 <tr>
                                     <th>Date</th>
                                     <th>Name</th>
-                                    <th>Image</th>
+                                    
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -40,9 +40,7 @@
                                             <td>
                                                 <?= $item['name'] ?>
                                             </td>
-                                            <td>
-                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="" height="100px">
-                                            </td>
+                                          
                                             <td>
                                                 <a href="<?= base_url('admin/pages/view_product?uid=') . $item['uid'] ?>"
                                                     class="btn btn-info">

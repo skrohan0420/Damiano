@@ -33,6 +33,7 @@ class Load extends Common {
         $data['data_page']['products'] = $this->Pages_model->get_product();
         $data['data_page']['product_details'] = $this->Pages_model->get_product_by_id($p_id);
         $data['data_page']['product_features'] = $this->Pages_model->get_product_features_by_id($p_id);
+        $data['data_page']['banner_images'] = $this->Pages_model->get_all_banner_img();
         $this->load_page('web/product.php',$data);
     }
 

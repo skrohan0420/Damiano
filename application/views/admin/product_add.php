@@ -17,7 +17,7 @@
                 <!-- Card Body -->
                 <div class="card-body row">
                     <div class="col-xl-12 col-lg-12 ">
-                        <form action="<?= base_url('admin/pages/add_new_product') ?>" method="POST" enctype="multipart/form-data">
+                        <form action="<?= base_url("admin/pages/add_new_product") ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="form-group">
@@ -31,7 +31,7 @@
                                             placeholder="Product Details" required></textarea>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-lg-3">
+                                <!-- <div class="col-xl-3 col-lg-3">
                                     <div class='form-group'>
                                         <div>
                                             <label for="formGroupExampleInput2">Upload product Image</label>
@@ -42,8 +42,8 @@
                                         <input type="file" class="form-control-file" placeholder="product image"
                                             name="product_img[]" />
                                     </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-3">
+                                </div> -->
+                                <div class="col-xl-6 col-lg-6">
                                     <div class='form-group'>
                                         <div>
                                             <label for="formGroupExampleInput2">Upload Banner Image</label>
@@ -51,8 +51,7 @@
                                         <div id="productBannerImagePreview"></div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="file" class="form-control-file" placeholder="product image"
-                                            name="product_banner_img[]" />
+                                        <input type="file" class="form-control-file" placeholder="product image" name="product_banner_img[]" multiple/>
                                     </div>
                                 </div>
                             </div>

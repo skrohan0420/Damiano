@@ -390,18 +390,38 @@ if (false) {
     <!--header end-->
 
 
-    <!--inner banner-->
-    <div class="inner-bannermain">
-        <div class="row">
-            <div>
-                <div class="rightinnerimg">
-                    <img src="<?= base_url() . $product_details['banner_img_path'] ?>" />
-                </div>
-            </div>
+    <!--banner start-->
+    <section class="banner_main">
+        <div class="bg-shadows"></div>
+        <div class="bannerslider owl-carousel owl-theme">
 
+            <?php
+            if (!empty($banner_images)) {
+                foreach ($banner_images as $index => $item) {
+                    ?>
+                    <div class="item">
+                        <img src="<?= base_url() . $item['img_path'] ?>" alt="SCIS-Banner" />
+                    </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
-    </div>
-    <!--inner banner-->
+        <div class="bannertextviewcurve">
+            <div id="curved2" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <?= $product_details['name'] ?>
+            </div>
+        </div>
+       
+        <div class="toptobottomfixed">
+            <a href="#aboutus">
+                <div class="toptobottom pulse">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!--banner end-->
 
     <!--overview section-->
     <div class="allpagesview">
@@ -493,7 +513,6 @@ if (false) {
                     </div>
                 </div>
                 <style>
-
                     #myImg {
                         border-radius: 5px;
                         cursor: pointer;
@@ -616,19 +635,19 @@ if (false) {
                             <div class="column col-lg-6 col-mg-12 col-sm-12">
                                 <ul class="list">
                                     <?php
-                                        if (!empty($product_features)) {
-                                            foreach ($product_features as $index => $item) {
-                                                ?>
-                                                    <li onclick="openModel('<?= base_url() . $item['img_path'] ?>','<?=$item['title']?>')"
-                                                        style="color:rgb(2,0,51); font-weight: 700;">
-                                                        <?=$item['title']?>
-                                                    </li>
-                                                <?php
-                                            }
+                                    if (!empty($product_features)) {
+                                        foreach ($product_features as $index => $item) {
+                                            ?>
+                                            <li onclick="openModel('<?= base_url() . $item['img_path'] ?>','<?= $item['title'] ?>')"
+                                                style="color:rgb(2,0,51); font-weight: 700; cursor: pointer;">
+                                                <?= $item['title'] ?>
+                                            </li>
+                                            <?php
                                         }
+                                    }
                                     ?>
 
-                                  
+
                                 </ul>
                             </div>
                         </div>
@@ -655,13 +674,13 @@ if (false) {
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
 
-        function openModel(path, title){
+        function openModel(path, title) {
             modal.style.display = "block";
             modalImg.src = path;
             captionText.innerHTML = title;
         }
-      
-       
+
+
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
