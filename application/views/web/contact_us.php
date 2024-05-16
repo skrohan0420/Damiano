@@ -194,7 +194,7 @@
                     <span></span>
                 </div>
             </div>
-            <a href="<?=base_url('contact-us')?>" onclick="activateGetInTouch();">
+            <a href="<?= base_url('contact-us') ?>" onclick="activateGetInTouch();">
                 <div class="headertop_right" data-aos="fade-left" data-aos-duration="1500">
                     <p>Contact</p>
                     <img src="<?= base_url() ?>assets/images/mail.png" alt="#">
@@ -207,15 +207,16 @@
                     <div class="intSchMenu__menusWrapper">
                         <div class="first-level-navigation">
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li data-tab="aboutmenu"><a href="<?=base_url('about')?>">About Us</a></li>
-                                <li data-tab="academicsmenu"><a href="javascript:;">Products<span><i
-                                                class="fa fa-angle-right"></i></span></a></li>
-                                <li data-tab="beyondclassroom"><a href="javascript:;">Updates</a></li>
-                                <li data-tab="infrastructure"><a href="javascript:;">Quality</a></li>
-                                <li data-tab="admissionmenu"><a href="javascript:;">Infrastructure</a></li>
-                                <li><a href="#">Career</a></li>
-                                <li data-tab=""><a href="<?=base_url('contact-us')?>">Contact us </a></li>
+                                <li><a href="<?= base_url('home') ?>">Home</a></li>
+                                <li data-tab="aboutmenu"><a href="<?= base_url('about') ?>">About Us</a></li>
+                                <li data-tab="academicsmenu">
+                                    <a href="javascript:;">
+                                        Products<span><i class="fa fa-angle-right"></i></span>
+                                    </a>
+                                </li>
+                                <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li>
+                                <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                                <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                             </ul>
                         </div>
 
@@ -224,13 +225,17 @@
 
                             <div id="academicsmenu" class="tab-content">
                                 <ul>
-                                    <li><a href="#">Abc Accessories</a></li>
-                                    <li><a href="#">Conductor Accessories</a></li>
-                                    <li><a href="#">Fuse Cutouts</a></li>
-                                    <li><a href="#">Helical Fittings</a></li>
-                                    <li><a href="#">Insulator Accessories</a></li>
-                                    <li><a href="#">Pole lien Hardware and Accessories</a></li>
-                                    <li><a href="#">Telecommunication Accessories</a></li>
+                                    <?php
+                                    if ($products) {
+                                        foreach ($products as $index => $item) {
+                                            ?>
+                                            <li>
+                                                <a href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                            </li>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </div>
 
@@ -253,26 +258,27 @@
 
 
                         <ul class="navmobile">
-                            <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">About Us</a></li>
+                            <li class="nav__item"><a href="<?= base_url('home') ?>" class="nav__link">Home</a></li>
+                            <li class="nav__item"><a class="nav__link" href="<?= base_url('about') ?>">About Us</a></li>
                             <li class="nav__item">
                                 <a class="nav__link" href="#">Products <i class="fas fa-chevron-right"></i></a>
                                 <ul class="nav__sub">
-                                    <li class="nav__item"><a class="nav__link" href="#">Abc Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Conductor Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Fuse Cutouts</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Helical Fittings</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Insulator Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Pole lien Hardware and
-                                            Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Telecommunication
-                                            Accessories</a></li>
+                                    <?php
+                                    if ($products) {
+                                        foreach ($products as $index => $item) {
+                                            ?>
+                                            <li>
+                                                <a href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                            </li>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
-                            <li class="nav__item"><a href="/" class="nav__link">Updates</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">Quality</a></li>
-                            <li class="nav__item"><a href="/" class="nav__link">Infrastructure</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">Contact us</a></li>
+                            <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a></li>
+                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>" class="nav__link">Infrastructure</a></li>
+                            <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact us</a></li>
                         </ul>
 
                     </div>

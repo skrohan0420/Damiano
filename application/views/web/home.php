@@ -225,7 +225,7 @@ if (false) {
                     <span></span>
                 </div>
             </div>
-            <a href="<?=base_url('contact-us')?>" onclick="activateGetInTouch();">
+            <a href="<?= base_url('contact-us') ?>" onclick="activateGetInTouch();">
                 <div class="headertop_right" data-aos="fade-left" data-aos-duration="1500">
                     <p>Contact</p>
                     <img src="<?= base_url() ?>assets/images/mail.png" alt="#">
@@ -238,18 +238,16 @@ if (false) {
                     <div class="intSchMenu__menusWrapper">
                         <div class="first-level-navigation">
                             <ul>
-                                <li><a href="<?=base_url('home')?>">Home</a></li>
-                                <li data-tab="aboutmenu"><a href="<?=base_url('about')?>">About Us</a></li>
+                                <li><a href="<?= base_url('home') ?>">Home</a></li>
+                                <li data-tab="aboutmenu"><a href="<?= base_url('about') ?>">About Us</a></li>
                                 <li data-tab="academicsmenu">
                                     <a href="javascript:;">
                                         Products<span><i class="fa fa-angle-right"></i></span>
                                     </a>
                                 </li>
-                                <li data-tab="beyondclassroom"><a href="javascript:;">Updates</a></li>
-                                <li data-tab="infrastructure"><a href="javascript:;">Quality</a></li>
-                                <li data-tab="admissionmenu"><a href="javascript:;">Infrastructure</a></li>
-                                <li><a href="#">Career</a></li>
-                                <li data-tab=""><a href="<?=base_url('contact-us')?>">Contact us </a></li>
+                                <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li>
+                                <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                                <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                             </ul>
                         </div>
 
@@ -259,15 +257,15 @@ if (false) {
                             <div id="academicsmenu" class="tab-content">
                                 <ul>
                                     <?php
-                                        if($products){
-                                            foreach($products as $index => $item){
-                                                ?>
-                                                    <li>
-                                                        <a href="<?=base_url('product?p_id=').$item['uid']?>"><?=$item['name']?></a>
-                                                    </li>
-                                                <?php
-                                            }
+                                    if ($products) {
+                                        foreach ($products as $index => $item) {
+                                            ?>
+                                            <li>
+                                                <a href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                            </li>
+                                            <?php
                                         }
+                                    }
                                     ?>
                                 </ul>
                             </div>
@@ -291,26 +289,27 @@ if (false) {
 
 
                         <ul class="navmobile">
-                            <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">About Us</a></li>
+                            <li class="nav__item"><a href="<?= base_url('home') ?>" class="nav__link">Home</a></li>
+                            <li class="nav__item"><a class="nav__link" href="<?= base_url('about') ?>">About Us</a></li>
                             <li class="nav__item">
                                 <a class="nav__link" href="#">Products <i class="fas fa-chevron-right"></i></a>
                                 <ul class="nav__sub">
-                                    <li class="nav__item"><a class="nav__link" href="#">Abc Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Conductor Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Fuse Cutouts</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Helical Fittings</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Insulator Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Pole lien Hardware and
-                                            Accessories</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="#">Telecommunication
-                                            Accessories</a></li>
+                                    <?php
+                                    if ($products) {
+                                        foreach ($products as $index => $item) {
+                                            ?>
+                                            <li>
+                                                <a href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                            </li>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
-                            <li class="nav__item"><a href="/" class="nav__link">Updates</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">Quality</a></li>
-                            <li class="nav__item"><a href="/" class="nav__link">Infrastructure</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">Contact us</a></li>
+                            <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a></li>
+                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>" class="nav__link">Infrastructure</a></li>
+                            <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact us</a></li>
                         </ul>
 
                     </div>
@@ -614,22 +613,22 @@ if (false) {
             <div class="appreciation owl-carousel owl-theme" data-aos="fade-up" data-aos-duration="2000">
 
                 <?php
-                    if(!empty($appreciation)){
-                        foreach($appreciation as $index => $item){
-                            ?>
-                            <div class="item">
-                                <div class="lower-content">
-                                    <div class="border-layer"></div>
-                                    <a href="<?= base_url() . $item['img_path'] ?>" data-fancybox="">
-                                        <img src="<?= base_url() . $item['img_path'] ?>" alt="#" />
-                                    </a>
-                                </div>
+                if (!empty($appreciation)) {
+                    foreach ($appreciation as $index => $item) {
+                        ?>
+                        <div class="item">
+                            <div class="lower-content">
+                                <div class="border-layer"></div>
+                                <a href="<?= base_url() . $item['img_path'] ?>" data-fancybox="">
+                                    <img src="<?= base_url() . $item['img_path'] ?>" alt="#" />
+                                </a>
                             </div>
-                            <?php
-                        }
+                        </div>
+                        <?php
                     }
+                }
                 ?>
-               
+
                 <!-- <div class="item">
                     <div class="lower-content">
                         <div class="border-layer"></div>
@@ -753,13 +752,15 @@ if (false) {
                 </div>
                 <div class="col-lg-6 contactus-right">
                     <div class="gettouch" data-aos="fade-up" data-aos-duration="2000">Get In Touch</div>
-                    <div class="gettouchtext" data-aos="fade-up" data-aos-duration="2200">Drop us your details for a quick response.</div>
+                    <div class="gettouchtext" data-aos="fade-up" data-aos-duration="2200">Drop us your details for a
+                        quick response.</div>
                     <form class="form" data-aos="fade-up" data-aos-duration="2400"
                         action="<?= base_url('admin/pages/save_user_message') ?>" method="POST">
                         <div class="mb-3">
                             <label class="form-label">First Name*</label>
                             <div>
-                                <input type="text" class="form-control" placeholder="" maxlength="100" id="txtstudentname" name="f_name">
+                                <input type="text" class="form-control" placeholder="" maxlength="100"
+                                    id="txtstudentname" name="f_name">
                                 <div class="icon">
                                     <img src="https://cdn-icons-png.flaticon.com/512/9187/9187475.png" alt="#" />
                                 </div>
@@ -769,7 +770,8 @@ if (false) {
                         <div class="mb-3">
                             <label class="form-label">Last Name*</label>
                             <div>
-                                <input type="text" class="form-control" placeholder="" maxlength="100" id="txtparentname" name="l_name">
+                                <input type="text" class="form-control" placeholder="" maxlength="100"
+                                    id="txtparentname" name="l_name">
                                 <div class="icon">
                                     <img src="https://cdn-icons-png.flaticon.com/512/547/547551.png" alt="#" />
                                 </div>
@@ -779,14 +781,16 @@ if (false) {
                         <div class="mb-3">
                             <label class="form-label">Phone Number*</label>
                             <div>
-                                <input type="tel" class="form-control" maxlength="10" id="txtmobile" onkeypress="return isNumberKey(event)" name="mobile">
+                                <input type="tel" class="form-control" maxlength="10" id="txtmobile"
+                                    onkeypress="return isNumberKey(event)" name="mobile">
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Email*</label>
                             <div>
-                                <input type="email" class="form-control" placeholder="" maxlength="100" id="txtemail" name="email">
+                                <input type="email" class="form-control" placeholder="" maxlength="100" id="txtemail"
+                                    name="email">
                                 <div class="icon">
                                     <img style="width:27px;"
                                         src="https://cdn-icons-png.flaticon.com/512/2549/2549872.png" alt="#" />
@@ -797,7 +801,8 @@ if (false) {
                         <div class="mb-3">
                             <label class="form-label">Your Inquiry*</label>
                             <div>
-                                <input type="subject" class="form-control" placeholder="" maxlength="100" id="txtemail" style="height: 150px;" name="msg">
+                                <input type="subject" class="form-control" placeholder="" maxlength="100" id="txtemail"
+                                    style="height: 150px;" name="msg">
                                 <div class="icon">
                                     <img style="width:27px;"
                                         src="https://cdn-icons-png.flaticon.com/512/9987/9987254.png" alt="#" />
