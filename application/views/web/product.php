@@ -1,7 +1,7 @@
 <?php
 if (false) {
     echo "<pre>";
-    print_r($product_details);
+    print_r($products);
     exit();
 }
 
@@ -78,6 +78,7 @@ if (false) {
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
     <link href="https://cdn.materialdesignicons.com/2.1.99/css/materialdesignicons.min.css" rel="stylesheet">
+    <script src="<?= base_url() ?>assets/js/magnific-popup.min.js"></script>
 
     <style type="text/css">
         .error_message {
@@ -406,18 +407,21 @@ if (false) {
     <div class="allpagesview">
         <div class="auto-container">
             <div class="row">
-                <div class="col-lg-3" style="top: 400px;">
+                <div class="col-lg-3">
                     <div class="lefttopfixed">
                         <div class="allpagesview-left" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="left_subheading">Product</div>
+                            <div class="left_subheading">All Products</div>
                             <div class="leftmenupartbox">
                                 <ul>
-                                    <li class="active_li"><a href="#"> Details</a></li>
                                     <?php
-                                    if(!empty($product_features)){
-                                        foreach($product_features as $index => $item){
+                                    if (!empty($products)) {
+                                        foreach ($products as $index => $item) {
                                             ?>
-                                                <li class="active_li"><a href="#" ><?=$item['title']?></a></li>
+                                            <li class="active_li">
+                                                <a href="<?= base_url('/product?p_id=') . $item['uid'] ?>">
+                                                    <?= $item['name'] ?>
+                                                </a>
+                                            </li>
                                             <?php
                                         }
                                     }
@@ -428,32 +432,45 @@ if (false) {
                         </div>
 
                         <style>
-                            .leftmenupartbox ul{
+                            .leftmenupartbox ul {
                                 border: 1px solid #2596be;
                             }
+
                             .leftmenupartbox ul li {
                                 background-color: white;
-                                
+
                             }
-                            .leftmenupartbox ul li a{
+
+                            .leftmenupartbox ul li a {
                                 color: black;
                             }
-                            .active_li{
+
+                            .active_li {
                                 background-color: #2596be !important;
                                 outline: 1px solid #fff;
                             }
-                            .active_li a{
+
+                            .active_li a {
                                 color: #fff !important;
                             }
 
+                            #product_img_bx {
+                                width: 100%;
+                            }
+
+                            #product_img_bx img {
+                                object-fit: contain;
+                                width: 100%;
+                            }
 
 
                             .newleftsidecss ul li a {
                                 font-size: 16px;
                                 padding: 2px 10px;
                                 align-items: self-start;
-                                
+
                             }
+
                             .newleftsidecss ul li a img {
                                 margin-left: -3px;
                                 position: relative;
@@ -475,8 +492,117 @@ if (false) {
 
                     </div>
                 </div>
+                <style>
+
+                    #myImg {
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+
+                    #myImg:hover {
+                        opacity: 0.7;
+                    }
+
+                    /* The Modal (background) */
+                    .modal {
+                        display: none;
+                        /* Hidden by default */
+                        position: fixed;
+                        /* Stay in place */
+                        z-index: 100000;
+                        /* Sit on top */
+                        padding-top: 100px;
+                        /* Location of the box */
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        /* Full width */
+                        height: 100%;
+                        /* Full height */
+                        overflow: auto;
+                        /* Enable scroll if needed */
+                        background-color: rgb(0, 0, 0);
+                        /* Fallback color */
+                        background-color: rgba(0, 0, 0, 0.9);
+                        /* Black w/ opacity */
+                    }
+
+                    /* Modal Content (image) */
+                    .modal-content {
+                        margin: auto;
+                        display: block;
+                        width: 80%;
+                        max-width: 700px;
+                    }
+
+                    /* Caption of Modal Image */
+                    #caption {
+                        margin: auto;
+                        display: block;
+                        width: 80%;
+                        max-width: 700px;
+                        text-align: center;
+                        color: #ccc;
+                        height: 150px;
+                    }
+
+                    /* Add Animation */
+                    .modal-content,
+                    #caption {
+                        -webkit-animation-name: zoom;
+                        -webkit-animation-duration: 0.6s;
+                        animation-name: zoom;
+                        animation-duration: 0.6s;
+                    }
+
+                    @-webkit-keyframes zoom {
+                        from {
+                            -webkit-transform: scale(0)
+                        }
+
+                        to {
+                            -webkit-transform: scale(1)
+                        }
+                    }
+
+                    @keyframes zoom {
+                        from {
+                            transform: scale(0)
+                        }
+
+                        to {
+                            transform: scale(1)
+                        }
+                    }
+
+                    /* The Close Button */
+                    .close {
+                        position: absolute;
+                        top: 15px;
+                        right: 35px;
+                        color: #f1f1f1;
+                        font-size: 40px;
+                        font-weight: bold;
+                        transition: 0.3s;
+                    }
+
+                    .close:hover,
+                    .close:focus {
+                        color: #bbb;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+
+                    /* 100% Image Width on Smaller Screens */
+                    @media only screen and (max-width: 700px) {
+                        .modal-content {
+                            width: 100%;
+                        }
+                    }
+                </style>
                 <div class="col-lg-9">
-                    <div class="allpagesview-right">
+                    <div class="allpagesview-right" style="padding-bottom: 0px;">
                         <h1 class="headingh1" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                             <?= $product_details['name'] ?>
                         </h1>
@@ -484,9 +610,33 @@ if (false) {
                             <p><?= $product_details['details'] ?></p>
                         </div>
                     </div>
+
+                    <div class="options-outer" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
+                        <div class="row clearfix">
+                            <div class="column col-lg-6 col-mg-12 col-sm-12">
+                                <ul class="list">
+                                    <?php
+                                        if (!empty($product_features)) {
+                                            foreach ($product_features as $index => $item) {
+                                                ?>
+                                                    <li onclick="openModel('<?= base_url() . $item['img_path'] ?>','<?=$item['title']?>')"
+                                                        style="color:rgb(2,0,51); font-weight: 700;">
+                                                        <?=$item['title']?>
+                                                    </li>
+                                                <?php
+                                            }
+                                        }
+                                    ?>
+
+                                  
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-               
+
 
 
 
@@ -494,6 +644,33 @@ if (false) {
         </div>
     </div>
 
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <h4 id="caption" class="mt-2"></h4>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        function openModel(path, title){
+            modal.style.display = "block";
+            modalImg.src = path;
+            captionText.innerHTML = title;
+        }
+      
+       
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
 
 
 
