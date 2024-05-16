@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require_once(APPPATH . 'controllers/Common.php');
+require_once (APPPATH . 'controllers/Common.php');
 
 
 class Admin extends Common
@@ -131,7 +131,8 @@ class Admin extends Common
 
     }
 
-    public function updates(){
+    public function updates()
+    {
 
         $this->init_model(MODEL_PAGES);
         $data = PAGE_DATA_ADMIN;
@@ -140,6 +141,22 @@ class Admin extends Common
         $data['data_header']['sidebar']['dashboard'] = true;
 
         $this->is_auth('admin/updates.php', $data);
+
+
+    }
+    public function about()
+    {
+
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['about_js.php'];
+        $data['data_header']['title'] = 'Admin | Dashboard';
+        $data['data_header']['sidebar']['dashboard'] = true;
+
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
+        $data['data_page']['about_img'] = $this->Pages_model->get_all_about_img();
+
+        $this->is_auth('admin/about.php', $data);
 
 
     }

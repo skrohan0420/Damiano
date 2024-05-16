@@ -87,6 +87,14 @@
                     <span>Updates</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/about') ?>">
+                    <i class="fa fa-info-circle mr-1"></i>
+                    <span>About</span>
+                </a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

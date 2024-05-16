@@ -12,6 +12,7 @@ $route['home']                          = 'web/load';
 $route['contact-us']                    = 'web/load/contact_us';
 $route['about']                         = 'web/load/about';
 $route['product']                       = 'web/load/product';
+$route['updates']                       = 'web/load/updates';
 
 // ============================ admin routes
 $route['admin']                         = 'admin/Admin/index';
@@ -23,6 +24,8 @@ $route['admin/logout']                  = 'admin/Admin/logout';
 $route['admin/messages']                = 'admin/Admin/messages';
 $route['admin/alerts']                  = 'admin/Admin/alerts';
 $route['admin/infrastructure']          = 'admin/Admin/infrastructure';
+$route['admin/updates']                 = 'admin/Admin/updates';
+$route['admin/about']                   = 'admin/Admin/about';
 $route['admin/product/features/add']    = 'admin/pages/product_feature_add';
 
 

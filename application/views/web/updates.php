@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Damiano</title>
-    <meta name="description" content="South City International School is a premier international school in Kolkata, India. We offer a high-quality education that prepares students for success in college and beyond. Our curriculum is rigorous, our teachers are experienced, and our facilities are state-of-the-art. We are committed to providing our students with a well-rounded education that includes academics, sports, arts, and extracurricular activities."
-    />
-    <meta name="keywords" content="South City International School, Kolkata, international school, ICSE, ISC, education, school, students, parents, co-educational, day school, english medium, academic excellence, social service" />
+    <meta name="description"
+        content="South City International School is a premier international school in Kolkata, India. We offer a high-quality education that prepares students for success in college and beyond. Our curriculum is rigorous, our teachers are experienced, and our facilities are state-of-the-art. We are committed to providing our students with a well-rounded education that includes academics, sports, arts, and extracurricular activities." />
+    <meta name="keywords"
+        content="South City International School, Kolkata, international school, ICSE, ISC, education, school, students, parents, co-educational, day school, english medium, academic excellence, social service" />
 
     <meta name="author" content="South City International School" />
     <link rel="image_src" href="https://www.scis.co.in/images/scisbanner1.jpg">
@@ -29,15 +30,16 @@
     <meta name="expires" content="never" />
 
     <meta property="og:title" content="South City International School | Kolkata's Premier International School" />
-    <meta property="og:description" content="South City International School is a premier international school in Kolkata, India. We offer a high-quality education that prepares students for success in college and beyond. Our curriculum is rigorous, our teachers are experienced, and our facilities are state-of-the-art. We are committed to providing our students with a well-rounded education that includes academics, sports, arts, and extracurricular activities."
-    />
+    <meta property="og:description"
+        content="South City International School is a premier international school in Kolkata, India. We offer a high-quality education that prepares students for success in college and beyond. Our curriculum is rigorous, our teachers are experienced, and our facilities are state-of-the-art. We are committed to providing our students with a well-rounded education that includes academics, sports, arts, and extracurricular activities." />
     <meta property="og:url" content="https://www.scis.co.in" />
     <meta property="og:image" content="https://www.scis.co.in/images/scisbanner1.jpg" />
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="scis.co.in">
     <meta property="twitter:url" content="https://www.scis.co.in">
     <meta name="twitter:title" content="South City International School | Kolkata's Premier International School">
-    <meta name="twitter:description" content="South City International School is a premier international school in Kolkata, India. We offer a high-quality education that prepares students for success in college and beyond. Our curriculum is rigorous, our teachers are experienced, and our facilities are state-of-the-art. We are committed to providing our students with a well-rounded education that includes academics, sports, arts, and extracurricular activities.">
+    <meta name="twitter:description"
+        content="South City International School is a premier international school in Kolkata, India. We offer a high-quality education that prepares students for success in college and beyond. Our curriculum is rigorous, our teachers are experienced, and our facilities are state-of-the-art. We are committed to providing our students with a well-rounded education that includes academics, sports, arts, and extracurricular activities.">
     <meta name="twitter:image" content="https://www.scis.co.in/images/scisbanner1.jpg">
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -51,7 +53,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css?v=15">
@@ -61,7 +65,8 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdn.wizemen.net/fontawesome5-15-3/css/all.css" />
     <link rel="stylesheet" href="https://cdn.wizemen.net/fontawesome5-15-3/css/v4-shims.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
     <link href="https://cdn.materialdesignicons.com/2.1.99/css/materialdesignicons.min.css" rel="stylesheet">
 
     <style type="text/css">
@@ -151,11 +156,12 @@
             }
         }
     </style>
-     <style>
+    <style>
         .hero-banner {
             position: relative;
             width: 100%;
-            height: 400px; /* adjust height as needed */
+            height: 400px;
+            /* adjust height as needed */
             overflow: hidden;
             background-image: url('images/banner/slider9.jpg');
             background-size: cover;
@@ -163,9 +169,12 @@
         }
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <!-- datepicker -->
     <script src="https://cdn.wizemen.net/plugins/datepicker/bootstrap-datepicker.js"></script>
 </head>
@@ -223,7 +232,8 @@
                                     </a>
                                 </li>
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li>
-                                <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                                <li data-tab="admissionmenu"><a
+                                        href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                             </ul>
                         </div>
@@ -238,7 +248,8 @@
                                         foreach ($products as $index => $item) {
                                             ?>
                                             <li>
-                                                <a href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                                <a
+                                                    href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
                                             </li>
                                             <?php
                                         }
@@ -276,7 +287,8 @@
                                         foreach ($products as $index => $item) {
                                             ?>
                                             <li>
-                                                <a href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                                <a
+                                                    href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
                                             </li>
                                             <?php
                                         }
@@ -284,9 +296,12 @@
                                     ?>
                                 </ul>
                             </li>
-                            <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a></li>
-                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>" class="nav__link">Infrastructure</a></li>
-                            <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact us</a></li>
+                            <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a>
+                            </li>
+                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>"
+                                    class="nav__link">Infrastructure</a></li>
+                            <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact
+                                    us</a></li>
                         </ul>
 
                     </div>
@@ -375,7 +390,7 @@
     </header>
     <!--header end-->
 
-    
+
     <!--inner banner-->
     <div class="inner-bannermain">
         <div class="row">
@@ -384,9 +399,9 @@
                     <img src="<?= base_url() ?>assets/images/banner/slider7.jpg" />
                 </div>
             </div>
-           
+
         </div>
-       <!-- <div class="bgsvgview">
+        <!-- <div class="bgsvgview">
             <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3400 2000" width="1920" height="700">
             <title></title>
             <defs>
@@ -434,113 +449,68 @@
     </div>
     <!--inner banner-->
 
-    <!--overview section-->
-    <div class="allpagesview">
-        <div class="auto-container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="lefttopfixed">
-                        <div class="allpagesview-left" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="left_subheading">About Us</div>
-                            <div class="leftmenupartbox">
-                                <ul></ul>
-                            </div>
-                        </div>
-
-                        <style>
-                            .newleftsidecss ul li a {
-                                font-size: 16px;
-                                padding: 2px 10px;
-                                align-items: self-start;
-                            }
-
-                            .newleftsidecss ul li a img {
-                                margin-left: -3px;
-                                position: relative;
-                                top: 5px;
-                            }
-
-                            .newleftsidecss ul li:nth-child(2) a img {
-                                width: 17px;
-                                margin-right: 4px;
-                                position: relative;
-                                top: 3px;
-                                margin-left: 0px;
-                            }
-
-                            .newleftsidecss li.lastbtnapply a {
-                                padding: 10px 30px 13px !important;
-                            }
-                        </style>
-                        <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
-                            <p>Damiano</p>
+    <!--announcement-->
+    <section class="announcement">
+        <div class="crposition">
+            <div class="auto-container">
+                <div class="logorotate" style="opacity: 20%;">
+                    <div class="logorotateinner">
+                        <img src="<?= base_url() ?>assets/images/Without.png" />
+                    </div>
+                </div>
+                <div class="subheding" data-aos="fade-down" data-aos-duration="1000">Updates</div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 announcement-leftmain">
+                        <div class="announcement-left" data-aos="fade-left" data-aos-duration="1500">
                             <ul>
-                                <li><a href="https://www.google.com/maps/place/South+City+International+School+(SCIS)/@22.5002609,88.356794,17z/data=!4m6!3m5!1s0x3a0270d89963ea53:0x878e218b8963f14b!8m2!3d22.5001841!4d88.3624578!16s%2Fg%2F11bx5613b_?authuser=0&hl=en"
-                                        target="_blank"><img src="<?= base_url() ?>assets/images/location.png" alt="location" />53, Dr. Meghnad Saha Sarani, Southern Avenue Kolkata-700 029, West Bengal, India.</a></li>
-                                <li>
-                                    <a href="tel:+913340630070"><img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="#"> +91 33 4063 0070</a>
-                                    <a href="mailto:info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png" alt="#"> info@adamiano.com</a>
-                                </li>
-                                <li class="lastbtnapply"><a href="" target="_blank">Contact us</a></li>
+                                <?php
+                                if (!empty($announcement)) {
+                                    foreach ($announcement as $index => $item) {
+                                        ?>
+                                        <li>
+                                            <a href="javascript:;" data-fancybox data-type="iframe"
+                                                data-src="<?= base_url() . $item['path'] ?>">
+                                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                                                <span>Yours Announcement 1 <span class="newtag">New</span> </span>
+                                            </a>
+                                        </li>
+                                        <?php
+                                    }
+                                }
+                                ?>
+
                             </ul>
                         </div>
-                        <!-- <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a href="" target="_blank"><img src="<?= base_url() ?>assets/images/newspage/5.jpg" /></a></div> -->
                     </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="allpagesview-right">
-                        <h1 class="headingh1" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">Vision & Mission</h1>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <p>
-                            <?= $about_text['about_text'] ?>
-                            </p>
-                        </div>
-                        <div class="row allthemegapbottom allthemegaptop">
-                            <div class="image-column col-lg-6 col-md-6">
-                                <div class="inner-column">
-                                    <div class="image-one" data-aos="fade-down" data-aos-duration="1000">
-                                        <img src="<?= base_url() ?>assets/images/qu-1.jpg" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <h2 class="headingh2" data-aos="fade-up" data-aos-duration="1000">Vision</h2>
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <p>
-                                        <?= $about_text['vision_text'] ?>
-                                    </p>
-                                </div>
+                    <!-- <div class="image-column col-lg-6 col-md-6">
+                        <div class="inner-column">
+                            <div class="image-one" data-aos="fade-down" data-aos-duration="1000">
+                                <img src="./images/qu-1.jpg" />
                             </div>
                         </div>
-                        <div class="row allthemegapbottom allthemegaptop">
-                            <div class="col-lg-6 col-md-6">
-                                <h2 class="headingh2" data-aos="fade-up" data-aos-duration="1000">Mission</h2>
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <p>
-                                        <?= $about_text['mission_text'] ?>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="image-column col-lg-6 col-md-6">
-                                <div class="inner-column">
-                                    <div class="image-one" data-aos="fade-down" data-aos-duration="1000">
-                                        <img src="<?= base_url() ?>assets/images/qu-2.jpg" />
-                                    </div>
+                    </div>-->
+
+                    <div class="image-column col-lg-6 col-md-6">
+                        <div class="inner-column">
+                            <div class="slider" data-aos="fade-down" data-aos-duration="1000">
+                                <div class="slide">
+                                    <img src="<?= base_url() . $update_img['img_path'] ?>" alt="Slide 1">
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
+                        <a href="#" class="allbtnview"><span>View All</span></a>
+                    </div> -->
                 </div>
             </div>
-        </div>
-    </div>
-    <!--overview section-->
-    <div class="hero-banner">
-       
-    </div>
-    
-    
+    </section>
+    <!--announcement-->
   
+
+
+
 
     <!--footer-->
     <footer>
@@ -550,9 +520,12 @@
                     <div class="footerlogo">
                         <a href="/"><img src="<?= base_url() ?>assets/images/logo.png" alt="#" /></a>
                     </div>
-                    <p>Damiano was established in 1968 for manufacturing Pole Line Hardware's, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories, Fuse Cutouts and Telecommunication OSP Hardware's.
+                    <p>Damiano was established in 1968 for manufacturing Pole Line Hardware's, Steel structures,
+                        Insulator and Conductor accessories, Clamps and Connectors, ABC accessories, Fuse Cutouts and
+                        Telecommunication OSP Hardware's.
 
-                        The export performance dates back to 1972 and is continuing till date with exports spread out across the globe touching more than 32 countries besides domestic acceptance.</p>
+                        The export performance dates back to 1972 and is continuing till date with exports spread out
+                        across the globe touching more than 32 countries besides domestic acceptance.</p>
                     <div class="mobilecenter">
                         <a href="visionmission.html" class="allbtnview"><span>View More</span></a>
                     </div>
@@ -574,23 +547,31 @@
                         <div class="footerheading">Connect with us</div>
                         <ul>
 
-                            <li><a href="#"
-                                    target="_blank"><img class="addressview" src="<?= base_url() ?>assets/images/location.png" alt="#">53, Dr. Meghnad Saha Sarani, Southern Avenue
+                            <li><a href="#" target="_blank"><img class="addressview"
+                                        src="<?= base_url() ?>assets/images/location.png" alt="#">53, Dr. Meghnad Saha
+                                    Sarani, Southern Avenue
                                     <br>Kolkata-700 029, West Bengal, India.</a></li>
                             <li>
                                 Inquiry Number & Email<br />
-                                <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> +91 33 4063 0070</a>
-                                <a href="mailto: info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png" alt="#">  info@adamiano.com</a>
+                                <a href="#" target="_blank"><img
+                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> +91 33 4063
+                                    0070</a>
+                                <a href="mailto: info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png"
+                                        alt="#"> info@adamiano.com</a>
                             </li>
-                           
+
 
                         </ul>
                         <div class="footerheading">Follow Us On</div>
                         <ul class="socialmedia">
-                            <li class="facebook_color"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li class="linkedin_color"><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="instagram_color"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                            <li class="youtube_color"><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                            <li class="facebook_color"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li class="linkedin_color"><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li class="instagram_color"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li class="youtube_color"><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -605,7 +586,8 @@
             <div class="auto-container">
                 <div class="row">
                     <div class="col-lg-6 col-sm-8">
-                        <p>© 2024 Damiano. All Rights Reserved. | Developed by <a href="#" target="_blank">Quantum Brize</a></p>
+                        <p>© 2024 Damiano. All Rights Reserved. | Developed by <a href="#" target="_blank">Quantum
+                                Brize</a></p>
                     </div>
                     <div class="col-lg-6 col-sm-4">
                         <ul>
@@ -618,7 +600,8 @@
     </footer>
     <!--footer-->
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet" media="screen">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet"
+        media="screen">
     <link rel="stylesheet" href=https://cdn.wizemen.net/plugins/datepicker/datepicker3.css />
     <style>
         .intl-tel-input {
@@ -1988,7 +1971,7 @@
 
             $('.date_calender_custom').datepicker({
                 startDate: new Date(),
-                beforeShowDay: function(date) {
+                beforeShowDay: function (date) {
                     var dateString = date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
                     return disabledDates.indexOf(dateString) < 0;
                 },
@@ -2027,14 +2010,14 @@
 
         });
 
-        var reset = function() {
+        var reset = function () {
             telInput.removeClass("error");
             errorMsg.addClass("hide");
             validMsg.addClass("hide");
         };
 
         // on blur: validate
-        telInput.blur(function() {
+        telInput.blur(function () {
             reset();
             if ($.trim(telInput.val())) {
                 if (telInput.intlTelInput("isValidNumber")) {
@@ -2102,19 +2085,20 @@
         }
     </script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
     <script>
-        $.fn.circleType = function(options) {
+        $.fn.circleType = function (options) {
 
             var settings = {
                 dir: 1,
                 position: 'relative'
             };
-            if (typeof($.fn.lettering) !== 'function') {
+            if (typeof ($.fn.lettering) !== 'function') {
                 console.log('Lettering.js is required');
                 return;
             }
-            return this.each(function() {
+            return this.each(function () {
 
                 if (options) {
                     $.extend(settings, options);
@@ -2135,7 +2119,7 @@
                 letters = elem.getElementsByTagName('span');
                 center = Math.floor(letters.length / 2)
 
-                var layout = function() {
+                var layout = function () {
                     var tw = 0,
                         i,
                         offset = 0,
@@ -2196,11 +2180,11 @@
                     }
 
                     if (settings.fitText) {
-                        if (typeof($.fn.fitText) !== 'function') {
+                        if (typeof ($.fn.fitText) !== 'function') {
                             console.log('FitText.js is required when using the fitText option');
                         } else {
                             $(elem).fitText();
-                            $(window).resize(function() {
+                            $(window).resize(function () {
                                 updateHeight();
                             });
                         }
@@ -2208,7 +2192,7 @@
                     updateHeight();
                 };
 
-                var getBounds = function(elem) {
+                var getBounds = function (elem) {
                     var docElem = document.documentElement,
                         box = elem.getBoundingClientRect();
                     return {
@@ -2218,7 +2202,7 @@
                     };
                 };
 
-                var updateHeight = function() {
+                var updateHeight = function () {
                     var mid = getBounds(letters[center]),
                         first = getBounds(letters[0]),
                         h;
@@ -2231,14 +2215,14 @@
                 }
 
                 if (settings.fluid && !settings.fitText) {
-                    $(window).resize(function() {
+                    $(window).resize(function () {
                         layout();
                     });
                 }
 
                 if (document.readyState !== "complete") {
                     elem.style.visibility = 'hidden';
-                    $(window).on("load", function() {
+                    $(window).on("load", function () {
                         elem.style.visibility = 'visible';
                         layout();
                     });
@@ -2276,18 +2260,20 @@
     <script type="text/javascript" src="<?= base_url() ?>assets/js/Carousel.js"></script>
     <script type="text/javascript" src="<?= base_url() ?>assets/js/owl.carousel.min.js"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 
     <script src="<?= base_url() ?>assets/js/fullcalendar/dist/index.global.js"></script>
     <script type="text/javascript" src="<?= base_url() ?>assets/js/aos.js"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
 
     <script type="text/javascript" src="<?= base_url() ?>assets/js/coustom.js?v=3"></script>
     <script type="text/javascript" src="<?= base_url() ?>assets/js/common.js"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.date_calender').datepicker({
                 format: 'dd/mm/yyyy',
                 autoclose: true

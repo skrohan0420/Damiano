@@ -49,10 +49,23 @@ class Load extends Common {
         $this->init_model(MODEL_PAGES);
         $data = PAGE_DATA_WEB;
         $data['data_header']['about'] = true;
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
+        $data['data_page']['about_img'] = $this->Pages_model->get_all_about_img();
         $this->load_page('web/about.php',$data);
     }
 
-   
+    
+    public function updates(){
+
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_WEB;
+        $data['data_header']['about'] = true;
+        $data['data_page']['update_img'] = $this->Pages_model->get_update_img();
+        $data['data_page']['announcement'] = $this->Pages_model->get_announcement();
+        $this->load_page('web/updates.php',$data);
+        
+    }
+
 
 
 

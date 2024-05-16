@@ -167,7 +167,7 @@ class Pages extends Admin
     {
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->update_about_text($this->input->post());
-        redirect('/admin/home');
+        redirect('/admin/about');
     }
 
     public function upload_home_banner_img()
@@ -208,7 +208,7 @@ class Pages extends Admin
             $uid = $this->input->get('uid');
             $this->Pages_model->update_home_about_img('/uploads/home_about_img/' . $upload_data['file_name'], $uid);
         }
-        redirect('/admin/home');
+        redirect('/admin/about');
 
     }
 
