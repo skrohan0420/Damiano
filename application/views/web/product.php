@@ -396,8 +396,8 @@ if (false) {
         <div class="bannerslider owl-carousel owl-theme">
 
             <?php
-            if (!empty($banner_images)) {
-                foreach ($banner_images as $index => $item) {
+            if (!empty($product_banner_images)) {
+                foreach ($product_banner_images as $index => $item) {
                     ?>
                     <div class="item">
                         <img src="<?= base_url() . $item['img_path'] ?>" alt="SCIS-Banner" />

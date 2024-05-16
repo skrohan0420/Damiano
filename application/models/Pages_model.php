@@ -40,6 +40,19 @@ class Pages_model extends Admin_model
         return isset($about) ? $about[0] : [];
     }
 
+    public function get_aproduct_banner_images($p_id){
+        $data = $this->db
+            ->select('*')
+            ->from('product_banner_img')
+            ->where(['product_id' => $p_id])
+            ->get();
+
+
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];
+    }
+
     public function get_all_banner_img()
     {
         $banner = $this->db
