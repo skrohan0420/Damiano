@@ -2739,11 +2739,18 @@ if (false) {
                 <img src="<?= base_url() ?>assets/images/logo.png" alt="International School Gurgaon">
                 <span class="content__popup">
                     <span class="topheadingpopup">Damiano</span>
-                    <span class="text-popup">Your Update Message 1</span>
-                    <span class="text-popup">Your Update Message 2</span>
-                    <span class="text-popup">Your Update Message 3</span>
 
-                    <span> <span class="see_morew__btn">Click here</span></span>
+                    <?php
+                        if(!empty($alerts)){
+                            foreach($alerts as $index => $item){
+                                ?>
+                                    <span class="text-popup"><?= $item['message'] ?></span>
+                                <?php
+                            }
+
+                        }
+                    ?>
+
                 </span>
             </a>
         </div>

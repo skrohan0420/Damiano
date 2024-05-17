@@ -627,7 +627,7 @@ if (false) {
                     }
                 </style>
                 <div class="col-lg-9">
-                    <div class="allpagesview-right" style="padding-bottom: 0px;">
+                    <div class="allpagesview-right" style="padding-bottom: 40px;">
                         <h1 class="headingh1" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                             <?= $product_details['name'] ?>
                         </h1>
@@ -636,16 +636,17 @@ if (false) {
                         </div>
                     </div>
 
-                    <div class="options-outer" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
+                    <div class="options-outer" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0" style="padding-bottom: 150px;">
                         <div class="row clearfix">
                             <div class="column col-lg-6 col-mg-12 col-sm-12">
-                                <ul class="list">
+                                <ul class="list row">
                                     <?php
                                     if (!empty($product_features)) {
                                         foreach ($product_features as $index => $item) {
                                             ?>
                                             <li onclick="openModel('<?= base_url() . $item['img_path'] ?>','<?= $item['title'] ?>')"
-                                                style="color:rgb(2,0,51); font-weight: 700; cursor: pointer;">
+                                                style="color:rgb(2,0,51); font-weight: 700; cursor: pointer;"
+                                                class="column col-lg-6 col-mg-6 col-sm-6">
                                                 <?= $item['title'] ?>
                                             </li>
                                             <?php

@@ -267,6 +267,25 @@ class Pages_model extends Admin_model
         $this->db->insert('product_banner_img', $banner_insert_data);
     }
 
+    public function add_alert($data)
+    {
+        $insert_data = [
+            'uid' => $this->generate_uid('ALT'),
+            'message' => $data['message'],
+        ];
+        $this->db->insert('alerts', $insert_data);
+    }
+
+    public function get_alert()
+    {
+        $data = $this->db
+            ->select('*')
+            ->from('alerts')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];
+    }
 
     public function get_infrastructure()
     {
@@ -378,6 +397,13 @@ class Pages_model extends Admin_model
         $this->db->delete('features');
         return $this->db->affected_rows() > 0;
 
+    }
+
+    public function delete_alert($uid)
+    {
+        $this->db->where('uid', $uid);
+        $this->db->delete('alerts');
+        return $this->db->affected_rows() > 0;
     }
 
 

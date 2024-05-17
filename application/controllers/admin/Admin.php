@@ -102,7 +102,7 @@ class Admin extends Common
         $data['data_header']['title'] = 'Admin | Dashboard';
         $data['data_header']['sidebar']['dashboard'] = true;
         $data['data_page']['messages'] = $this->Pages_model->get_messages();
-
+        
         $this->is_auth('admin/messages.php', $data);
 
     }
@@ -114,6 +114,7 @@ class Admin extends Common
         $data['data_footer']['footer_link'] = ['alerts_js.php'];
         $data['data_header']['title'] = 'Admin | Dashboard';
         $data['data_header']['sidebar']['dashboard'] = true;
+        $data['data_page']['alerts'] = $this->Pages_model->get_alert();
 
         $this->is_auth('admin/alerts.php', $data);
 

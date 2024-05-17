@@ -24,6 +24,8 @@ class Load extends Common
         $data['data_page']['infrastructure'] = $this->Pages_model->get_infrastructure();
         $data['data_page']['appreciation'] = $this->Pages_model->get_appreciation();
         $data['data_page']['products'] = $this->Pages_model->get_product();
+        $data['data_page']['alerts'] = $this->Pages_model->get_alert();
+
 
         $this->load_page('web/home.php', $data);
     }
@@ -45,8 +47,9 @@ class Load extends Common
     public function contact_us()
     {
         $this->init_model(MODEL_PAGES);
-        $data = PAGE_DATA_WEB;
+        $data = PAGE_DATA_WEB;        
         $data['data_header']['contact_us'] = true;
+        $data['data_page']['products'] = $this->Pages_model->get_product();
         $this->load_page('web/contact_us.php', $data);
     }
 
@@ -55,6 +58,7 @@ class Load extends Common
         $this->init_model(MODEL_PAGES);
         $data = PAGE_DATA_WEB;
         $data['data_header']['about'] = true;
+        $data['data_page']['products'] = $this->Pages_model->get_product();
         $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
         $data['data_page']['about_img'] = $this->Pages_model->get_all_about_img();
         $this->load_page('web/about.php', $data);
@@ -67,6 +71,7 @@ class Load extends Common
         $this->init_model(MODEL_PAGES);
         $data = PAGE_DATA_WEB;
         $data['data_header']['about'] = true;
+        $data['data_page']['products'] = $this->Pages_model->get_product();
         $data['data_page']['update_img'] = $this->Pages_model->get_update_img();
         $data['data_page']['announcement'] = $this->Pages_model->get_announcement();
         $this->load_page('web/updates.php', $data);
@@ -79,6 +84,7 @@ class Load extends Common
         $this->init_model(MODEL_PAGES);
         $data = PAGE_DATA_WEB;
         $data['data_header']['about'] = true;
+        $data['data_page']['products'] = $this->Pages_model->get_product();
         $data['data_page']['infrastructure'] = $this->Pages_model->get_infrastructure();
         $this->load_page('web/infrastructure.php', $data);
     }

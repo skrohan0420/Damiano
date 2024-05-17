@@ -154,6 +154,13 @@ class Pages extends Admin
     }
 
 
+    public function add_alert(){
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->add_alert($this->input->post());
+        redirect('/admin/alerts');
+    }
+
+
 
     public function update_banner_text()
     {
@@ -278,6 +285,13 @@ class Pages extends Admin
 
     }
 
+    public function delete_alert(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_alert($uid);
+        redirect('/admin/alerts');
+    }
+
     public function delete_product(){
         $uid = $this->input->get('uid');
         $this->init_model(MODEL_PAGES);
@@ -299,5 +313,8 @@ class Pages extends Admin
         $this->Pages_model->delete_product_banner_img($uid);
         redirect('/admin/pages/view_product?uid='.$this->input->get('p_id'));
     }
+
+
+
 
 }
