@@ -126,7 +126,7 @@ class Admin extends Common
         $data['data_footer']['footer_link'] = ['infrastructure_js.php'];
         $data['data_header']['title'] = 'Admin | Dashboard';
         $data['data_header']['sidebar']['dashboard'] = true;
-
+        $data['data_page']['infrastructure'] = $this->Pages_model->get_infrastructure();
         $this->is_auth('admin/infrastructure.php', $data);
 
     }
@@ -139,7 +139,8 @@ class Admin extends Common
         $data['data_footer']['footer_link'] = ['updates_js.php'];
         $data['data_header']['title'] = 'Admin | Dashboard';
         $data['data_header']['sidebar']['dashboard'] = true;
-
+        $data['data_page']['update_img'] = $this->Pages_model->get_update_img();
+        $data['data_page']['announcement'] = $this->Pages_model->get_announcement();
         $this->is_auth('admin/updates.php', $data);
 
 

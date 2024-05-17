@@ -187,7 +187,7 @@ class Pages extends Admin
             $this->init_model(MODEL_PAGES);
             $this->Pages_model->insert_home_announcement_file('/uploads/home_announcement_file/' . $upload_data['file_name']);
         }
-        redirect('/admin/home');
+        redirect('/admin/updates');
     }
 
     public function upload_home_update_img(){
@@ -196,7 +196,7 @@ class Pages extends Admin
             $this->init_model(MODEL_PAGES);
             $this->Pages_model->update_home_update_img('/uploads/home_update_img/' . $upload_data['file_name']);
         }
-        redirect('/admin/home');
+        redirect('/admin/updates');
     }
 
     public function upload_home_about_img()
@@ -218,7 +218,7 @@ class Pages extends Admin
             $this->init_model(MODEL_PAGES);
             $this->Pages_model->add_infrastructure('/uploads/home_infrastructure_img/' . $upload_data['file_name'], $this->input->post('home_infrastructure_text'));
         }
-        redirect('/admin/home');
+        redirect('/admin/infrastructure');
 
     }
 
