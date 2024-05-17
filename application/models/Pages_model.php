@@ -97,6 +97,16 @@ class Pages_model extends Admin_model
         return isset($banner) ? $banner : [];
     }
 
+    public function get_infrastructure_banner(){
+        $banner = $this->db
+            ->select('*')
+            ->from('infrastructure_page_banner')
+            ->get();
+        $banner = $banner->result_array();
+        //$this->prd($banner);
+        return isset($banner) ? $banner : [];
+    }
+
     public function update_home_about_img($path, $uid)
     {
         $data = [
@@ -196,14 +206,25 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function add_infrastructure($path, $title)
-    {
+    public function add_new_infrastructure_banner($path){
         $data = [
+            'uid' => $this->generate_uid('INBN'),
+            'img_path' => $path
+        ];
+        $add = $this->db->insert('infrastructure_page_banner', $data);
+        return $add;
+    }
+
+
+    public function add_infrastructure($path, $data)
+    {
+        $data_insert = [
             'uid' => $this->generate_uid('INF'),
-            'title' => $title,
+            'title' => $data['home_infrastructure_text'],
+            'details' => $data['home_infrastructure_details'],
             'img_path' => $path,
         ];
-        $add = $this->db->insert('home_infrastructure', $data);
+        $add = $this->db->insert('home_infrastructure', $data_insert);
         return $add;
     }
 
@@ -451,5 +472,12 @@ class Pages_model extends Admin_model
         $this->db->delete('about_page_banner');
         return $this->db->affected_rows() > 0;
     }
+
+    public function delete_infrastructure_banner_img($uid){
+        $this->db->where('uid', $uid);
+        $this->db->delete('infrastructure_page_banner');
+        return $this->db->affected_rows() > 0;
+    }
+
 
 }

@@ -128,6 +128,7 @@ class Admin extends Common
         $data['data_header']['title'] = 'Admin | Dashboard';
         $data['data_header']['sidebar']['dashboard'] = true;
         $data['data_page']['infrastructure'] = $this->Pages_model->get_infrastructure();
+        $data['data_page']['infrastructure_banner'] = $this->Pages_model->get_infrastructure_banner();
         $this->is_auth('admin/infrastructure.php', $data);
 
     }

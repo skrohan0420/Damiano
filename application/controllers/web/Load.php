@@ -87,6 +87,7 @@ class Load extends Common
         $data['data_header']['about'] = true;
         $data['data_page']['products'] = $this->Pages_model->get_product();
         $data['data_page']['infrastructure'] = $this->Pages_model->get_infrastructure();
+        $data['data_page']['infrastructure_banner'] = $this->Pages_model->get_infrastructure_banner();
         $this->load_page('web/infrastructure.php', $data);
     }
 

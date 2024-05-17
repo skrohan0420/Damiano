@@ -208,6 +208,18 @@ class Pages extends Admin
         redirect('/admin/about');
     }
 
+    public function add_new_infrastructure_banner(){
+
+        $upload_data = $this->upload_files('./uploads/infrastructure_banner_img/', 'infrastructure_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        //$this->prd($upload_data);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_new_infrastructure_banner('/uploads/infrastructure_banner_img/' . $upload_data['file_name']);
+        }
+        redirect('/admin/infrastructure');
+
+    }
+
 
     public function upload_home_update_img(){
         $upload_data = $this->upload_files('./uploads/home_update_img/', 'home_update_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
@@ -235,7 +247,7 @@ class Pages extends Admin
         $upload_data = $this->upload_files('./uploads/home_infrastructure_img/', 'home_infrastructure_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
         if ($upload_data) {
             $this->init_model(MODEL_PAGES);
-            $this->Pages_model->add_infrastructure('/uploads/home_infrastructure_img/' . $upload_data['file_name'], $this->input->post('home_infrastructure_text'));
+            $this->Pages_model->add_infrastructure('/uploads/home_infrastructure_img/' . $upload_data['file_name'], $this->input->post());
         }
         redirect('/admin/infrastructure');
 
@@ -332,6 +344,13 @@ class Pages extends Admin
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_about_banner_img($uid);
         redirect('/admin/about');
+    }
+
+    public function delete_infrastructure_banner_img(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_infrastructure_banner_img($uid);
+        redirect('/admin/infrastructure'); 
     }
 
 

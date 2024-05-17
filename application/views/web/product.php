@@ -212,7 +212,7 @@ if (false) {
 
     <header id="home">
         <div class="topheaderlogo">
-            <a href="index.html"><img data-aos="fade-up" data-aos-duration="1500"
+            <a href="<?= base_url() ?>"><img data-aos="fade-up" data-aos-duration="1500"
                     src="<?= base_url() ?>assets/images/logo.png" alt="logo"></a>
         </div>
         <div class="headertop">
