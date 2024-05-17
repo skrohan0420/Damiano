@@ -267,6 +267,15 @@ class Pages_model extends Admin_model
         $this->db->insert('product_banner_img', $banner_insert_data);
     }
 
+    public function add_new_about_banner($path)
+    {
+        $banner_insert_data = [
+            'uid' => $this->generate_uid('ABBN'),
+            'img_path' => $path
+        ];
+        $this->db->insert('about_page_banner', $banner_insert_data);
+    }
+
     public function add_alert($data)
     {
         $insert_data = [
@@ -281,6 +290,17 @@ class Pages_model extends Admin_model
         $data = $this->db
             ->select('*')
             ->from('alerts')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];
+    }
+
+    public function get_about_banners()
+    {
+        $data = $this->db
+            ->select('*')
+            ->from('about_page_banner')
             ->get();
         $data = $data->result_array();
         //$this->prd($banner);
@@ -422,6 +442,13 @@ class Pages_model extends Admin_model
     {
         $this->db->where('uid', $uid);
         $this->db->delete('product_banner_img');
+        return $this->db->affected_rows() > 0;
+    }
+
+    public function delete_about_banner_img($uid)
+    {
+        $this->db->where('uid', $uid);
+        $this->db->delete('about_page_banner');
         return $this->db->affected_rows() > 0;
     }
 

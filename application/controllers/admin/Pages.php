@@ -197,6 +197,18 @@ class Pages extends Admin
         redirect('/admin/updates');
     }
 
+    public function add_new_about_banner(){
+
+        $upload_data = $this->upload_files('./uploads/about_banner_img/', 'about_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        //$this->prd($upload_data);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_new_about_banner('/uploads/about_banner_img/' . $upload_data['file_name']);
+        }
+        redirect('/admin/about');
+    }
+
+
     public function upload_home_update_img(){
         $upload_data = $this->upload_files('./uploads/home_update_img/', 'home_update_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
         if ($upload_data) {
@@ -314,6 +326,13 @@ class Pages extends Admin
         redirect('/admin/pages/view_product?uid='.$this->input->get('p_id'));
     }
 
+
+    public function delete_about_banner_img(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_about_banner_img($uid);
+        redirect('/admin/about');
+    }
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2024 at 08:04 PM
+-- Generation Time: May 17, 2024 at 04:17 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,71 @@ SET time_zone = "+00:00";
 --
 -- Database: `damiano_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_page_banner`
+--
+
+CREATE TABLE `about_page_banner` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `img_path` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `about_page_banner`
+--
+
+INSERT INTO `about_page_banner` (`id`, `uid`, `img_path`, `created_at`) VALUES
+(2, 'ABBN663ACB7B20240517', '/uploads/about_banner_img/a474a03b5f5a56d3c4135286a5633dcc.jpg', '2024-05-17 19:45:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `action_buttons`
+--
+
+CREATE TABLE `action_buttons` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `btn_title_1` text NOT NULL,
+  `btn_link_1` text NOT NULL,
+  `btn_title_2` text NOT NULL,
+  `btn_link_2` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `action_buttons`
+--
+
+INSERT INTO `action_buttons` (`id`, `uid`, `btn_title_1`, `btn_link_1`, `btn_title_2`, `btn_link_2`, `created_at`) VALUES
+(1, 'BTN879654372YFTY', 'APPLY NOW', 'https://www.google.com/', 'VIEW ALL PRODUCTS', 'https://www.google.com/', '2024-05-17 16:34:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alerts`
+--
+
+CREATE TABLE `alerts` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `alerts`
+--
+
+INSERT INTO `alerts` (`id`, `uid`, `message`, `created_at`) VALUES
+(2, 'ALTCDE32A1520240517', 'fdhgf', '2024-05-17 16:17:42'),
+(3, 'ALT906FB3D220240517', 'ghsdf', '2024-05-17 16:17:44'),
+(4, 'ALT3320307720240517', 'trhh', '2024-05-17 16:17:45');
 
 -- --------------------------------------------------------
 
@@ -45,7 +110,9 @@ INSERT INTO `features` (`id`, `uid`, `product_id`, `title`, `details`, `img_path
 (3, 'FTR706CD22220240515', 'PRDEE94A1EB20240515', 'fdg', 'ghsdfh', '/uploads/feature_img/285e3849a6a28f1e3be9bf74b792b99f.png', '2024-05-15 17:08:19'),
 (6, 'FTRB4B40AA320240515', 'PRDF9C2FF6720240515', 'fdghf', 'ghdfhg', '/uploads/feature_img/7a1cb0daf7db79f5d7288ea182dedf8a.jpg', '2024-05-15 19:00:00'),
 (7, 'FTRD42117A520240515', 'PRDF9C2FF6720240515', 'gfhjg', 'thsdhtfghftghfghgfhfg', '/uploads/feature_img/99f49a9d66fd5471d5b154429c41a407.jpg', '2024-05-15 19:00:17'),
-(8, 'FTR7E39D5A120240516', 'PRDB814E4DF20240516', 'fdgdrgd', 'fsghsdfhgfdsh', '/uploads/feature_img/df61018c046d52b96b160698fca6d954.JPG', '2024-05-16 20:29:18');
+(8, 'FTR7E39D5A120240516', 'PRDB814E4DF20240516', 'fdgdrgd', 'fsghsdfhgfdsh', '/uploads/feature_img/df61018c046d52b96b160698fca6d954.JPG', '2024-05-16 20:29:18'),
+(9, 'FTR5C68FD7520240517', 'PRDF9C2FF6720240515', 'thsrh', 'sher', '/uploads/feature_img/950febb11679070c0324d305ede83c24.jpg', '2024-05-17 15:51:53'),
+(10, 'FTRDF4E88CB20240517', 'PRDF9C2FF6720240515', 'fdshgth', 'hgsrjtg', '/uploads/feature_img/68b347f95f1b18d867c0779b893c58ca.jpg', '2024-05-17 15:52:01');
 
 -- --------------------------------------------------------
 
@@ -224,7 +291,7 @@ CREATE TABLE `home_updates_img` (
 --
 
 INSERT INTO `home_updates_img` (`id`, `uid`, `img_path`, `created_at`) VALUES
-(1, 'UBNH86967F20240511', '/uploads/home_update_img/670d6df2ac5797fd26b39eb6e18224fa.jpg', '2024-05-13 15:28:00');
+(1, 'UBNH86967F20240511', '/uploads/home_update_img/33e26cf35d51106abe87d472d644f458.jpg', '2024-05-13 15:28:00');
 
 -- --------------------------------------------------------
 
@@ -279,7 +346,23 @@ INSERT INTO `product_banner_img` (`id`, `uid`, `product_id`, `img_path`, `create
 (5, 'PRBNF4F0BB6120240516', 'PRD482FF27F20240516', '/uploads/product_banner_img/ce58d06078a77dfc78c51a1024addd21.png', '2024-05-16 18:47:35'),
 (6, 'PRBNDA2D219020240516', 'PRD482FF27F20240516', '/uploads/product_banner_img/0c6cfee2d6dc1f34a51800c3b7a5744d.png', '2024-05-16 18:47:35'),
 (7, 'PRBNBBD569FE20240516', 'PRDB814E4DF20240516', '/uploads/product_banner_img/11affdb384cebf3d4677764c37337893.jpg', '2024-05-16 19:44:32'),
-(8, 'PRBNFB0F45F620240516', 'PRDB814E4DF20240516', '/uploads/product_banner_img/af962c303218672779cd7e8528b707b9.JPG', '2024-05-16 19:44:32');
+(8, 'PRBNFB0F45F620240516', 'PRDB814E4DF20240516', '/uploads/product_banner_img/af962c303218672779cd7e8528b707b9.JPG', '2024-05-16 19:44:32'),
+(16, 'PRBN500BE8EC20240517', 'PRDF9C2FF6720240515', '/uploads/product_banner_img/f29058ef30c8bbdb658f0e87d35a36c9.jpg', '2024-05-17 15:51:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quality`
+--
+
+CREATE TABLE `quality` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `title` text NOT NULL,
+  `description` text NOT NULL,
+  `img_path` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -334,6 +417,24 @@ INSERT INTO `user_message` (`id`, `uid`, `name`, `email`, `phone`, `subject`, `m
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `about_page_banner`
+--
+ALTER TABLE `about_page_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `action_buttons`
+--
+ALTER TABLE `action_buttons`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `alerts`
+--
+ALTER TABLE `alerts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `features`
@@ -402,6 +503,12 @@ ALTER TABLE `product_banner_img`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `quality`
+--
+ALTER TABLE `quality`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -418,10 +525,28 @@ ALTER TABLE `user_message`
 --
 
 --
+-- AUTO_INCREMENT for table `about_page_banner`
+--
+ALTER TABLE `about_page_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `action_buttons`
+--
+ALTER TABLE `action_buttons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `alerts`
+--
+ALTER TABLE `alerts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `features`
 --
 ALTER TABLE `features`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `home_about_img`
@@ -481,7 +606,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product_banner_img`
 --
 ALTER TABLE `product_banner_img`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `quality`
+--
+ALTER TABLE `quality`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

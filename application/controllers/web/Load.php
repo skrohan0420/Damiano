@@ -61,6 +61,7 @@ class Load extends Common
         $data['data_page']['products'] = $this->Pages_model->get_product();
         $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
         $data['data_page']['about_img'] = $this->Pages_model->get_all_about_img();
+        $data['data_page']['about_banner'] = $this->Pages_model->get_about_banners();
         $this->load_page('web/about.php', $data);
     }
 
