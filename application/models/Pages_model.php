@@ -322,6 +322,17 @@ class Pages_model extends Admin_model
         return isset($data) ? $data : [];
     }
 
+    public function get_action_buttons()
+    {
+        $data = $this->db
+            ->select('*')
+            ->from('action_buttons')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data[0] : [];
+
+    }
     public function get_messages()
     {
         $data = $this->db

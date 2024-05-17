@@ -1,7 +1,5 @@
 <?php
-//echo "<pre>";
-//print_r($infrastructure);
-//die()
+
 ?>
 
 <!-- Begin Page Content -->
@@ -101,22 +99,22 @@
 
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <label for="formGroupExampleInput">Button 1 Title</label>
-                                    <input type="text" class="form-control" name="btn_title_1" value=""
+                                    <input type="text" class="form-control" name="btn_title_1" value="<?=$action_buttons['btn_title_1']?>"
                                         placeholder="Button 1 Title" required>
                                 </div>
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <label for="formGroupExampleInput">Button 1 link</label>
-                                    <input type="text" class="form-control" name="btn_link_1" value=""
+                                    <input type="text" class="form-control" name="btn_link_1" value="<?=$action_buttons['btn_link_1']?>"
                                         placeholder="Button 1 link" required>
                                 </div>
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <label for="formGroupExampleInput">Button 2 Title</label>
-                                    <input type="text" class="form-control" name="btn_title_2" value=""
+                                    <input type="text" class="form-control" name="btn_title_2" value="<?=$action_buttons['btn_title_2']?>"
                                         placeholder="Button 2 Title" required>
                                 </div>
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <label for="formGroupExampleInput">Button 2 link</label>
-                                    <input type="text" class="form-control" name="btn_link_2" value=""
+                                    <input type="text" class="form-control" name="btn_link_2" value="<?=$action_buttons['btn_link_2']?>"
                                         placeholder="Button 2 link" required>
                                 </div>
                                 <div class="form-group col-xl-6 col-lg-6">

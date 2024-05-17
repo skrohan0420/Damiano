@@ -26,6 +26,7 @@ $route['admin/messages']                = 'admin/Admin/messages';
 $route['admin/alerts']                  = 'admin/Admin/alerts';
 $route['admin/infrastructure']          = 'admin/Admin/infrastructure';
 $route['admin/updates']                 = 'admin/Admin/updates';
+$route['admin/quality']                 = 'admin/Admin/quality';
 $route['admin/about']                   = 'admin/Admin/about';
 $route['admin/product/features/add']    = 'admin/pages/product_feature_add';
 

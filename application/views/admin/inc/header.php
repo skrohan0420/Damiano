@@ -87,6 +87,13 @@
                     <span>Updates</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/quality') ?>">
+                    <i class="fas fa-check mr-1"></i>
+                    <span>Quality</span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link"

@@ -115,7 +115,7 @@ class Admin extends Common
         $data['data_header']['title'] = 'Admin | Dashboard';
         $data['data_header']['sidebar']['dashboard'] = true;
         $data['data_page']['alerts'] = $this->Pages_model->get_alert();
-
+        $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
         $this->is_auth('admin/alerts.php', $data);
 
     }
@@ -161,6 +161,19 @@ class Admin extends Common
         $this->is_auth('admin/about.php', $data);
 
 
+    }
+
+
+    public function quality(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['quality_js.php'];
+        $data['data_header']['title'] = 'Admin | Dashboard';
+        $data['data_header']['sidebar']['dashboard'] = true;
+
+       
+
+        $this->is_auth('admin/quality.php', $data);
     }
 
 
