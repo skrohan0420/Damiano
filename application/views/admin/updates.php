@@ -57,55 +57,107 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-xl-12 col-lg-12 card shadow mt-4">
-                        <!-- Card Header - Dropdown -->
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h5 class="m-0 font-weight-bold text-primary">All announcement</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-info" id="dataTable_announcement" width="100%"
-                                    cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Date</th>
-                                            <th>View</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        if (!empty($announcement)) {
-                                            foreach ($announcement as $index => $item) {
-                                                ?>
-                                                <tr>
-                                                    <td><?= $index + 1 ?></td>
-                                                    <td><?= $item['created_at'] ?></td>
-                                                    <td>
-                                                        <a href="<?= base_url($item['path']) ?>" class="btn btn-info"
-                                                            target="_blank">
-                                                            VIEW
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="<?= base_url('admin/pages/delete_announcement_file?uid=') . $item['uid'] ?>"
-                                                            class="btn btn-danger">
-                                                            DELETE
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <?php
-                                            }
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                </div>
+            </div>
 
+
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h5 class="m-0 font-weight-bold text-primary">Updates banners</h5>
+                    <form action="<?= base_url("admin/pages/add_new_updates_banner") ?>" method="POST"
+                        enctype="multipart/form-data">
+
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" placeholder="updates image"
+                                name="updates_banner_img[]" required />
+                        </div>
+                        <div id="updatesBannerImagePreview"></div>
+                        <input type="submit" class="btn btn-success" id="" value="Add Banner img" />
+                    </form>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-info" id="dataTableBanner" width="100%"
+                            cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                if (!empty($updates_banner)) {
+                                    foreach ($updates_banner as $index => $item) {
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="" height="100px">
+                                            </td>
+                                            <td>
+                                                <a href="<?= base_url('admin/pages/delete_updates_banner_img?uid=') . $item['uid'] ?> "
+                                                    class="btn btn-danger">
+                                                    DELETE
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 card shadow mt-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h5 class="m-0 font-weight-bold text-primary">All announcement</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-info" id="dataTable_announcement" width="100%"
+                            cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Date</th>
+                                    <th>View</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                if (!empty($announcement)) {
+                                    foreach ($announcement as $index => $item) {
+                                        ?>
+                                        <tr>
+                                            <td><?= $index + 1 ?></td>
+                                            <td><?= $item['created_at'] ?></td>
+                                            <td>
+                                                <a href="<?= base_url($item['path']) ?>" class="btn btn-info" target="_blank">
+                                                    VIEW
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="<?= base_url('admin/pages/delete_announcement_file?uid=') . $item['uid'] ?>"
+                                                    class="btn btn-danger">
+                                                    DELETE
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

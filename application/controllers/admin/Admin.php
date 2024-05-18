@@ -143,6 +143,7 @@ class Admin extends Common
         $data['data_header']['sidebar']['dashboard'] = true;
         $data['data_page']['update_img'] = $this->Pages_model->get_update_img();
         $data['data_page']['announcement'] = $this->Pages_model->get_announcement();
+        $data['data_page']['updates_banner'] = $this->Pages_model->get_updates_banner();
         $this->is_auth('admin/updates.php', $data);
 
 

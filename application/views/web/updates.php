@@ -391,63 +391,39 @@
     <!--header end-->
 
 
-    <!--inner banner-->
-    <div class="inner-bannermain">
-        <div class="row">
-            <div>
-                <div class="rightinnerimg">
-                    <img src="<?= base_url() ?>assets/images/banner/slider7.jpg" />
-                </div>
-            </div>
+      <!--banner start-->
+      <section class="banner_main">
+        <div class="bg-shadows"></div>
+        <div class="bannerslider owl-carousel owl-theme">
 
+            <?php
+            if (!empty($updates_banner)) {
+                foreach ($updates_banner as $index => $item) {
+                    ?>
+                    <div class="item">
+                        <img src="<?= base_url() . $item['img_path'] ?>" alt="SCIS-Banner" />
+                    </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
-        <!-- <div class="bgsvgview">
-            <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3400 2000" width="1920" height="700">
-            <title></title>
-            <defs>
-                <linearGradient id="g2" x1="3355.7" y1="2784" x2="3467.1" y2="-407" gradientUnits="userSpaceOnUse">
-                    <stop offset="0" stop-color="#fff" />
-                    <stop offset=".071" stop-color="#fff" />
-                    <stop offset="1" stop-color="#fff" />
-                </linearGradient>
-            </defs>
-            <style>
-                .s0 {
-                    fill: url(#g1)
-                }
+        <div class="bannertextviewcurve">
+           
+        </div>
+        <div class="fixtextbanner">
 
-                .s1 {
-                    fill: url(#g2)
-                }
-
-                .s2 {
-                    fill: #e9eef2
-                }
-
-                .s3 {
-                    fill: #284152
-                }
-            </style>
-            <g id="Design">
-                <g id="Shape 2">
-                    <path id="Ellipse" class="s0" d="m1997-243c610.3-317.7 140.7 389.4 769 829 561.4 392.8 370.3 2092-315 2092-685.3 0-1512-1121.8-880-1386.7 679.8-285-522-1040.8 426-1534.3z" />
-                    <path id="Ellipse " class="s1" d="m1978.4-29.6c568.5-387.5 2807.5-556.1 3435.7-116.5 561.4 392.7-2283.5 2930.1-2968.7 2930.1-685.2 0-1535.5-1068.9-862.9-1377.6 656-301-497.9-826.8 395.9-1436z" />
-                    <path id="Ellipse" class="s2" d="m2088.8-116.8c596.1-343.6 2775.7-460.2 3404-20.6 561.4 392.9-2268.7 2991.1-2952 2939.6-978.8-73.6-1495.4-1012.6-940-1338 736.4-431.6-474.9-1026.2 488-1581z" />
-                </g>
-                <g id="Shape 1">
-                    <path id="Ellipse" class="s3" d="m3448.2 522.4l-17.4-4.9-4.9 17.4c-1 3.7-4.8 5.9-8.5 4.8-3.7-1-5.8-4.8-4.8-8.5l4.9-17.4-17.4-4.9c-3.7-1-5.8-4.8-4.8-8.5 1-3.7 4.9-5.8 8.5-4.8l17.4 4.9 4.9-17.4c1-3.7 4.9-5.9 8.5-4.8 3.7 1 5.9 4.8 4.8 8.5l-4.8 17.4 17.3 4.9c3.7 1 5.9 4.8 4.8 8.5-1 3.7-4.8 5.8-8.5 4.8z" />
-                    <path id="Ellipse" class="s3" d="m3036.7 1983.5l-17.9 2.4 2.5 17.9c0.5 3.8-2.2 7.3-6 7.8-3.7 0.5-7.2-2.1-7.8-5.9l-2.4-17.9-17.9 2.5c-3.8 0.5-7.3-2.2-7.8-6-0.5-3.8 2.1-7.3 5.9-7.8l17.9-2.4-2.4-17.9c-0.6-3.8 2.1-7.3 5.9-7.8 3.8-0.5 7.3 2.1 7.8 5.9l2.4 17.9 17.9-2.5c3.8-0.5 7.3 2.2 7.8 6 0.5 3.7-2.1 7.2-5.9 7.8z" />
-                    <path id="Ellipse" class="s3" d="m3158.9 1617.1c-2.7 0.2-50.2 4.5-52.1 4.7-2.4 0.2-4.4-2.1-3.2-4.8 1-2.1 20.7-43.9 22.3-47.5 1.1-2.4 4.2-2.6 5.7-0.5 1.6 2.3 27.9 40.2 29.7 42.9 1.3 2 0.3 4.9-2.4 5.2z" />
-                    <path id="Ellipse" class="s3" d="m1982.6 1742.8c-2.2 1.6-40.9 29.5-42.4 30.6-2 1.4-4.9 0.4-5.2-2.5-0.2-2.3-4.6-48.3-5-52.3-0.2-2.6 2.3-4.3 4.6-3.3 2.6 1.2 44.5 20.4 47.4 21.9 2.2 1 2.8 4.1 0.6 5.6z" />
-                    <path id="Ellipse" fill-rule="evenodd" class="s3" d="m3486.8 829.7c9 12.6 6 30.1-6.6 39.1-12.6 9-30 6-39-6.5-9-12.6-6-30.1 6.6-39.1 12.6-9 30-6.1 39 6.5zm-33.4 1.5c-8.1 5.8-10.1 17.2-4.2 25.4 5.8 8.1 17.2 10 25.4 4.2 8.1-5.8 10.1-17.2 4.2-25.4-5.8-8.2-17.2-10.1-25.4-4.2z" />
-                    <path id="Ellipse" fill-rule="evenodd" class="s3" d="m3225.8-6.3c9 12.6 6 30.1-6.6 39.1-12.6 9-30 6-39-6.5-9-12.6-6-30.1 6.6-39.1 12.6-9 30-6.1 39 6.5zm-33.4 1.5c-8.1 5.8-10.1 17.2-4.2 25.4 5.8 8.1 17.2 10 25.4 4.2 8.1-5.8 10.1-17.2 4.2-25.4-5.8-8.2-17.2-10.1-25.4-4.2z" />
-                    <path id="Ellipse" fill-rule="evenodd" class="s3" d="m1978.8 941.7c9 12.6 6 30.1-6.6 39.1-12.6 9-30 6-39-6.5-9-12.6-6-30.1 6.6-39.1 12.6-9 30-6.1 39 6.5zm-33.4 1.5c-8.1 5.8-10.1 17.2-4.2 25.4 5.8 8.1 17.2 10 25.4 4.2 8.1-5.8 10.1-17.2 4.2-25.4-5.8-8.2-17.2-10.1-25.4-4.2z" />
-                </g>
-            </g>
-        </svg>
-        </div>-->
-    </div>
-    <!--inner banner-->
+         
+        </div>
+        <div class="toptobottomfixed">
+            <a href="#aboutus">
+                <div class="toptobottom pulse">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!--banner end-->
 
     <!--announcement-->
     <section class="announcement">

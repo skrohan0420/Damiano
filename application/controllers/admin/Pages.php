@@ -132,6 +132,10 @@ class Pages extends Admin
         redirect('admin/pages/view_product?uid='.$p_id);
     }
 
+   
+
+
+
     public function update_product(){
         //$this->prd($_FILES);
         $this->init_model(MODEL_PAGES);
@@ -220,6 +224,15 @@ class Pages extends Admin
 
     }
 
+    public function add_new_updates_banner(){
+        $upload_data = $this->upload_files('./uploads/updates_banner_img/', 'updates_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        //$this->prd($upload_data);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_new_updates_banner('/uploads/updates_banner_img/' . $upload_data['file_name']);
+        }
+        redirect('/admin/updates');
+    }
 
     public function upload_home_update_img(){
         $upload_data = $this->upload_files('./uploads/home_update_img/', 'home_update_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
@@ -352,7 +365,16 @@ class Pages extends Admin
         $this->Pages_model->delete_infrastructure_banner_img($uid);
         redirect('/admin/infrastructure'); 
     }
+    
 
+    public function delete_updates_banner_img(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_updates_banner_img($uid);
+        redirect('/admin/updates');
+
+
+    }
 
 
 }
