@@ -48,6 +48,21 @@
                                         required><?= $about_text['mission_text'] ?></textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label for="formGroupExampleInput2">Products text </label>
+                                    <textarea type="text" class="form-control" name="products_text"
+                                        required><?= $about_text['products_text'] ?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Facilities text </label>
+                                    <textarea type="text" class="form-control" name="facilities_text"
+                                        required><?= $about_text['facilities_text'] ?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Global Presence text </label>
+                                    <textarea type="text" class="form-control" name="global_presence_text"
+                                        required><?= $about_text['global_presence_text'] ?></textarea>
+                                </div>
+                                <div class="form-group">
                                     <input type="submit" class="btn btn-success" id="" value="Update">
                                 </div>
                             </form>

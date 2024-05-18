@@ -180,16 +180,16 @@
 </head>
 
 <body id="topview">
-<div class="fixbuttoninapplynowmain" data-aos="zoom-in" data-aos-duration="3000">
+    <div class="fixbuttoninapplynowmain" data-aos="zoom-in" data-aos-duration="3000">
         <div class="fixbuttoninapplynow applynowsticky">
             <div class="textrotateviewapplynow">
-                <a href="<?=$action_buttons['btn_link_1']?>" target="_blank"><?=$action_buttons['btn_title_1']?></a>
+                <a href="<?= $action_buttons['btn_link_1'] ?>" target="_blank"><?= $action_buttons['btn_title_1'] ?></a>
             </div>
         </div>
 
         <div class="fixbuttoninapplynow bookatour">
             <div class="textrotateviewapplynow">
-                <a href="<?=$action_buttons['btn_link_2']?>" target="_blank"><?=$action_buttons['btn_title_2']?></a>
+                <a href="<?= $action_buttons['btn_link_2'] ?>" target="_blank"><?= $action_buttons['btn_title_2'] ?></a>
             </div>
         </div>
     </div>
@@ -234,7 +234,8 @@
                                 </li>
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li>
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('quality') ?>">Quality</a></li>
-                                <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                                <li data-tab="admissionmenu"><a
+                                        href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                             </ul>
                         </div>
@@ -299,8 +300,10 @@
                             </li>
                             <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a>
                             </li>
-                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>" class="nav__link">Infrastructure</a></li>
-                            <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a></li>
+                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>"
+                                    class="nav__link">Infrastructure</a></li>
+                            <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a>
+                            </li>
                             <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact
                                     us</a></li>
                         </ul>
@@ -322,9 +325,9 @@
                                                     <i class="fa fa-newspaper-o"></i>
                                                 </div>
                                                 <div class="newsinnertext">
-                                                    <img src="<?= base_url() . $item['img_path']?>" alt="#" />
+                                                    <img src="<?= base_url() . $item['img_path'] ?>" alt="#" />
                                                     <div class="hovertext">
-                                                        <a href="<?= base_url() . $item['img_path']?>">
+                                                        <a href="<?= base_url() . $item['img_path'] ?>">
                                                             <div class="newsmoreview">
                                                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                                                             </div>
@@ -365,11 +368,11 @@
             ?>
         </div>
         <div class="bannertextviewcurve">
-           
+
         </div>
         <div class="fixtextbanner">
 
-         
+
         </div>
         <div class="toptobottomfixed">
             <a href="#aboutus">
@@ -399,93 +402,115 @@
                         </div>
 
                         <style>
-                            .newleftsidecss ul li a {
-                                font-size: 16px;
-                                padding: 2px 10px;
-                                align-items: self-start;
+                            .card-custom {
+                                border: 1px solid  #2596be;
+                                cursor: pointer;
+                                border-radius: 5px;
+                                padding: 20px;
+                                text-align: center;
+                                margin-bottom: 20px;
+                                height: 100% !important;
+                                transition: 0.1s ease-in-out;
+                            }
+                            .card-custom:hover {
+                                background-color: #ddd;
+                            }
+                            .card-custom img {
+                                max-width: 100px;
+                                margin-bottom: 15px;
+                                filter: brightness(0) saturate(100%) invert(40%) sepia(73%) saturate(1810%) hue-rotate(167deg) brightness(92%) contrast(100%);
+                            }
+                            .cards-in .col-md-6{
+                                margin-bottom: 30px; 
+                            }
+                            .card-custom h5 {
+                                font-size: 2rem;
+                                padding-bottom: 10px;
+                                margin-bottom: 10px;
+                                border-bottom:  1px solid #2596be;
                             }
 
-                            .newleftsidecss ul li a img {
-                                margin-left: -3px;
-                                position: relative;
-                                top: 5px;
+                            .card-custom p {
+                                font-size: 0.95rem;
+                                color: #666;
                             }
 
-                            .newleftsidecss ul li:nth-child(2) a img {
-                                width: 17px;
-                                margin-right: 4px;
-                                position: relative;
-                                top: 3px;
-                                margin-left: 0px;
-                            }
-
-                            .newleftsidecss li.lastbtnapply a {
-                                padding: 10px 30px 13px !important;
-                            }
                         </style>
                         <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
                             <p>Damiano</p>
                             <ul>
                                 <li><a href="https://www.google.com/maps/place/South+City+International+School+(SCIS)/@22.5002609,88.356794,17z/data=!4m6!3m5!1s0x3a0270d89963ea53:0x878e218b8963f14b!8m2!3d22.5001841!4d88.3624578!16s%2Fg%2F11bx5613b_?authuser=0&hl=en"
-                                        target="_blank"><img src="<?=base_url()?>assets/images/location.png" alt="location" />53, Dr. Meghnad
+                                        target="_blank"><img src="<?= base_url() ?>assets/images/location.png"
+                                            alt="location" />53, Dr. Meghnad
                                         Saha Sarani, Southern Avenue Kolkata-700 029, West Bengal, India.</a></li>
                                 <li>
                                     <a href="tel:+913340630070"><img
                                             src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="#"> +91 33
                                         4063 0070</a>
-                                    <a href="mailto:info@adamiano.com"><img src="<?=base_url()?>assets/images/mail.png" alt="#">
+                                    <a href="mailto:info@adamiano.com"><img
+                                            src="<?= base_url() ?>assets/images/mail.png" alt="#">
                                         info@adamiano.com</a>
                                 </li>
-                                <li class="lastbtnapply"><a href="<?= base_url('contact-us') ?>" target="_blank">Contact us</a></li>
+                                <li class="lastbtnapply"><a href="<?= base_url('contact-us') ?>" target="_blank">Contact
+                                        us</a></li>
                             </ul>
                         </div>
                         <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a href=""
-                                target="_blank"><img src="<?=base_url()?>assets/images/newspage/5.jpg" /></a></div>
+                                target="_blank"><img src="<?= base_url() ?>assets/images/newspage/5.jpg" /></a></div>
                     </div>
                 </div>
                 <div class="col-lg-9">
                     <div class="allpagesview-right">
-                        <h1 id="m&v" class="headingh1" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">About</h1>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <p>
-                                <?= $about_text['about_text'] ?>
-                            </p>
-                        </div>
-                        <div class="row allthemegapbottom allthemegaptop">
-                            <div class="image-column col-lg-6 col-md-6">
-                                <div class="inner-column">
-                                    <div class="image-one" data-aos="fade-down" data-aos-duration="1000">
-                                        <img src="<?= base_url() ?>assets/images/qu-1.jpg" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <h2 class="headingh2" data-aos="fade-up" data-aos-duration="1000">Vision</h2>
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <p>
-                                        <?= $about_text['vision_text'] ?>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row allthemegapbottom allthemegaptop">
-                            <div class="col-lg-6 col-md-6">
-                                <h2 class="headingh2" data-aos="fade-up" data-aos-duration="1000">Mission</h2>
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <p>
-                                        <?= $about_text['mission_text'] ?>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="image-column col-lg-6 col-md-6">
-                                <div class="inner-column">
-                                    <div class="image-one" data-aos="fade-down" data-aos-duration="1000">
-                                        <img src="<?= base_url() ?>assets/images/qu-2.jpg" />
-                                    </div>
-                                </div>
-                            </div>
+                        <h1 id="m&v" class="headingh1" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
+                            About</h1>
 
+
+                        <div class="row cards-in">
+
+                            <div class="col-md-6">
+                                <div class="card-custom">
+                                    <img src="<?= base_url() ?>assets/images/about_icons/icon1.png" alt="About Us">
+                                    <h5>About Us</h5>
+                                    <p><?=$about_text['about_text']?></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-custom">
+                                    <img src="<?= base_url() ?>assets/images/about_icons/icon2.png" alt="Vision">
+                                    <h5>Vision</h5>
+                                    <p><?=$about_text['vision_text']?></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-custom">
+                                    <img src="<?= base_url() ?>assets/images/about_icons/icon3.png" alt="Mission">
+                                    <h5>Mission</h5>
+                                    <p><?=$about_text['mission_text']?></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-custom">
+                                    <img src="<?= base_url() ?>assets/images/about_icons/icon4.png" alt="Products">
+                                    <h5>Products</h5>
+                                    <p><?=$about_text['products_text']?></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-custom">
+                                    <img src="<?= base_url() ?>assets/images/about_icons/icon5.png" alt="Facilities">
+                                    <h5>Facilities</h5>
+                                    <p><?=$about_text['facilities_text']?></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-custom">
+                                    <img src="<?= base_url() ?>assets/images/about_icons/icon6.png" alt="Global Presence">
+                                    <h5>Global Presence</h5>
+                                    <p><?=$about_text['global_presence_text']?></p>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -534,11 +559,11 @@
                     <div class="quicklinks">
                         <div class="footerheading quicklinkview">Quick Links</div>
                         <ul>
-                            <li><a href="<?=base_url('about')?>">About</a></li>
-                            <li><a href="<?=base_url('updates')?>">Updates</a></li>
-                            <li><a href="<?=base_url('quality')?>">Quality</a></li>
-                            <li><a href="<?=base_url('infrastructure')?>">Infrastructure</a></li>
-                            <li><a href="<?=base_url('contact-us')?>">Contact</a></li>
+                            <li><a href="<?= base_url('about') ?>">About</a></li>
+                            <li><a href="<?= base_url('updates') ?>">Updates</a></li>
+                            <li><a href="<?= base_url('quality') ?>">Quality</a></li>
+                            <li><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                            <li><a href="<?= base_url('contact-us') ?>">Contact</a></li>
                         </ul>
                     </div>
                 </div>
