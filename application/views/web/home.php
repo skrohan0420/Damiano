@@ -196,13 +196,13 @@ if (false) {
     <div class="fixbuttoninapplynowmain" data-aos="zoom-in" data-aos-duration="3000">
         <div class="fixbuttoninapplynow applynowsticky">
             <div class="textrotateviewapplynow">
-                <a href="#" target="_blank">Apply Now</a>
+                <a href="<?= $action_buttons['btn_link_1'] ?>" target="_blank"><?= $action_buttons['btn_title_1'] ?></a>
             </div>
         </div>
 
         <div class="fixbuttoninapplynow bookatour">
             <div class="textrotateviewapplynow">
-                <a href="#">View All Products</a>
+                <a href="<?= $action_buttons['btn_link_2'] ?>" target="_blank"><?= $action_buttons['btn_title_2'] ?></a>
             </div>
         </div>
     </div>
@@ -246,7 +246,9 @@ if (false) {
                                     </a>
                                 </li>
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li>
-                                <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                                <li data-tab="beyondclassroom"><a href="<?= base_url('quality') ?>">Quality</a></li>
+                                <li data-tab="admissionmenu"><a
+                                        href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                             </ul>
                         </div>
@@ -261,7 +263,8 @@ if (false) {
                                         foreach ($products as $index => $item) {
                                             ?>
                                             <li>
-                                                <a href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                                <a
+                                                    href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
                                             </li>
                                             <?php
                                         }
@@ -299,7 +302,8 @@ if (false) {
                                         foreach ($products as $index => $item) {
                                             ?>
                                             <li>
-                                                <a href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                                <a
+                                                    href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
                                             </li>
                                             <?php
                                         }
@@ -307,9 +311,14 @@ if (false) {
                                     ?>
                                 </ul>
                             </li>
-                            <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a></li>
-                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>" class="nav__link">Infrastructure</a></li>
-                            <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact us</a></li>
+                            <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a>
+                            </li>
+                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>"
+                                    class="nav__link">Infrastructure</a></li>
+                            <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a>
+                            </li>
+                            <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact
+                                    us</a></li>
                         </ul>
 
                     </div>
@@ -320,75 +329,29 @@ if (false) {
                         </div>
                         <div class="rightsideonmenuview">
                             <div class="latestnewsview">
-                                <div class="facebooknews samecolor">
-                                    <div class="lower-content">
-                                        <div class="newsname">
-                                            <i class="fa fa-newspaper-o"></i>
-                                        </div>
-                                        <div class="newsinnertext">
-                                            <img src="<?= base_url() ?>assets/images/newspage/1.jpg" alt="#" />
-                                            <div class="hovertext">
-                                                <a href="#">
-                                                    <div class="newsmoreview">
-                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                <?php if (!empty($flyers)) {
+                                    foreach ($flyers as $index => $item) {
+                                        ?>
+                                        <div class="samecolor">
+                                            <div class="lower-content">
+                                                <div class="newsname">
+                                                    <i class="fa fa-newspaper-o"></i>
+                                                </div>
+                                                <div class="newsinnertext">
+                                                    <img src="<?= base_url() . $item['img_path'] ?>" alt="#" />
+                                                    <div class="hovertext">
+                                                        <a href="<?= base_url() . $item['img_path'] ?>">
+                                                            <div class="newsmoreview">
+                                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                            </div>
+                                                        </a>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="instagramnews samecolor">
-                                    <div class="lower-content">
-                                        <div class="newsname">
-                                            <i class="fa fa-newspaper-o"></i>
-                                        </div>
-                                        <div class="newsinnertext">
-                                            <img src="<?= base_url() ?>assets/images/newspage/2.jpg" alt="#" />
-                                            <div class="hovertext">
-                                                <a href="#">
-                                                    <div class="newsmoreview">
-                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="twitternews samecolor">
-                                    <div class="lower-content">
-                                        <div class="newsname">
-                                            <i class="fa fa-newspaper-o"></i>
-                                        </div>
-                                        <div class="newsinnertext">
-                                            <img src="<?= base_url() ?>assets/images/newspage/3.jpg" alt="#" />
-                                            <div class="hovertext">
-                                                <a href="#">
-                                                    <div class="newsmoreview">
-                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="youtubenews samecolor">
-                                    <div class="lower-content">
-                                        <div class="newsname">
-                                            <i class="fa fa-newspaper-o"></i>
-                                        </div>
-                                        <div class="newsinnertext">
-                                            <img src="<?= base_url() ?>assets/images/newspage/4.jpg" alt="#" />
-                                            <div class="hovertext">
-                                                <a href="#">
-                                                    <div class="newsmoreview">
-                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                        <?php
+                                    }
+                                } ?>
                             </div>
                         </div>
                     </div>
@@ -2259,238 +2222,39 @@ if (false) {
         <div class="auto-container">
             <div class="subheding" data-aos="fade-up" data-aos-duration="2000">Latest News</div>
             <div class="row stories-main">
-                <div class="col-lg-4 col-sm-4 stories-left">
-                    <div class="schoolnews" data-aos="fade-right" data-aos-duration="2000">
-                        <div class="lower-content">
-                            <div class="newsname">
-                                <i class="fa fa-newspaper-o"></i>
-                            </div>
-                            <div class="border-layer"></div>
-                            <div class="newsinnertext">
-                                <img src="<?= base_url() ?>assets/images/newspage/1.jpg" />
-                                <div class="hovertext">
-                                    <a href="#">
-                                        <div class="newsmoreview">
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-sm-8 stories-right" data-aos="fade-left" data-aos-duration="2000">
+                <div class="col-lg-12 col-sm-12 stories-right" data-aos="fade-left" data-aos-duration="2000">
                     <div class="row">
-                        <div class="col-lg-6 col-sm-6 col-6 twonewsview">
-                            <div class="schoolnews facebooknews">
-                                <div class="lower-content">
-                                    <div class="newsname">
-                                        <i class="fa fa-newspaper-o"></i>
-                                    </div>
-                                    <div class="border-layer"></div>
-                                    <div class="newsinnertext">
-                                        <img src="<?= base_url() ?>assets/images/newspage/2.jpg" />
-                                        <div class="hovertext">
-                                            <a href="#">
-                                                <div class="newsmoreview">
-                                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <?php if (!empty($flyers)) {
+                            foreach ($flyers as $index => $item) {
+                                ?>
+                                <div class="col-lg-4 col-sm-4 col-4 twonewsview">
+                                    <div class="schoolnews facebooknews">
+                                        <div class="lower-content">
+                                            <div class="newsname">
+                                                <i class="fa fa-newspaper-o"></i>
+                                            </div>
+                                            <div class="border-layer"></div>
+                                            <div class="newsinnertext">
+                                                <img src="<?= base_url() . $item['img_path'] ?>" />
+                                                <div class="hovertext">
+                                                    <a href="<?= base_url() . $item['img_path'] ?>">
+                                                        <div class="newsmoreview">
+                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                            </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="schoolnews instagramnews">
-                                <div class="lower-content">
-                                    <div class="newsname">
-                                        <i class="fa fa-newspaper-o"></i>
-                                    </div>
-                                    <div class="border-layer"></div>
-                                    <div class="newsinnertext">
-                                        <img src="<?= base_url() ?>assets/images/newspage/3.jpg" />
-                                        <div class="hovertext">
-                                            <a href="#">
-                                                <div class="newsmoreview">
-                                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-6 col-6 twonewsview">
-                            <div class="schoolnews twitternews">
-                                <div class="lower-content">
-                                    <div class="newsname">
-                                        <i class="fa fa-newspaper-o"></i>
-                                    </div>
-                                    <div class="border-layer"></div>
-                                    <div class="newsinnertext">
-                                        <img src="<?= base_url() ?>assets/images/newspage/4.jpg" />
-                                        <div class="hovertext">
-                                            <a href="#">
-                                                <div class="newsmoreview">
-                                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="schoolnews youtubenews">
-                                <div class="lower-content">
-                                    <div class="newsname">
-                                        <i class="fa fa-newspaper-o"></i>
-                                    </div>
-                                    <div class="border-layer"></div>
-                                    <div class="newsinnertext">
-                                        <img src="<?= base_url() ?>assets/images/newspage/5.jpg" />
-                                        <div class="hovertext">
-                                            <a href="#">
-                                                <div class="newsmoreview">
-                                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--<div class="row stories-main">
-        <div class="col-lg-4 col-sm-4 stories-left">
-            <div class="schoolnews" data-aos="fade-right" data-aos-duration="2000">
-                <div class="lower-content">
-                    <div class="newsname">
-                        <i class="fa fa-newspaper-o"></i>
-                    </div>
-                    <div class="border-layer"></div>
-                    <div class="newsinnertext">
-                        <img src="/images/small/pic1.webp" alt="#">
-                        <div class="newsinnertextview">
-                            <div class="sb-info">News</div>
-                            <div class="sb-date">02/23</div>
-                        </div>
-                        <div class="hovertext">
-                            <p>Shout out to Vyom of Grade 11! He started "The Yuva Foundation" - an initiative to provide sporting opportunities to children from underprivileged backgrounds. He is also holding a sports equipment drive at school - do</p>
-                            <a href="/newsdetails">-->
+                                <?php
+                            }
+                        } ?>
 
-            <!--<div class="newsmoreview">
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-8 col-sm-8 stories-right" data-aos="fade-left" data-aos-duration="2000">
-            <div class="row">
-                <div class="col-lg-6 col-sm-6 col-6 twonewsview">
-                    <div class="schoolnews facebooknews">
-                        <div class="lower-content">
-                            <div class="newsname">
-                                <i class="fa fa-newspaper-o"></i>
-                            </div>
-                            <div class="border-layer"></div>
-                            <div class="newsinnertext">
-                                <img src="/images/post1.jpg" alt="#">
-                                <div class="newsinnertextview">
-                                    <div class="sb-info">News</div>
-                                    <div class="sb-date">02/23</div>
-                                </div>
-                                <div class="hovertext">
-                                    <p>Shout out to Vyom of Grade 11! He started "The Yuva Foundation" - an initiative to provide sporting opportunities to children from underprivileged backgrounds. He is also holding a sports equipment drive at school - do</p>
-                                    <a href="/newsdetails">
-                                        <div class="newsmoreview">
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="schoolnews instagramnews">
-                        <div class="lower-content">
-                            <div class="newsname">
-                                <i class="fa fa-newspaper-o"></i>
-                            </div>
-                            <div class="border-layer"></div>
-                            <div class="newsinnertext">
-                                <img src="/images/post2.jpg" alt="#">
-                                <div class="newsinnertextview">
-                                    <div class="sb-info">News</div>
-                                    <div class="sb-date">02/23</div>
-                                </div>
-                                <div class="hovertext">
-                                    <p>Shout out to Vyom of Grade 11! He started "The Yuva Foundation" - an initiative to provide sporting opportunities to children from underprivileged backgrounds. He is also holding a sports equipment drive at school - do</p>
-                                    <a href="/newsdetails">
-                                        <div class="newsmoreview">
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6 col-6 twonewsview">
-                    <div class="schoolnews twitternews">
-                        <div class="lower-content">
-                            <div class="newsname">
-                                <i class="fa fa-newspaper-o"></i>
-                            </div>
-                            <div class="border-layer"></div>
-                            <div class="newsinnertext">
-                                <img src="/images/pos3.jpg" alt="#">
-                                <div class="newsinnertextview">
-                                    <div class="sb-info">News</div>
-                                    <div class="sb-date">02/23</div>
-                                </div>
-                                <div class="hovertext">
-                                    <p>Shout out to Vyom of Grade 11! He started "The Yuva Foundation" - an initiative to provide sporting opportunities to children from underprivileged backgrounds. He is also holding a sports equipment drive at school - do</p>
-                                    <a href="/newsdetails">
-                                        <div class="newsmoreview">
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="schoolnews youtubenews">
-                        <div class="lower-content">
-                            <div class="newsname">
-                                <i class="fa fa-newspaper-o"></i>
-                            </div>
-                            <div class="border-layer"></div>
-                            <div class="newsinnertext">
-                                <img src="/images/post1.jpg" alt="#">
-                                <div class="newsinnertextview">
-                                    <div class="sb-info">News</div>
-                                    <div class="sb-date">02/23</div>
-                                </div>
-                                <div class="hovertext">
-                                    <p>Shout out to Vyom of Grade 11! He started "The Yuva Foundation" - an initiative to provide sporting opportunities to children from underprivileged backgrounds. He is also holding a sports equipment drive at school - do</p>
-                                    <a href="/newsdetails">
-                                        <div class="newsmoreview">
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
-            <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
-                <a href="#" class="allbtnview"><span>All News</span></a>
-            </div>
+
         </div>
     </section>
 
@@ -2519,11 +2283,11 @@ if (false) {
                     <div class="quicklinks">
                         <div class="footerheading quicklinkview">Quick Links</div>
                         <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Updates</a></li>
-                            <li><a href="#">Quality</a></li>
-                            <li><a href="#">Infrastructure</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="<?=base_url('about')?>">About</a></li>
+                            <li><a href="<?=base_url('updates')?>">Updates</a></li>
+                            <li><a href="<?=base_url('quality')?>">Quality</a></li>
+                            <li><a href="<?=base_url('infrastructure')?>">Infrastructure</a></li>
+                            <li><a href="<?=base_url('contact-us')?>">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -2741,14 +2505,14 @@ if (false) {
                     <span class="topheadingpopup">Damiano</span>
 
                     <?php
-                        if(!empty($alerts)){
-                            foreach($alerts as $index => $item){
-                                ?>
-                                    <span class="text-popup"><?= $item['message'] ?></span>
-                                <?php
-                            }
-
+                    if (!empty($alerts)) {
+                        foreach ($alerts as $index => $item) {
+                            ?>
+                            <span class="text-popup"><?= $item['message'] ?></span>
+                            <?php
                         }
+
+                    }
                     ?>
 
                 </span>

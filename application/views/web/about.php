@@ -180,21 +180,22 @@
 </head>
 
 <body id="topview">
-    <div class="fixbuttoninapplynowmain" data-aos="zoom-in" data-aos-duration="3000">
+<div class="fixbuttoninapplynowmain" data-aos="zoom-in" data-aos-duration="3000">
         <div class="fixbuttoninapplynow applynowsticky">
             <div class="textrotateviewapplynow">
-                <a href="#" target="_blank">Apply Now</a>
+                <a href="<?=$action_buttons['btn_link_1']?>" target="_blank"><?=$action_buttons['btn_title_1']?></a>
             </div>
         </div>
 
         <div class="fixbuttoninapplynow bookatour">
             <div class="textrotateviewapplynow">
-                <a href="#">View All Products</a>
+                <a href="<?=$action_buttons['btn_link_2']?>" target="_blank"><?=$action_buttons['btn_title_2']?></a>
             </div>
         </div>
     </div>
 
     <!--header start-->
+
     <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
     </div>
@@ -232,8 +233,8 @@
                                     </a>
                                 </li>
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li>
-                                <li data-tab="admissionmenu"><a
-                                        href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                                <li data-tab="beyondclassroom"><a href="<?= base_url('quality') ?>">Quality</a></li>
+                                <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                             </ul>
                         </div>
@@ -298,8 +299,8 @@
                             </li>
                             <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a>
                             </li>
-                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>"
-                                    class="nav__link">Infrastructure</a></li>
+                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>" class="nav__link">Infrastructure</a></li>
+                            <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a></li>
                             <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact
                                     us</a></li>
                         </ul>
@@ -312,75 +313,29 @@
                         </div>
                         <div class="rightsideonmenuview">
                             <div class="latestnewsview">
-                                <div class="facebooknews samecolor">
-                                    <div class="lower-content">
-                                        <div class="newsname">
-                                            <i class="fa fa-newspaper-o"></i>
-                                        </div>
-                                        <div class="newsinnertext">
-                                            <img src="<?= base_url() ?>assets/images/newspage/1.jpg" alt="#" />
-                                            <div class="hovertext">
-                                                <a href="#">
-                                                    <div class="newsmoreview">
-                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                <?php if (!empty($flyers)) {
+                                    foreach ($flyers as $index => $item) {
+                                        ?>
+                                        <div class="samecolor">
+                                            <div class="lower-content">
+                                                <div class="newsname">
+                                                    <i class="fa fa-newspaper-o"></i>
+                                                </div>
+                                                <div class="newsinnertext">
+                                                    <img src="<?= base_url() . $item['img_path']?>" alt="#" />
+                                                    <div class="hovertext">
+                                                        <a href="<?= base_url() . $item['img_path']?>">
+                                                            <div class="newsmoreview">
+                                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                            </div>
+                                                        </a>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="instagramnews samecolor">
-                                    <div class="lower-content">
-                                        <div class="newsname">
-                                            <i class="fa fa-newspaper-o"></i>
-                                        </div>
-                                        <div class="newsinnertext">
-                                            <img src="<?= base_url() ?>assets/images/newspage/2.jpg" alt="#" />
-                                            <div class="hovertext">
-                                                <a href="#">
-                                                    <div class="newsmoreview">
-                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="twitternews samecolor">
-                                    <div class="lower-content">
-                                        <div class="newsname">
-                                            <i class="fa fa-newspaper-o"></i>
-                                        </div>
-                                        <div class="newsinnertext">
-                                            <img src="<?= base_url() ?>assets/images/newspage/3.jpg" alt="#" />
-                                            <div class="hovertext">
-                                                <a href="#">
-                                                    <div class="newsmoreview">
-                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="youtubenews samecolor">
-                                    <div class="lower-content">
-                                        <div class="newsname">
-                                            <i class="fa fa-newspaper-o"></i>
-                                        </div>
-                                        <div class="newsinnertext">
-                                            <img src="<?= base_url() ?>assets/images/newspage/4.jpg" alt="#" />
-                                            <div class="hovertext">
-                                                <a href="#">
-                                                    <div class="newsmoreview">
-                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                        <?php
+                                    }
+                                } ?>
                             </div>
                         </div>
                     </div>
@@ -389,6 +344,7 @@
         </div>
     </header>
     <!--header end-->
+
 
 
     <!--banner start-->
@@ -578,11 +534,11 @@
                     <div class="quicklinks">
                         <div class="footerheading quicklinkview">Quick Links</div>
                         <ul>
-                            <li><a href="/admissionprocess">About</a></li>
-                            <li><a href="/paymentmethod">Updates</a></li>
-                            <li><a href="/newsletter">Quality</a></li>
-                            <li><a href="/feestructure">Infrastructure</a></li>
-                            <li><a href="/workwithus">Contact</a></li>
+                            <li><a href="<?=base_url('about')?>">About</a></li>
+                            <li><a href="<?=base_url('updates')?>">Updates</a></li>
+                            <li><a href="<?=base_url('quality')?>">Quality</a></li>
+                            <li><a href="<?=base_url('infrastructure')?>">Infrastructure</a></li>
+                            <li><a href="<?=base_url('contact-us')?>">Contact</a></li>
                         </ul>
                     </div>
                 </div>
