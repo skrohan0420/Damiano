@@ -191,6 +191,16 @@ class Pages extends Admin
         redirect('/admin/home');
     }
 
+    public function add_new_quality_banner(){
+        $upload_data = $this->upload_files('./uploads/quality_banner_img/', 'quality_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_new_quality_banner('/uploads/quality_banner_img/' . $upload_data['file_name']);
+        }
+        redirect('/admin/quality');
+    }
+
+
     public function upload_announcement_file(){
         $upload_data = $this->upload_files('./uploads/home_announcement_file/', 'home_announcement_file', IMG_FILE_TYPES, IMG_FILE_SIZE);
         //$this->prd($upload_data);
@@ -265,6 +275,16 @@ class Pages extends Admin
         redirect('/admin/infrastructure');
 
     }
+
+    public function add_quality(){
+        $upload_data = $this->upload_files('./uploads/quality_img/', 'quality_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_quality('/uploads/quality_img/' . $upload_data['file_name'], $this->input->post());
+        }
+        redirect('/admin/quality');
+    }
+
 
     public function add_appreciation(){
         $upload_data = $this->upload_files('./uploads/home_appreciation_img/', 'home_appreciation_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
@@ -372,9 +392,20 @@ class Pages extends Admin
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_updates_banner_img($uid);
         redirect('/admin/updates');
-
-
     }
 
+    public function delete_quality(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_quality($uid);
+        redirect('/admin/quality');
+    }
+
+    public function delete_quality_banner_img(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_quality_banner_img($uid);
+        redirect('/admin/quality');
+    }
 
 }

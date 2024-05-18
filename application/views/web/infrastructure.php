@@ -391,7 +391,7 @@
     <!--header end-->
 
 
-   
+
     <!--banner start-->
     <section class="banner_main">
         <div class="bg-shadows"></div>
@@ -410,11 +410,11 @@
             ?>
         </div>
         <div class="bannertextviewcurve">
-           
+
         </div>
         <div class="fixtextbanner">
 
-         
+
         </div>
         <div class="toptobottomfixed">
             <a href="#aboutus">
@@ -426,36 +426,138 @@
     </section>
     <!--banner end-->
 
-    <!--achievement-->
-    <section class="achievement">
-        <div class="subheding" data-aos="fade-up" data-aos-duration="1500">Infrastructure</div>
+    <!--overview section-->
+    <div class="allpagesview">
         <div class="auto-container">
-            <div class="toppers">
-
-                <?php
-
-                if (!empty($infrastructure)) {
-                    foreach ($infrastructure as $index => $item) {
-                        ?>
-                        <div class="toppersbox" data-aos="fade-left" data-aos-duration="1600">
-                            <div class="toppesrimgbox">
-                                <img src="<?= base_url() . $item['img_path'] ?>" />
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="lefttopfixed">
+                        <div class="allpagesview-left" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="left_subheading">Infrastructure</div>
+                            <div class="leftmenupartbox">
+                                <ul>
+                                    <li><a href="<?= base_url('about') ?>">About us</a></li>
+                                    <li><a href="<?= base_url('updates') ?>">Updates</a></li>
+                                    <li><a href="<?= base_url('contact-us') ?>">Contact us</a></li>
+                                </ul>
                             </div>
-                            <div class="studentname"><?= $item['title'] ?></div>
                         </div>
-                        <?php
-                    }
-                }
 
-                ?>
+                        <style>
+                            .newleftsidecss ul li a {
+                                font-size: 16px;
+                                padding: 2px 10px;
+                                align-items: self-start;
+                            }
+
+                            .newleftsidecss ul li a img {
+                                margin-left: -3px;
+                                position: relative;
+                                top: 5px;
+                            }
+
+                            .newleftsidecss ul li:nth-child(2) a img {
+                                width: 17px;
+                                margin-right: 4px;
+                                position: relative;
+                                top: 3px;
+                                margin-left: 0px;
+                            }
+
+                            .newleftsidecss li.lastbtnapply a {
+                                padding: 10px 30px 13px !important;
+                            }
+                        </style>
+                        <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
+                            <p>Damiano</p>
+                            <ul>
+                                <li><a href="https://www.google.com/maps/place/South+City+International+School+(SCIS)/@22.5002609,88.356794,17z/data=!4m6!3m5!1s0x3a0270d89963ea53:0x878e218b8963f14b!8m2!3d22.5001841!4d88.3624578!16s%2Fg%2F11bx5613b_?authuser=0&hl=en"
+                                        target="_blank"><img src="<?= base_url() ?>assets/images/location.png"
+                                            alt="location" />53, Dr. Meghnad
+                                        Saha Sarani, Southern Avenue Kolkata-700 029, West Bengal, India.</a></li>
+                                <li>
+                                    <a href="tel:+913340630070"><img
+                                            src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="#"> +91 33
+                                        4063 0070</a>
+                                    <a href="mailto:info@adamiano.com"><img
+                                            src="<?= base_url() ?>assets/images/mail.png" alt="#">
+                                        info@adamiano.com</a>
+                                </li>
+                                <li class="lastbtnapply"><a href="<?= base_url('contact-us') ?>" target="_blank">Contact
+                                        us</a></li>
+                            </ul>
+                        </div>
+                        <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a href=""
+                                target="_blank"><img src="<?= base_url() ?>assets/images/newspage/5.jpg" /></a></div>
+                    </div>
+                </div>
+                <style>
+                    .content-wrapper {
+                        display: flex;
+                        /* align-items: center; */
+                        padding: 20px;
+                        /* border: 1px solid #ddd; */
+                        /* border-radius: 2px; */
+                        margin-top: 20px;
+                    }
+
+                    .img-wrapper {
+                        flex: 0 0 150px;
+                        max-width: 250px;
+                    }
+
+                    .img-wrapper img {
+                        width: 250px;
+                        height: auto;
+                        border-radius: 5px;
+                    }
+
+                    .details-wrapper {
+                        flex: 1;
+                    }
+                </style>
+                <div class="col-lg-9">
+                    <div class="allpagesview-right">
+                        <h1 id="m&v" class="headingh1" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
+                            Infrastructure</h1>
+                        <?php if (!empty($infrastructure)) {
+                            foreach ($infrastructure as $index => $item) {
+                                ?>
+                                <div class="container mt-5" data-aos="fade-up" data-aos-duration="1000">
+                                    <h4><?= $item['title'] ?></h4>
+                                    <div class="content-wrapper">
+                                        <?php
+                                        if ($index % 2 == 0) {
+                                            ?>
+                                            <div class="details-wrapper">
+                                                <p><?= $item['details'] ?></p>
+                                            </div>
+                                            <div class="img-wrapper" style="margin-left: 20px;">
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image">
+                                            </div>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <div class="img-wrapper" style="margin-right: 20px;">
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image">
+                                            </div>
+                                            <div class="details-wrapper" >
+                                                <p><?= $item['details'] ?></p>
+                                            </div>
+                                            <?php
+
+                                        } ?>
+
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        } ?>
+                    </div>
+                </div>
             </div>
-            <a href="#" class="arrowtopagetopper"></a>
-            <!-- <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
-                <a href="#" class="allbtnview"><span>VIEW ALL</span></a>
-            </div> -->
         </div>
-    </section>
-    <!--achievement-->
+    </div>
 
 
 

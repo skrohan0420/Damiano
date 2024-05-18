@@ -173,7 +173,8 @@ class Admin extends Common
         $data['data_footer']['footer_link'] = ['quality_js.php'];
         $data['data_header']['title'] = 'Admin | Dashboard';
         $data['data_header']['sidebar']['dashboard'] = true;
-
+        $data['data_page']['quality'] = $this->Pages_model->get_quality();
+        $data['data_page']['quality_banner'] = $this->Pages_model->get_quality_banner();
        
 
         $this->is_auth('admin/quality.php', $data);

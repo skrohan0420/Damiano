@@ -97,7 +97,8 @@ class Pages_model extends Admin_model
         return isset($banner) ? $banner : [];
     }
 
-    public function get_infrastructure_banner(){
+    public function get_infrastructure_banner()
+    {
         $banner = $this->db
             ->select('*')
             ->from('infrastructure_page_banner')
@@ -206,7 +207,8 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function add_new_infrastructure_banner($path){
+    public function add_new_infrastructure_banner($path)
+    {
         $data = [
             'uid' => $this->generate_uid('INBN'),
             'img_path' => $path
@@ -225,6 +227,18 @@ class Pages_model extends Admin_model
             'img_path' => $path,
         ];
         $add = $this->db->insert('home_infrastructure', $data_insert);
+        return $add;
+    }
+
+    public function add_quality($path, $data)
+    {
+        $data_insert = [
+            'uid' => $this->generate_uid('QLT'),
+            'title' => $data['quality_text'],
+            'description' => $data['quality_details'],
+            'img_path' => $path,
+        ];
+        $add = $this->db->insert('quality', $data_insert);
         return $add;
     }
 
@@ -297,12 +311,34 @@ class Pages_model extends Admin_model
         $this->db->insert('about_page_banner', $banner_insert_data);
     }
 
-    public function add_new_updates_banner($path){
+    public function add_new_updates_banner($path)
+    {
         $banner_insert_data = [
             'uid' => $this->generate_uid('UPBN'),
             'img_path' => $path
         ];
         $this->db->insert('update_page_banner', $banner_insert_data);
+    }
+
+    public function add_new_quality_banner($path)
+    {
+        $banner_insert_data = [
+            'uid' => $this->generate_uid('QTBN'),
+            'img_path' => $path
+        ];
+        $this->db->insert('quality_banner', $banner_insert_data);
+
+    }
+
+    public function get_quality_banner()
+    {
+        $data = $this->db
+            ->select('*')
+            ->from('quality_banner')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];
     }
 
     public function add_alert($data)
@@ -319,6 +355,17 @@ class Pages_model extends Admin_model
         $data = $this->db
             ->select('*')
             ->from('alerts')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];
+    }
+
+    public function get_quality()
+    {
+        $data = $this->db
+            ->select('*')
+            ->from('quality')
             ->get();
         $data = $data->result_array();
         //$this->prd($banner);
@@ -492,18 +539,33 @@ class Pages_model extends Admin_model
         return $this->db->affected_rows() > 0;
     }
 
-    public function delete_infrastructure_banner_img($uid){
+    public function delete_infrastructure_banner_img($uid)
+    {
         $this->db->where('uid', $uid);
         $this->db->delete('infrastructure_page_banner');
         return $this->db->affected_rows() > 0;
     }
 
-    public function delete_updates_banner_img($uid){
+    public function delete_updates_banner_img($uid)
+    {
         $this->db->where('uid', $uid);
         $this->db->delete('update_page_banner');
         return $this->db->affected_rows() > 0;
 
     }
 
+    public function delete_quality($uid)
+    {
+        $this->db->where('uid', $uid);
+        $this->db->delete('quality');
+        return $this->db->affected_rows() > 0;
+    }
+
+    public function delete_quality_banner_img($uid)
+    {
+        $this->db->where('uid', $uid);
+        $this->db->delete('quality_banner');
+        return $this->db->affected_rows() > 0;
+    }
 
 }

@@ -14,6 +14,7 @@ $route['about']                         = 'web/load/about';
 $route['product']                       = 'web/load/product';
 $route['updates']                       = 'web/load/updates';
 $route['infrastructure']                = 'web/load/infrastructure';
+$route['quality']                       = 'web/load/quality';
 
 // ============================ admin routes
 $route['admin']                         = 'admin/Admin/index';
