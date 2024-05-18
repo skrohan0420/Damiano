@@ -254,6 +254,25 @@ class Pages_model extends Admin_model
 
     }
 
+    public function add_new_flyer($path){
+        $data = [
+            'uid' => $this->generate_uid('FLY'),
+            'img_path' => $path,
+        ];
+        $add = $this->db->insert('flyers', $data);
+        return $add;
+    }
+
+    public function get_flyer(){
+        $data = $this->db
+            ->select('*')
+            ->from('flyers')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];
+    }
+
     public function save_user_message($data)
     {
         $insert_data = [
@@ -565,6 +584,13 @@ class Pages_model extends Admin_model
     {
         $this->db->where('uid', $uid);
         $this->db->delete('quality_banner');
+        return $this->db->affected_rows() > 0;
+    }
+
+    public function delete_flyer_img($uid){
+
+        $this->db->where('uid', $uid);
+        $this->db->delete('flyers');
         return $this->db->affected_rows() > 0;
     }
 

@@ -53,9 +53,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link"
-                    href="<?= base_url('/admin/messages') ?>">
-                    <i class="fas fa-fw fa-envelope mr-1"></i>
-                    <span>Messages</span>
+                    href="<?= base_url('/admin/about') ?>">
+                    <i class="fa fa-info-circle mr-1"></i>
+                    <span>About</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -65,14 +65,6 @@
                     <span>Products</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link"
-                    href="<?= base_url('/admin/alerts') ?>">
-                    <i class="fas fa-fw fa-bell mr-1"></i>
-                    <span>Alerts</span>
-                </a>
-            </li>
-
             <li class="nav-item">
                 <a class="nav-link"
                     href="<?= base_url('/admin/infrastructure') ?>">
@@ -94,14 +86,33 @@
                     <span>Quality</span>
                 </a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link"
-                    href="<?= base_url('/admin/about') ?>">
-                    <i class="fa fa-info-circle mr-1"></i>
-                    <span>About</span>
+                    href="<?= base_url('/admin/flyers') ?>">
+                    <i class="fa fa-file mr-1"></i>
+                    <span>Flyers</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/messages') ?>">
+                    <i class="fas fa-fw fa-envelope mr-1"></i>
+                    <span>Messages</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/alerts') ?>">
+                    <i class="fas fa-fw fa-bell mr-1"></i>
+                    <span>Alerts</span>
+                </a>
+            </li>
+
+           
+
+            
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

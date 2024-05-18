@@ -180,6 +180,18 @@ class Admin extends Common
         $this->is_auth('admin/quality.php', $data);
     }
 
+    public function flyers(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['flyers_js.php'];
+        $data['data_header']['title'] = 'Admin | Dashboard';
+        $data['data_header']['sidebar']['dashboard'] = true;
+        $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
+       
+
+        $this->is_auth('admin/flyers.php', $data);
+    }
+
 
     public function is_auth($page, $data)
     {

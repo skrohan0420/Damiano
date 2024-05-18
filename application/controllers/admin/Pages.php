@@ -121,6 +121,16 @@ class Pages extends Admin
         redirect('/admin/products');
     }
 
+    public function  add_new_flyer(){
+        $upload_banner_data = $this->upload_files('./uploads/flyer_img/', 'flyer_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_banner_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->add_new_flyer('/uploads/flyer_img/'.$upload_banner_data['file_name']);
+        }
+        redirect('admin/flyers'); 
+    }
+
+
     public function add_new_product_banner(){
         $p_id = $this->input->post('p_id');
         $upload_banner_data = $this->upload_files('./uploads/product_banner_img/', 'product_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
@@ -406,6 +416,13 @@ class Pages extends Admin
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_quality_banner_img($uid);
         redirect('/admin/quality');
+    }
+
+    public function delete_flyer_img(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_flyer_img($uid);
+        redirect('/admin/flyers');
     }
 
 }

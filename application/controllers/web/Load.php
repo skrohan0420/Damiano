@@ -92,6 +92,19 @@ class Load extends Common
         $this->load_page('web/infrastructure.php', $data);
     }
 
+    public function quality()
+    {
+
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_WEB;
+        $data['data_header']['about'] = true;
+        $data['data_page']['products'] = $this->Pages_model->get_product();
+        $data['data_page']['quality'] = $this->Pages_model->get_quality();
+        $data['data_page']['quality_banner'] = $this->Pages_model->get_quality_banner();
+
+        $this->load_page('web/quality.php', $data);
+    }
+
 
 
 
