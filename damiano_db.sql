@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2024 at 04:17 PM
+-- Generation Time: May 18, 2024 at 03:54 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -113,6 +113,30 @@ INSERT INTO `features` (`id`, `uid`, `product_id`, `title`, `details`, `img_path
 (8, 'FTR7E39D5A120240516', 'PRDB814E4DF20240516', 'fdgdrgd', 'fsghsdfhgfdsh', '/uploads/feature_img/df61018c046d52b96b160698fca6d954.JPG', '2024-05-16 20:29:18'),
 (9, 'FTR5C68FD7520240517', 'PRDF9C2FF6720240515', 'thsrh', 'sher', '/uploads/feature_img/950febb11679070c0324d305ede83c24.jpg', '2024-05-17 15:51:53'),
 (10, 'FTRDF4E88CB20240517', 'PRDF9C2FF6720240515', 'fdshgth', 'hgsrjtg', '/uploads/feature_img/68b347f95f1b18d867c0779b893c58ca.jpg', '2024-05-17 15:52:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flyers`
+--
+
+CREATE TABLE `flyers` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `img_path` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `flyers`
+--
+
+INSERT INTO `flyers` (`id`, `uid`, `img_path`, `created_at`) VALUES
+(6, 'FLY44062E1620240518', '/uploads/flyer_img/a7507a26eb6ca01dd81c3317c93497b0.jpg', '2024-05-18 18:49:01'),
+(7, 'FLYC47EEBDA20240518', '/uploads/flyer_img/1a44f9e76a7f94a8e9c162898a12f743.jpg', '2024-05-18 18:49:05'),
+(8, 'FLY17872B6420240518', '/uploads/flyer_img/45544f2f54d2a6adb6449b662f4f5b16.jpg', '2024-05-18 18:49:11'),
+(9, 'FLYE452308220240518', '/uploads/flyer_img/36fcfacedfa3589a0582a1f725850697.jpg', '2024-05-18 18:49:16'),
+(10, 'FLYAC59F18C20240518', '/uploads/flyer_img/ee3e5b02494f13882cdc767183580c35.jpg', '2024-05-18 18:49:20');
 
 -- --------------------------------------------------------
 
@@ -260,6 +284,7 @@ CREATE TABLE `home_infrastructure` (
   `uid` varchar(255) NOT NULL,
   `title` text NOT NULL,
   `img_path` text NOT NULL,
+  `details` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -267,11 +292,10 @@ CREATE TABLE `home_infrastructure` (
 -- Dumping data for table `home_infrastructure`
 --
 
-INSERT INTO `home_infrastructure` (`id`, `uid`, `title`, `img_path`, `created_at`) VALUES
-(4, 'INF1223D20620240514', 'text_1', '/uploads/home_infrastructure_img/46e6cd13cd40e0b7c1f9abf69941bd54.jpg', '2024-05-14 12:56:39'),
-(5, 'INFD32BF47B20240514', 'text_2', '/uploads/home_infrastructure_img/20f0effb01ae696912eded2ecd697554.jpg', '2024-05-14 12:56:51'),
-(6, 'INFA9D0F4DE20240514', 'text_3', '/uploads/home_infrastructure_img/4711572dd254784bd331e60517bfa5db.jpg', '2024-05-14 12:57:01'),
-(7, 'INF1FBD20C420240514', 'text_4', '/uploads/home_infrastructure_img/8223ed58af8d9b541cf7047a1a5b41d6.jpg', '2024-05-14 12:57:14');
+INSERT INTO `home_infrastructure` (`id`, `uid`, `title`, `img_path`, `details`, `created_at`) VALUES
+(9, 'INF71E81FAB20240518', 'text_1', '/uploads/home_infrastructure_img/0c5bcae1b3f9cd95557bedc82c3cedcc.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2024-05-18 15:49:55'),
+(10, 'INFE57AA7D220240518', 'text_2', '/uploads/home_infrastructure_img/960a6537a0805c17d7894b73a6e3a4f7.jpeg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2024-05-18 15:50:11'),
+(11, 'INF4DD1BB7120240518', 'text_3', '/uploads/home_infrastructure_img/1d19876c8f6454a13368fd431df535a3.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2024-05-18 15:50:22');
 
 -- --------------------------------------------------------
 
@@ -292,6 +316,27 @@ CREATE TABLE `home_updates_img` (
 
 INSERT INTO `home_updates_img` (`id`, `uid`, `img_path`, `created_at`) VALUES
 (1, 'UBNH86967F20240511', '/uploads/home_update_img/33e26cf35d51106abe87d472d644f458.jpg', '2024-05-13 15:28:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `infrastructure_page_banner`
+--
+
+CREATE TABLE `infrastructure_page_banner` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `img_path` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `infrastructure_page_banner`
+--
+
+INSERT INTO `infrastructure_page_banner` (`id`, `uid`, `img_path`, `created_at`) VALUES
+(2, 'INBN9E61543320240517', '/uploads/infrastructure_banner_img/4fc63abcf2015e9775f293256cdadae9.jpg', '2024-05-17 23:50:22'),
+(3, 'INBNC824015520240517', '/uploads/infrastructure_banner_img/14e120885bd7b40c0ec3ef7a2793e0f5.jpg', '2024-05-17 23:51:50');
 
 -- --------------------------------------------------------
 
@@ -363,6 +408,55 @@ CREATE TABLE `quality` (
   `img_path` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `quality`
+--
+
+INSERT INTO `quality` (`id`, `uid`, `title`, `description`, `img_path`, `created_at`) VALUES
+(1, 'QLT8D4BC95020240518', 'text 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '/uploads/quality_img/c20f3855d0ffddb7010a72e83884bbba.jpeg', '2024-05-18 17:34:37'),
+(3, 'QLT194B5B0E20240518', 'text 2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '/uploads/quality_img/6feed7267176108c80903178910fa57b.jpg', '2024-05-18 17:49:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quality_banner`
+--
+
+CREATE TABLE `quality_banner` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `img_path` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `quality_banner`
+--
+
+INSERT INTO `quality_banner` (`id`, `uid`, `img_path`, `created_at`) VALUES
+(1, 'QTBN24B6303420240518', '/uploads/quality_banner_img/08eb4279a8ddcb7ce2e3271ad1175a63.jpg', '2024-05-18 17:51:32'),
+(2, 'QTBNCD03D47F20240518', '/uploads/quality_banner_img/3d7bbc767fed1643386b20886d303bdc.jpg', '2024-05-18 17:51:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `update_page_banner`
+--
+
+CREATE TABLE `update_page_banner` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `img_path` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `update_page_banner`
+--
+
+INSERT INTO `update_page_banner` (`id`, `uid`, `img_path`, `created_at`) VALUES
+(3, 'UPBNE27A0ABE20240518', '/uploads/updates_banner_img/7b159823a0d32b3d6b748ae4ca029e72.jpeg', '2024-05-18 13:45:36');
 
 -- --------------------------------------------------------
 
@@ -443,6 +537,12 @@ ALTER TABLE `features`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `flyers`
+--
+ALTER TABLE `flyers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `home_about_img`
 --
 ALTER TABLE `home_about_img`
@@ -491,6 +591,12 @@ ALTER TABLE `home_updates_img`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `infrastructure_page_banner`
+--
+ALTER TABLE `infrastructure_page_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -506,6 +612,18 @@ ALTER TABLE `product_banner_img`
 -- Indexes for table `quality`
 --
 ALTER TABLE `quality`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `quality_banner`
+--
+ALTER TABLE `quality_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `update_page_banner`
+--
+ALTER TABLE `update_page_banner`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -549,6 +667,12 @@ ALTER TABLE `features`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `flyers`
+--
+ALTER TABLE `flyers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `home_about_img`
 --
 ALTER TABLE `home_about_img`
@@ -588,13 +712,19 @@ ALTER TABLE `home_banner_text`
 -- AUTO_INCREMENT for table `home_infrastructure`
 --
 ALTER TABLE `home_infrastructure`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `home_updates_img`
 --
 ALTER TABLE `home_updates_img`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `infrastructure_page_banner`
+--
+ALTER TABLE `infrastructure_page_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -612,7 +742,19 @@ ALTER TABLE `product_banner_img`
 -- AUTO_INCREMENT for table `quality`
 --
 ALTER TABLE `quality`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `quality_banner`
+--
+ALTER TABLE `quality_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `update_page_banner`
+--
+ALTER TABLE `update_page_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
