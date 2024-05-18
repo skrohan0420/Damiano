@@ -167,6 +167,18 @@ class Pages extends Admin
         redirect('/admin/products');
     }
 
+    public function update_alert(){
+        $this->init_model(MODEL_PAGES);
+        if(!empty($_FILES['allerts_img']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/allerts_img/', 'allerts_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $this->Pages_model->update_alert_img('/uploads/allerts_img/' . $upload_data['file_name']);
+            }
+        }
+        $this->Pages_model->update_alerts($this->input->post());
+        redirect('/admin/alerts');
+    }
+
 
     public function add_alert(){
         $this->init_model(MODEL_PAGES);

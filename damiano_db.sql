@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2024 at 03:54 PM
+-- Generation Time: May 19, 2024 at 01:57 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -74,6 +74,9 @@ CREATE TABLE `alerts` (
   `id` int(11) NOT NULL,
   `uid` varchar(255) NOT NULL,
   `message` text NOT NULL,
+  `title` text NOT NULL,
+  `img_path` text NOT NULL,
+  `link` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -81,10 +84,8 @@ CREATE TABLE `alerts` (
 -- Dumping data for table `alerts`
 --
 
-INSERT INTO `alerts` (`id`, `uid`, `message`, `created_at`) VALUES
-(2, 'ALTCDE32A1520240517', 'fdhgf', '2024-05-17 16:17:42'),
-(3, 'ALT906FB3D220240517', 'ghsdf', '2024-05-17 16:17:44'),
-(4, 'ALT3320307720240517', 'trhh', '2024-05-17 16:17:45');
+INSERT INTO `alerts` (`id`, `uid`, `message`, `title`, `img_path`, `link`, `created_at`) VALUES
+(2, 'ALTCDE32A1520240517', 'MESSAGE', 'TITLE', '/uploads/allerts_img/50d235b0d2a3fb3c0a1eafa479d077eb.jpeg', 'https://www.google.com/', '2024-05-17 16:17:42');
 
 -- --------------------------------------------------------
 
@@ -172,6 +173,9 @@ CREATE TABLE `home_about_text` (
   `about_text` text NOT NULL,
   `vision_text` text NOT NULL,
   `mission_text` text NOT NULL,
+  `products_text` text NOT NULL,
+  `facilities_text` text NOT NULL,
+  `global_presence_text` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -179,8 +183,8 @@ CREATE TABLE `home_about_text` (
 -- Dumping data for table `home_about_text`
 --
 
-INSERT INTO `home_about_text` (`id`, `uid`, `about_text`, `vision_text`, `mission_text`, `created_at`) VALUES
-(1, 'ABT143276SRHDSH', 'Damiano traces its origin as early as 1922. The company was representing the European companies for their procurement activities in India and was a part of the CTC Group which was a dominant player in the jute industry in India. Damiano underwent restructuring in late 1960\'s and re-established itself in its present form by diversifying into manufacturing in 1968 and has been manufacturing Pole Line Hardware\'s, Steel structures, insulator and Conductor accessories, Clamps and Connectors, Aerial Cable Accessories, Fuse Cutouts and Telecommunications OSP Hardware. The steps were small but firm and the company expanded from cottage scale manufacturer to a large industry within house facilities for fabrication, forging, machining, wire forming, moulding, die casting, hot dip galvanizing (including centrifuge) and electroplating. The company started exporting from 1972 and has niche presence not only in the domestic market but also across the globe. Damiano prides itself to be small and slow but never lacking in its commitment towards quality and ethics. The steps have been slow but steady and the foundation based on hard work, commitment and integrity which makes us different.', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', '2024-05-11 17:53:22');
+INSERT INTO `home_about_text` (`id`, `uid`, `about_text`, `vision_text`, `mission_text`, `products_text`, `facilities_text`, `global_presence_text`, `created_at`) VALUES
+(1, 'ABT143276SRHDSH', 'Damiano traces its origin as early as 1922. The company was representing the European companies for their procurement activities in India and was a part of the CTC Group which was a dominant player in the jute industry in India. Damiano underwent restructuring in late 1960\'s and re-established itself i', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano underwent restructuring in late 1960\'s and re established itself in its present from by diversifying into manufacturing in 1968 and has been manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', '2024-05-11 17:53:22');
 
 -- --------------------------------------------------------
 

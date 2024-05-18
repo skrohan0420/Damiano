@@ -173,6 +173,20 @@ class Pages_model extends Admin_model
             ->update('home_about_text', $data);
         return $update;
     }
+
+    public function update_alert_img($path){
+        $data = ['img_path' => $path];
+        $update = $this->db->where(['uid' => 'ALTCDE32A1520240517'])
+            ->update('alerts', $data);
+        return $update;
+    }
+
+    public function update_alerts($data){
+        $update = $this->db->where(['uid' => 'ALTCDE32A1520240517'])
+            ->update('alerts', $data);
+        return $update;
+    }
+
     public function insert_home_banner_img($path)
     {
         $data = [
@@ -377,7 +391,7 @@ class Pages_model extends Admin_model
             ->get();
         $data = $data->result_array();
         //$this->prd($banner);
-        return isset($data) ? $data : [];
+        return isset($data) ? $data[0] : [];
     }
 
     public function get_quality()

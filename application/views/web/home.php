@@ -2283,11 +2283,11 @@ if (false) {
                     <div class="quicklinks">
                         <div class="footerheading quicklinkview">Quick Links</div>
                         <ul>
-                            <li><a href="<?=base_url('about')?>">About</a></li>
-                            <li><a href="<?=base_url('updates')?>">Updates</a></li>
-                            <li><a href="<?=base_url('quality')?>">Quality</a></li>
-                            <li><a href="<?=base_url('infrastructure')?>">Infrastructure</a></li>
-                            <li><a href="<?=base_url('contact-us')?>">Contact</a></li>
+                            <li><a href="<?= base_url('about') ?>">About</a></li>
+                            <li><a href="<?= base_url('updates') ?>">Updates</a></li>
+                            <li><a href="<?= base_url('quality') ?>">Quality</a></li>
+                            <li><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                            <li><a href="<?= base_url('contact-us') ?>">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -2497,26 +2497,16 @@ if (false) {
     <div class="overlay-main">
         <div class="overlay-main-content" data-aos="fade-down" data-aos-duration="2000">
             <div class="close-button" onclick="closePopup()">
-                <i class="fa fa-times" aria-hidden="true"></i>
+                <i class="fa fa-close" style="color: #333;"></i>
             </div>
-            <a href="#" target="_blank" class="img-and-content">
-                <img src="<?= base_url() ?>assets/images/logo.png" alt="International School Gurgaon">
+            <div  class="img-and-content">
+                <img src="<?= base_url() .$alerts['img_path'] ?>" alt="International School Gurgaon">
                 <span class="content__popup">
-                    <span class="topheadingpopup">Damiano</span>
-
-                    <?php
-                    if (!empty($alerts)) {
-                        foreach ($alerts as $index => $item) {
-                            ?>
-                            <span class="text-popup"><?= $item['message'] ?></span>
-                            <?php
-                        }
-
-                    }
-                    ?>
-
+                    <h4 ><?=$alerts['title']?></h4>
+                    <span class="text-popup"><?= $alerts['message'] ?></span>
+                    <a href="<?=$alerts['link']?>" class="btn-sm btn-success">see more</a>
                 </span>
-            </a>
+            </div>
         </div>
     </div>
     <script>

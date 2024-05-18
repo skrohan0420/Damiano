@@ -22,62 +22,39 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body row">
-                    <div class="col-xl-3 col-lg-3 card shadow">
+                    <div class="col-xl-12 col-lg-12 card shadow">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                             <h6 class="m-0 font-weight-bold text-primary">Add Allerts</h6>
                         </div>
                         <div class="card-body">
-                            <form action="<?= base_url('admin/pages/add_alert') ?>" method="POST">
-                                <div class="form-group">
+                            <form action="<?= base_url('admin/pages/update_alert') ?>" method="POST" class="row" enctype="multipart/form-data">
+                                <div class="form-group col-6">
+                                    <label for="formGroupExampleInput">Title</label>
+                                    <input type="text" class="form-control" name="title" value="<?=$alerts['title']?>" placeholder="Title"
+                                        required>
+                                </div>
+                                <div class="form-group col-6">
                                     <label for="formGroupExampleInput">Message</label>
-                                    <input type="text" class="form-control" name="message" value=""
+                                    <input type="text" class="form-control" name="message" value="<?=$alerts['message']?>"
                                         placeholder="Message" required>
                                 </div>
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-success" id="" value="Add">
+                                <div class="form-group col-6">
+                                    <label for="formGroupExampleInput">Link</label>
+                                    <input type="text" class="form-control" name="link" value="<?=$alerts['link']?>" placeholder="Link"
+                                        required>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="formGroupExampleInput">Allerts image</label>
+                                    <div id="allertsImagePreview">
+                                        <img src="<?=base_url().$alerts['img_path']?>" height="100"/>
+                                    </div>
+                                    <input type="file" class="form-control-file" placeholder="Allerts image"
+                                        name="allerts_img[]" />
+                                </div>
+                                <div class="form-group col-6">
+                                    <input type="submit" class="btn btn-success" id="" value="Update">
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                    <div class="col-xl-9 col-lg-9 card shadow">
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">All Alerts</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-info" id="dataTable" width="100%"
-                                    cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Message</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        if (!empty($alerts)) {
-                                            foreach ($alerts as $index => $item) {
-                                                ?>
-                                                <tr>
-                                                    <td><?= $index + 1 ?></td>
-                                                    <td>
-                                                    <?= $item['message'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <a href="<?= base_url('admin/pages/delete_alert?uid=') . $item['uid'] ?>"
-                                                            class="btn btn-danger">
-                                                            DELETE
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <?php
-                                            }
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -95,27 +72,31 @@
                             <h6 class="m-0 font-weight-bold text-primary">Update Action Buttons</h6>
                         </div>
                         <div class="card-body">
-                            <form action="<?= base_url('admin/pages/add_alert') ?>" method="POST" class="row">          
+                            <form action="<?= base_url('admin/pages/add_alert') ?>" method="POST" class="row">
 
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <label for="formGroupExampleInput">Button 1 Title</label>
-                                    <input type="text" class="form-control" name="btn_title_1" value="<?=$action_buttons['btn_title_1']?>"
-                                        placeholder="Button 1 Title" required>
+                                    <input type="text" class="form-control" name="btn_title_1"
+                                        value="<?= $action_buttons['btn_title_1'] ?>" placeholder="Button 1 Title"
+                                        required>
                                 </div>
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <label for="formGroupExampleInput">Button 1 link</label>
-                                    <input type="text" class="form-control" name="btn_link_1" value="<?=$action_buttons['btn_link_1']?>"
-                                        placeholder="Button 1 link" required>
+                                    <input type="text" class="form-control" name="btn_link_1"
+                                        value="<?= $action_buttons['btn_link_1'] ?>" placeholder="Button 1 link"
+                                        required>
                                 </div>
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <label for="formGroupExampleInput">Button 2 Title</label>
-                                    <input type="text" class="form-control" name="btn_title_2" value="<?=$action_buttons['btn_title_2']?>"
-                                        placeholder="Button 2 Title" required>
+                                    <input type="text" class="form-control" name="btn_title_2"
+                                        value="<?= $action_buttons['btn_title_2'] ?>" placeholder="Button 2 Title"
+                                        required>
                                 </div>
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <label for="formGroupExampleInput">Button 2 link</label>
-                                    <input type="text" class="form-control" name="btn_link_2" value="<?=$action_buttons['btn_link_2']?>"
-                                        placeholder="Button 2 link" required>
+                                    <input type="text" class="form-control" name="btn_link_2"
+                                        value="<?= $action_buttons['btn_link_2'] ?>" placeholder="Button 2 link"
+                                        required>
                                 </div>
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <input type="submit" class="btn btn-success" id="" value="update">
