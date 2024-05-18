@@ -391,8 +391,8 @@
     <!--header end-->
 
 
-      <!--banner start-->
-      <section class="banner_main">
+    <!--banner start-->
+    <section class="banner_main">
         <div class="bg-shadows"></div>
         <div class="bannerslider owl-carousel owl-theme">
 
@@ -409,11 +409,11 @@
             ?>
         </div>
         <div class="bannertextviewcurve">
-           
+
         </div>
         <div class="fixtextbanner">
 
-         
+
         </div>
         <div class="toptobottomfixed">
             <a href="#aboutus">
@@ -425,65 +425,95 @@
     </section>
     <!--banner end-->
 
-    <!--announcement-->
-    <section class="announcement">
-        <div class="crposition">
-            <div class="auto-container">
-                <div class="logorotate" style="opacity: 20%;">
-                    <div class="logorotateinner">
-                        <img src="<?= base_url() ?>assets/images/Without.png" />
-                    </div>
-                </div>
-                <div class="subheding" data-aos="fade-down" data-aos-duration="1000">Updates</div>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 announcement-leftmain">
-                        <div class="announcement-left" data-aos="fade-left" data-aos-duration="1500">
-                            <ul>
-                                <?php
-                                if (!empty($announcement)) {
-                                    foreach ($announcement as $index => $item) {
-                                        ?>
-                                        <li>
-                                            <a href="javascript:;" data-fancybox data-type="iframe"
-                                                data-src="<?= base_url() . $item['path'] ?>">
-                                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-                                                <span>Yours Announcement 1 <span class="newtag">New</span> </span>
-                                            </a>
-                                        </li>
-                                        <?php
-                                    }
-                                }
-                                ?>
+    <!--overview section-->
+    <div class="allpagesview">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="lefttopfixed">
+                        <div class="allpagesview-left" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="left_subheading">Updates</div>
+                            <div class="leftmenupartbox">
+                                <ul>
+                                    <li><a href="<?= base_url('about') ?>">About us</a></li>
+                                    <li><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                                    <li><a href="<?= base_url('contact-us') ?>">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
 
+                        <style>
+                            .newleftsidecss ul li a {
+                                font-size: 16px;
+                                padding: 2px 10px;
+                                align-items: self-start;
+                            }
+
+                            .newleftsidecss ul li a img {
+                                margin-left: -3px;
+                                position: relative;
+                                top: 5px;
+                            }
+
+                            .newleftsidecss ul li:nth-child(2) a img {
+                                width: 17px;
+                                margin-right: 4px;
+                                position: relative;
+                                top: 3px;
+                                margin-left: 0px;
+                            }
+
+                            .newleftsidecss li.lastbtnapply a {
+                                padding: 10px 30px 13px !important;
+                            }
+                        </style>
+                        <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
+                            <p>Damiano</p>
+                            <ul>
+                                <li><a href="https://www.google.com/maps/place/South+City+International+School+(SCIS)/@22.5002609,88.356794,17z/data=!4m6!3m5!1s0x3a0270d89963ea53:0x878e218b8963f14b!8m2!3d22.5001841!4d88.3624578!16s%2Fg%2F11bx5613b_?authuser=0&hl=en"
+                                        target="_blank"><img src="<?= base_url() ?>assets/images/location.png"
+                                            alt="location" />53, Dr. Meghnad
+                                        Saha Sarani, Southern Avenue Kolkata-700 029, West Bengal, India.</a></li>
+                                <li>
+                                    <a href="tel:+913340630070"><img
+                                            src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="#"> +91 33
+                                        4063 0070</a>
+                                    <a href="mailto:info@adamiano.com"><img
+                                            src="<?= base_url() ?>assets/images/mail.png" alt="#">
+                                        info@adamiano.com</a>
+                                </li>
+                                <li class="lastbtnapply"><a href="<?= base_url('contact-us') ?>" target="_blank">Contact
+                                        us</a></li>
                             </ul>
                         </div>
+                        <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a href=""
+                                target="_blank"><img src="<?= base_url() ?>assets/images/newspage/5.jpg" /></a></div>
                     </div>
-                    <!-- <div class="image-column col-lg-6 col-md-6">
-                        <div class="inner-column">
-                            <div class="image-one" data-aos="fade-down" data-aos-duration="1000">
-                                <img src="./images/qu-1.jpg" />
-                            </div>
-                        </div>
-                    </div>-->
-
-                    <div class="image-column col-lg-6 col-md-6">
-                        <div class="inner-column">
-                            <div class="slider" data-aos="fade-down" data-aos-duration="1000">
-                                <div class="slide">
-                                    <img src="<?= base_url() . $update_img['img_path'] ?>" alt="Slide 1">
+                </div>
+                <div class="col-lg-9">
+                    <div class="allpagesview-right">
+                        <h1 id="m&v" class="headingh1" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">Announcements</h1>
+                        <?php
+                        if (!empty($announcement)) {
+                            foreach ($announcement as $index => $item) {
+                                ?>
+                                <div data-aos="fade-up" data-aos-duration="1000" class="mb-4">
+                                    <h4 id="m&v" class="headingh2" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">Notice <?=$index+1?></h4>
+                                    <iframe id="dataFrame" src="<?= base_url() . $item['path'] ?>" style="width: 100%;height: 500px;"></iframe>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                                <?php
+                            }
+                        }
+                        ?>
 
-                    <!-- <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
-                        <a href="#" class="allbtnview"><span>View All</span></a>
-                    </div> -->
+                    </div>
                 </div>
             </div>
-    </section>
-    <!--announcement-->
-  
+        </div>
+    </div>
+
+
+
 
 
 
