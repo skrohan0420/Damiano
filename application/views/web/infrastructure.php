@@ -427,7 +427,7 @@
                                 padding: 10px 30px 13px !important;
                             }
                         </style>
-                           <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
                             <p>Damiano</p>
                             <ul>
                                 <li><a href="https://www.google.com/maps/place/South+City+International+School+(SCIS)/@22.5002609,88.356794,17z/data=!4m6!3m5!1s0x3a0270d89963ea53:0x878e218b8963f14b!8m2!3d22.5001841!4d88.3624578!16s%2Fg%2F11bx5613b_?authuser=0&hl=en"

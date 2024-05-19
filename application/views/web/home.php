@@ -497,7 +497,7 @@ if (false) {
                                             <a href="javascript:;" data-fancybox data-type="iframe"
                                                 data-src="<?= base_url() . $item['path'] ?>">
                                                 <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-                                                <span>Yours Announcement 1 <span class="newtag">New</span> </span>
+                                                <span><?=$item['title']?> <span class="newtag">New</span> </span>
                                             </a>
                                         </li>
                                         <?php
@@ -693,24 +693,22 @@ if (false) {
                     </div>
                     <ul class="gitmainclass" data-aos="fade-up" data-aos-duration="2000">
                         <li><a href="#" target="_blank"><img class="addressview"
-                                    src="<?= base_url() ?>assets/images/location.png" alt="#">53, Dr. Meghnad Saha
-                                Sarani,
-                                Southern Avenue
-                                <br>Kolkata-700 029, West Bengal, India.</a></li>
-                        <li class="gitleftbox">
-                            Admission Inquiry Number & Email<br />
+                                    src="<?= base_url() ?>assets/images/location.png"
+                                    alt="#"><?= $about_text['address'] ?></a></li>
+                        <li class="gitleftbox">Admission Inquiry Number & Email<br />
                             <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/739/739247.png"
-                                    alt="#"> +91 33 4063 0070</a>
-                            <a href="mailto:info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png"
-                                    alt="#">
-                                info@adamiano.com</a>
+                                    alt="#"><?= $about_text['phone'] ?></a>
+                            <a href="mailto: <?= $about_text['email'] ?>"><img
+                                    src="<?= base_url() ?>assets/images/mail.png" alt="#">
+                                <?= $about_text['email'] ?></a>
                         </li>
                     </ul>
                     <div class="locationmap" data-aos="fade-up" data-aos-duration="2400">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14742.872579209226!2d88.3513139!3d22.5147558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0271ceb65b520b%3A0x48b79fd4d955a45f!2sKRISHNA%20BHAVAN%2C%2053%2C%20SOUTHERN%20AVENUE!5e0!3m2!1sen!2sin!4v1714060179307!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14743.02149300434!2d88.3490765!3d22.5133596!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02765321b3ac7b%3A0x1368d3bf09f477ef!2sA%20Damiano%20%26%20Co!5e0!3m2!1sen!2sin!4v1715904413517!5m2!1sen!2sin"
                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                     </div>
                 </div>
                 <div class="col-lg-6 contactus-right">
@@ -2261,15 +2259,15 @@ if (false) {
     <!--news-->
     <!--small popup-->
 
-      <!--footer-->
-      <footer>
+    <!--footer-->
+    <footer>
         <div class="auto-container">
             <div class="row footer_top">
                 <div class="col-lg-4 col-sm-12" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                     <div class="footerlogo">
                         <a href="/"><img src="<?= base_url() ?>assets/images/logo.png" alt="#" /></a>
                     </div>
-                    <p><?=$about_text['about_text']?></p>
+                    <p><?= $about_text['about_text'] ?></p>
                 </div>
                 <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                     <div class="quicklinks">
@@ -2289,12 +2287,15 @@ if (false) {
                         <ul>
 
                             <li><a href="#" target="_blank"><img class="addressview"
-                                        src="<?= base_url() ?>assets/images/location.png" alt="#"><?=$about_text['address']?></a></li>
+                                        src="<?= base_url() ?>assets/images/location.png"
+                                        alt="#"><?= $about_text['address'] ?></a></li>
                             <li>
                                 <a href="#" target="_blank"><img
-                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> <?=$about_text['phone']?></a>
-                                <a href="mailto: <?=$about_text['email']?>"><img src="<?= base_url() ?>assets/images/mail.png"
-                                        alt="#"> <?=$about_text['email']?></a>
+                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#">
+                                    <?= $about_text['phone'] ?></a>
+                                <a href="mailto: <?= $about_text['email'] ?>"><img
+                                        src="<?= base_url() ?>assets/images/mail.png" alt="#">
+                                    <?= $about_text['email'] ?></a>
                             </li>
 
 
@@ -2485,12 +2486,12 @@ if (false) {
             <div class="close-button" onclick="closePopup()">
                 <i class="fa fa-close" style="color: #333;"></i>
             </div>
-            <div  class="img-and-content">
-                <img src="<?= base_url() .$alerts['img_path'] ?>" alt="International School Gurgaon">
+            <div class="img-and-content">
+                <img src="<?= base_url() . $alerts['img_path'] ?>" alt="International School Gurgaon">
                 <span class="content__popup">
-                    <h4 ><?=$alerts['title']?></h4>
+                    <h4><?= $alerts['title'] ?></h4>
                     <span class="text-popup"><?= $alerts['message'] ?></span>
-                    <a href="<?=$alerts['link']?>" class="btn-sm btn-success">see more</a>
+                    <a href="<?= $alerts['link'] ?>" class="btn-sm btn-success">see more</a>
                 </span>
             </div>
         </div>

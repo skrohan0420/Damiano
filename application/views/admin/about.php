@@ -90,63 +90,101 @@
             </div>
 
 
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h5 class="m-0 font-weight-bold text-primary">About banners</h5>
-                    <form action="<?= base_url("admin/pages/add_new_about_banner") ?>" method="POST"
-                        enctype="multipart/form-data">
+            <!-- Card Body -->
+            <div class="row">
+                <?php
+                if (!empty($about_img)) {
+                    foreach ($about_img as $index => $item) {
+                        ?>
+                        <div class="col-xl-4 col-lg-4 card shadow mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Banner Image <?= $index + 1 ?></h6>
+                            </div>
+                            <div class="card-body">
+                                <form enctype="multipart/form-data"
+                                    action="<?= base_url('admin/pages/upload_home_about_img?uid=' . $item['uid']) ?>"
+                                    method="POST">
+                                    <div class='form-group'>
 
-                        <div class="form-group">
-                            <input type="file" class="form-control-file" placeholder="about image"
-                                name="about_banner_img[]" required />
+                                        <div id="<?= $item['uid'] ?>">
+                                            <img src="<?= base_url() . $item['img_path'] ?>" height="100" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="file" class="form-control-file" placeholder="Banner image"
+                                            id="inp_<?= $item['uid'] ?>" name="home_about_img[]" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" hidden value="" name="uid">
+                                        <input type="submit" class="btn btn-success" id="" value="Update">
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div id="productBannerImagePreview"></div>
-                        <input type="submit" class="btn btn-success" id="" value="Add Banner img" />
-                    </form>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-info" id="dataTableBanner" width="100%"
-                            cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                if (!empty($about_banner)) {
-                                    foreach ($about_banner as $index => $item) {
-                                        ?>
-                                        <tr>
-                                            <td>
-                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="" height="100px">
-                                            </td>
-                                            <td>
-                                                <a href="<?= base_url('admin/pages/delete_about_banner_img?uid=') . $item['uid']?> "
-                                                    class="btn btn-danger">
-                                                    DELETE
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <?php
+                        <?php
+                    }
+                }
+                ?>
+
+            </div>
+
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h5 class="m-0 font-weight-bold text-primary">About banners</h5>
+                        <form action="<?= base_url("admin/pages/add_new_about_banner") ?>" method="POST"
+                            enctype="multipart/form-data">
+
+                            <div class="form-group">
+                                <input type="file" class="form-control-file" placeholder="about image"
+                                    name="about_banner_img[]" required />
+                            </div>
+                            <div id="productBannerImagePreview"></div>
+                            <input type="submit" class="btn btn-success" id="" value="Add Banner img" />
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-info" id="dataTableBanner" width="100%"
+                                cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if (!empty($about_banner)) {
+                                        foreach ($about_banner as $index => $item) {
+                                            ?>
+                                            <tr>
+                                                <td>
+                                                    <img src="<?= base_url() . $item['img_path'] ?>" alt="" height="100px">
+                                                </td>
+                                                <td>
+                                                    <a href="<?= base_url('admin/pages/delete_about_banner_img?uid=') . $item['uid'] ?> "
+                                                        class="btn btn-danger">
+                                                        DELETE
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
                                     }
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
+
+
+
+
+
             </div>
 
 
-
-
-
         </div>
-
-
-    </div>
-    <!-- /.container-fluid -->
+        <!-- /.container-fluid -->

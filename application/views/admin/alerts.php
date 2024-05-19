@@ -72,7 +72,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">Update Action Buttons</h6>
                         </div>
                         <div class="card-body">
-                            <form action="<?= base_url('admin/pages/add_alert') ?>" method="POST" class="row">
+                            <form action="<?= base_url('admin/pages/update_action_buttons') ?>" method="POST" class="row">
 
                                 <div class="form-group col-xl-6 col-lg-6">
                                     <label for="formGroupExampleInput">Button 1 Title</label>

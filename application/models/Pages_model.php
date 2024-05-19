@@ -161,17 +161,19 @@ class Pages_model extends Admin_model
         return $update;
     }
 
-    public function update_infrastructure($data){
-        
+    public function update_infrastructure($data)
+    {
+
         $update = $this->db->where(['uid' => $data['uid']])
             ->update('home_infrastructure', $data);
         return $update;
     }
 
-    public function update_quality($data){
+    public function update_quality($data)
+    {
         $insert_data = [
             'title' => $data['title'],
-            'description' => $data['details']  
+            'description' => $data['details']
         ];
 
         $update = $this->db->where(['uid' => $data['uid']])
@@ -179,7 +181,8 @@ class Pages_model extends Admin_model
         return $update;
     }
 
-    public function update_infrastructure_img($path ,$uid){
+    public function update_infrastructure_img($path, $uid)
+    {
         $insert_data = [
             'img_path' => $path,
         ];
@@ -189,7 +192,14 @@ class Pages_model extends Admin_model
 
     }
 
-    public function update_quality_img($path, $uid){
+    public function update_action_buttons($data){
+        $update = $this->db->where(['uid' => 'BTN879654372YFTY'])
+            ->update('action_buttons', $data);
+        return $update;
+    }
+
+    public function update_quality_img($path, $uid)
+    {
         $insert_data = [
             'img_path' => $path,
         ];
@@ -211,14 +221,17 @@ class Pages_model extends Admin_model
         return $update;
     }
 
-    public function update_alert_img($path){
+    public function update_alert_img($path)
+    {
         $data = ['img_path' => $path];
         $update = $this->db->where(['uid' => 'ALTCDE32A1520240517'])
             ->update('alerts', $data);
         return $update;
     }
 
-    public function update_alerts($data){
+    public function update_alerts($data)
+    {
+        //$this->prd($data);
         $update = $this->db->where(['uid' => 'ALTCDE32A1520240517'])
             ->update('alerts', $data);
         return $update;
@@ -248,10 +261,11 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function insert_home_announcement_file($path)
+    public function insert_home_announcement_file($path, $title)
     {
         $data = [
             'uid' => $this->generate_uid('BNHU'),
+            'title' => $title,
             'path' => $path
         ];
         $add = $this->db->insert('home_announcement_file', $data);
@@ -305,7 +319,8 @@ class Pages_model extends Admin_model
 
     }
 
-    public function add_new_flyer($path){
+    public function add_new_flyer($path)
+    {
         $data = [
             'uid' => $this->generate_uid('FLY'),
             'img_path' => $path,
@@ -314,7 +329,8 @@ class Pages_model extends Admin_model
         return $add;
     }
 
-    public function get_flyer(){
+    public function get_flyer()
+    {
         $data = $this->db
             ->select('*')
             ->from('flyers')
@@ -338,6 +354,14 @@ class Pages_model extends Admin_model
         return $add;
     }
 
+    public function isAssocArray($array)
+    {
+        if (!is_array($array)) {
+            return false; // Not an array
+        }
+        return array_keys($array) !== range(0, count($array) - 1);
+    }
+
     public function add_new_product($path, $banner_data, $data)
     {
         $insert_data = [
@@ -346,15 +370,27 @@ class Pages_model extends Admin_model
             'details' => $data['product_details'],
         ];
 
+        //$this->prd($banner_data);
+
         if (!empty($banner_data)) {
-            foreach ($banner_data as $index => $item) {
+            if($this->isAssocArray($banner_data)){
                 $banner_insert_data = [
                     'uid' => $this->generate_uid('PRBN'),
                     'product_id' => $insert_data['uid'],
-                    'img_path' => $path . $item['file_name']
+                    'img_path' => $path . $banner_data['file_name']
                 ];
                 $this->db->insert('product_banner_img', $banner_insert_data);
+            }else{
+                foreach ($banner_data as $index => $item) {
+                    $banner_insert_data = [
+                        'uid' => $this->generate_uid('PRBN'),
+                        'product_id' => $insert_data['uid'],
+                        'img_path' => $path . $item['file_name']
+                    ];
+                    $this->db->insert('product_banner_img', $banner_insert_data);
+                }
             }
+
         }
 
         $add = $this->db->insert('product', $insert_data);
@@ -419,6 +455,9 @@ class Pages_model extends Admin_model
         ];
         $this->db->insert('alerts', $insert_data);
     }
+
+   
+
 
     public function get_alert()
     {
@@ -542,7 +581,8 @@ class Pages_model extends Admin_model
 
     }
 
-    public function get_infrastructure_by_id($uid){
+    public function get_infrastructure_by_id($uid)
+    {
         $this->db->where('uid', $uid);
         $query = $this->db->get('home_infrastructure');
         $query = $query->result_array();
@@ -550,11 +590,12 @@ class Pages_model extends Admin_model
     }
 
 
-    public function get_quality_by_id($uid){
+    public function get_quality_by_id($uid)
+    {
         $this->db->where('uid', $uid);
         $query = $this->db->get('quality');
         $query = $query->result_array();
-        return !empty($query) ? $query[0] : [];   
+        return !empty($query) ? $query[0] : [];
     }
 
     public function delete_banner_img($uid)
@@ -652,7 +693,8 @@ class Pages_model extends Admin_model
         return $this->db->affected_rows() > 0;
     }
 
-    public function delete_flyer_img($uid){
+    public function delete_flyer_img($uid)
+    {
 
         $this->db->where('uid', $uid);
         $this->db->delete('flyers');

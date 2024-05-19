@@ -47,8 +47,12 @@
                             <form enctype="multipart/form-data"
                                 action="<?= base_url('admin/pages/upload_announcement_file') ?>" method="POST">
                                 <div class="form-group">
+                                    <label for="">Title</label>
+                                    <input type="text" class="form-control" placeholder="Title" name="title" required/>
+                                </div>
+                                <div class="form-group">
                                     <input type="file" class="form-control-file" placeholder="Updates Banner image"
-                                        name="home_announcement_file[]" />
+                                        name="home_announcement_file[]" required/>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" hidden value="" name="uid">
@@ -125,6 +129,7 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Date</th>
+                                    <th>Title</th>
                                     <th>View</th>
                                     <th>Delete</th>
                                 </tr>
@@ -137,6 +142,9 @@
                                         <tr>
                                             <td><?= $index + 1 ?></td>
                                             <td><?= $item['created_at'] ?></td>
+                                            <td>
+                                                <?= $item['title'] ?>
+                                            </td>
                                             <td>
                                                 <a href="<?= base_url($item['path']) ?>" class="btn btn-info" target="_blank">
                                                     VIEW

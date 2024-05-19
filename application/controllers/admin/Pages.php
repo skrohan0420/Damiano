@@ -244,6 +244,12 @@ class Pages extends Admin
         redirect('/admin/home');
     }
 
+    public function update_action_buttons(){
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->update_action_buttons($this->input->post());
+        redirect('/admin/alerts');
+    }
+
   
     public function update_about_text()
     {
@@ -277,7 +283,7 @@ class Pages extends Admin
         //$this->prd($upload_data);
         if ($upload_data) {
             $this->init_model(MODEL_PAGES);
-            $this->Pages_model->insert_home_announcement_file('/uploads/home_announcement_file/' . $upload_data['file_name']);
+            $this->Pages_model->insert_home_announcement_file('/uploads/home_announcement_file/' . $upload_data['file_name'], $this->input->post('title'));
         }
         redirect('/admin/updates');
     }
@@ -402,14 +408,15 @@ class Pages extends Admin
         $uid = $this->input->get('uid');
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_infrastructure($uid);
-        redirect('/admin/home');
+        redirect('/admin/infrastructure');
     }
 
     public function delete_appreciation(){
         $uid = $this->input->get('uid');
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_appreciation($uid);
-        redirect('/admin/home');
+        redirect('/admin/infrastructure');
+
 
     }
 

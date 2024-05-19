@@ -479,7 +479,27 @@ if (false) {
                                 padding: 10px 30px 13px !important;
                             }
                         </style>
-
+                        <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
+                            <p>Damiano</p>
+                            <ul>
+                                <li><a href="https://www.google.com/maps/place/South+City+International+School+(SCIS)/@22.5002609,88.356794,17z/data=!4m6!3m5!1s0x3a0270d89963ea53:0x878e218b8963f14b!8m2!3d22.5001841!4d88.3624578!16s%2Fg%2F11bx5613b_?authuser=0&hl=en"
+                                        target="_blank"><img src="<?= base_url() ?>assets/images/location.png"
+                                            alt="location" /><?= $about_text['address'] ?></a></li>
+                                <li>
+                                    <a href="tel:+913340630070"><img
+                                            src="https://cdn-icons-png.flaticon.com/512/159/159832.png"
+                                            alt="#"><?= $about_text['phone'] ?></a>
+                                    <a href="mailto:<?= $about_text['email'] ?>"><img
+                                            src="<?= base_url() ?>assets/images/mail.png"
+                                            alt="#"><?= $about_text['email'] ?></a>
+                                </li>
+                                <li class="lastbtnapply"><a href="<?= base_url('contact-us') ?>" target="_blank">Contact
+                                        us</a></li>
+                            </ul>
+                        </div>
+                        <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a
+                                href="<?= base_url() . $flyers[0]['img_path'] ?>" target="_blank"><img
+                                    src="<?= base_url() . $flyers[0]['img_path'] ?>" /></a></div>
                     </div>
                 </div>
                 <style>
@@ -626,7 +646,7 @@ if (false) {
                     </div>
 
                 </div>
-                                    
+
 
 
 
@@ -675,7 +695,7 @@ if (false) {
                     <div class="footerlogo">
                         <a href="/"><img src="<?= base_url() ?>assets/images/logo.png" alt="#" /></a>
                     </div>
-                    <p><?=$about_text['about_text']?></p>
+                    <p><?= $about_text['about_text'] ?></p>
                 </div>
                 <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                     <div class="quicklinks">
@@ -695,12 +715,15 @@ if (false) {
                         <ul>
 
                             <li><a href="#" target="_blank"><img class="addressview"
-                                        src="<?= base_url() ?>assets/images/location.png" alt="#"><?=$about_text['address']?></a></li>
+                                        src="<?= base_url() ?>assets/images/location.png"
+                                        alt="#"><?= $about_text['address'] ?></a></li>
                             <li>
                                 <a href="#" target="_blank"><img
-                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> <?=$about_text['phone']?></a>
-                                <a href="mailto: <?=$about_text['email']?>"><img src="<?= base_url() ?>assets/images/mail.png"
-                                        alt="#"> <?=$about_text['email']?></a>
+                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#">
+                                    <?= $about_text['phone'] ?></a>
+                                <a href="mailto: <?= $about_text['email'] ?>"><img
+                                        src="<?= base_url() ?>assets/images/mail.png" alt="#">
+                                    <?= $about_text['email'] ?></a>
                             </li>
 
 
