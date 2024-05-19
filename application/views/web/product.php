@@ -626,7 +626,7 @@ if (false) {
                     </div>
 
                 </div>
-
+                                    
 
 
 
@@ -675,15 +675,7 @@ if (false) {
                     <div class="footerlogo">
                         <a href="/"><img src="<?= base_url() ?>assets/images/logo.png" alt="#" /></a>
                     </div>
-                    <p>Damiano was established in 1968 for manufacturing Pole Line Hardware's, Steel structures,
-                        Insulator and Conductor accessories, Clamps and Connectors, ABC accessories, Fuse Cutouts and
-                        Telecommunication OSP Hardware's.
-
-                        The export performance dates back to 1972 and is continuing till date with exports spread out
-                        across the globe touching more than 32 countries besides domestic acceptance.</p>
-                    <div class="mobilecenter">
-                        <a href="visionmission.html" class="allbtnview"><span>View More</span></a>
-                    </div>
+                    <p><?=$about_text['about_text']?></p>
                 </div>
                 <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                     <div class="quicklinks">
@@ -703,16 +695,12 @@ if (false) {
                         <ul>
 
                             <li><a href="#" target="_blank"><img class="addressview"
-                                        src="<?= base_url() ?>assets/images/location.png" alt="#">53, Dr. Meghnad Saha
-                                    Sarani, Southern Avenue
-                                    <br>Kolkata-700 029, West Bengal, India.</a></li>
+                                        src="<?= base_url() ?>assets/images/location.png" alt="#"><?=$about_text['address']?></a></li>
                             <li>
-                                Inquiry Number & Email<br />
                                 <a href="#" target="_blank"><img
-                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> +91 33 4063
-                                    0070</a>
-                                <a href="mailto: info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png"
-                                        alt="#"> info@adamiano.com</a>
+                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> <?=$about_text['phone']?></a>
+                                <a href="mailto: <?=$about_text['email']?>"><img src="<?= base_url() ?>assets/images/mail.png"
+                                        alt="#"> <?=$about_text['email']?></a>
                             </li>
 
 

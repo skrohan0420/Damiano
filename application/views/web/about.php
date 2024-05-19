@@ -403,7 +403,7 @@
 
                         <style>
                             .card-custom {
-                                border: 1px solid  #2596be;
+                                border: 1px solid #2596be;
                                 cursor: pointer;
                                 border-radius: 5px;
                                 padding: 20px;
@@ -412,51 +412,51 @@
                                 height: 100% !important;
                                 transition: 0.1s ease-in-out;
                             }
+
                             .card-custom:hover {
                                 background-color: #ddd;
                             }
+
                             .card-custom img {
                                 max-width: 100px;
                                 margin-bottom: 15px;
                                 filter: brightness(0) saturate(100%) invert(40%) sepia(73%) saturate(1810%) hue-rotate(167deg) brightness(92%) contrast(100%);
                             }
-                            .cards-in .col-md-6{
-                                margin-bottom: 30px; 
+
+                            .cards-in .col-md-6 {
+                                margin-bottom: 30px;
                             }
+
                             .card-custom h5 {
                                 font-size: 2rem;
                                 padding-bottom: 10px;
                                 margin-bottom: 10px;
-                                border-bottom:  1px solid #2596be;
+                                border-bottom: 1px solid #2596be;
                             }
 
                             .card-custom p {
                                 font-size: 0.95rem;
                                 color: #666;
                             }
-
                         </style>
                         <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
                             <p>Damiano</p>
                             <ul>
                                 <li><a href="https://www.google.com/maps/place/South+City+International+School+(SCIS)/@22.5002609,88.356794,17z/data=!4m6!3m5!1s0x3a0270d89963ea53:0x878e218b8963f14b!8m2!3d22.5001841!4d88.3624578!16s%2Fg%2F11bx5613b_?authuser=0&hl=en"
                                         target="_blank"><img src="<?= base_url() ?>assets/images/location.png"
-                                            alt="location" />53, Dr. Meghnad
-                                        Saha Sarani, Southern Avenue Kolkata-700 029, West Bengal, India.</a></li>
+                                            alt="location" /><?=$about_text['address']?></a></li>
                                 <li>
                                     <a href="tel:+913340630070"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="#"> +91 33
-                                        4063 0070</a>
-                                    <a href="mailto:info@adamiano.com"><img
-                                            src="<?= base_url() ?>assets/images/mail.png" alt="#">
-                                        info@adamiano.com</a>
+                                            src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="#"><?=$about_text['phone']?></a>
+                                    <a href="mailto:<?=$about_text['email']?>"><img
+                                            src="<?= base_url() ?>assets/images/mail.png" alt="#"><?=$about_text['email']?></a>
                                 </li>
                                 <li class="lastbtnapply"><a href="<?= base_url('contact-us') ?>" target="_blank">Contact
                                         us</a></li>
                             </ul>
                         </div>
-                        <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a href=""
-                                target="_blank"><img src="<?= base_url() ?>assets/images/newspage/5.jpg" /></a></div>
+                        <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a href="<?= base_url().$flyers[0]['img_path'] ?>"
+                                target="_blank"><img src="<?= base_url().$flyers[0]['img_path'] ?>" /></a></div>
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -471,42 +471,43 @@
                                 <div class="card-custom">
                                     <img src="<?= base_url() ?>assets/images/about_icons/icon1.png" alt="About Us">
                                     <h5>About Us</h5>
-                                    <p><?=$about_text['about_text']?></p>
+                                    <p><?= $about_text['about_text'] ?></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="card-custom">
                                     <img src="<?= base_url() ?>assets/images/about_icons/icon2.png" alt="Vision">
                                     <h5>Vision</h5>
-                                    <p><?=$about_text['vision_text']?></p>
+                                    <p><?= $about_text['vision_text'] ?></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="card-custom">
                                     <img src="<?= base_url() ?>assets/images/about_icons/icon3.png" alt="Mission">
                                     <h5>Mission</h5>
-                                    <p><?=$about_text['mission_text']?></p>
+                                    <p><?= $about_text['mission_text'] ?></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="card-custom">
                                     <img src="<?= base_url() ?>assets/images/about_icons/icon4.png" alt="Products">
                                     <h5>Products</h5>
-                                    <p><?=$about_text['products_text']?></p>
+                                    <p><?= $about_text['products_text'] ?></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="card-custom">
                                     <img src="<?= base_url() ?>assets/images/about_icons/icon5.png" alt="Facilities">
                                     <h5>Facilities</h5>
-                                    <p><?=$about_text['facilities_text']?></p>
+                                    <p><?= $about_text['facilities_text'] ?></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="card-custom">
-                                    <img src="<?= base_url() ?>assets/images/about_icons/icon6.png" alt="Global Presence">
+                                    <img src="<?= base_url() ?>assets/images/about_icons/icon6.png"
+                                        alt="Global Presence">
                                     <h5>Global Presence</h5>
-                                    <p><?=$about_text['global_presence_text']?></p>
+                                    <p><?= $about_text['global_presence_text'] ?></p>
                                 </div>
                             </div>
                         </div>
@@ -545,15 +546,7 @@
                     <div class="footerlogo">
                         <a href="/"><img src="<?= base_url() ?>assets/images/logo.png" alt="#" /></a>
                     </div>
-                    <p>Damiano was established in 1968 for manufacturing Pole Line Hardware's, Steel structures,
-                        Insulator and Conductor accessories, Clamps and Connectors, ABC accessories, Fuse Cutouts and
-                        Telecommunication OSP Hardware's.
-
-                        The export performance dates back to 1972 and is continuing till date with exports spread out
-                        across the globe touching more than 32 countries besides domestic acceptance.</p>
-                    <div class="mobilecenter">
-                        <a href="visionmission.html" class="allbtnview"><span>View More</span></a>
-                    </div>
+                    <p><?= $about_text['about_text'] ?></p>
                 </div>
                 <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                     <div class="quicklinks">
@@ -573,16 +566,15 @@
                         <ul>
 
                             <li><a href="#" target="_blank"><img class="addressview"
-                                        src="<?= base_url() ?>assets/images/location.png" alt="#">53, Dr. Meghnad Saha
-                                    Sarani, Southern Avenue
-                                    <br>Kolkata-700 029, West Bengal, India.</a></li>
+                                        src="<?= base_url() ?>assets/images/location.png"
+                                        alt="#"><?= $about_text['address'] ?></a></li>
                             <li>
-                                Inquiry Number & Email<br />
                                 <a href="#" target="_blank"><img
-                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> +91 33 4063
-                                    0070</a>
-                                <a href="mailto: info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png"
-                                        alt="#"> info@adamiano.com</a>
+                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#">
+                                    <?= $about_text['phone'] ?></a>
+                                <a href="mailto: <?= $about_text['email'] ?>"><img
+                                        src="<?= base_url() ?>assets/images/mail.png" alt="#">
+                                    <?= $about_text['email'] ?></a>
                             </li>
 
 

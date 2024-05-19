@@ -28,6 +28,7 @@ class Load extends Common
         $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
         $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
 
+
         $this->load_page('web/home.php', $data);
     }
 
@@ -43,7 +44,7 @@ class Load extends Common
         $data['data_page']['product_banner_images'] = $this->Pages_model->get_aproduct_banner_images($p_id);
         $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
         $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
-
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
         $this->load_page('web/product.php', $data);
     }
 
@@ -56,7 +57,7 @@ class Load extends Common
         $data['data_page']['products'] = $this->Pages_model->get_product();
         $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
         $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
-
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
         $this->load_page('web/contact_us.php', $data);
     }
 
@@ -71,7 +72,7 @@ class Load extends Common
         $data['data_page']['about_banner'] = $this->Pages_model->get_about_banners();
         $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
         $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
-        
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
         $this->load_page('web/about.php', $data);
     }
 
@@ -88,7 +89,7 @@ class Load extends Common
         $data['data_page']['updates_banner'] = $this->Pages_model->get_updates_banner();
         $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
         $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
-
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
         $this->load_page('web/updates.php', $data);
 
     }
@@ -104,7 +105,7 @@ class Load extends Common
         $data['data_page']['infrastructure_banner'] = $this->Pages_model->get_infrastructure_banner();
         $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
         $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
-
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
         $this->load_page('web/infrastructure.php', $data);
     }
 
@@ -119,7 +120,7 @@ class Load extends Common
         $data['data_page']['quality_banner'] = $this->Pages_model->get_quality_banner();
         $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
         $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
-
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
         $this->load_page('web/quality.php', $data);
     }
 

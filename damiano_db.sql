@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2024 at 01:57 AM
+-- Generation Time: May 19, 2024 at 12:37 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -176,6 +176,9 @@ CREATE TABLE `home_about_text` (
   `products_text` text NOT NULL,
   `facilities_text` text NOT NULL,
   `global_presence_text` text NOT NULL,
+  `address` text NOT NULL,
+  `email` text NOT NULL,
+  `phone` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -183,8 +186,8 @@ CREATE TABLE `home_about_text` (
 -- Dumping data for table `home_about_text`
 --
 
-INSERT INTO `home_about_text` (`id`, `uid`, `about_text`, `vision_text`, `mission_text`, `products_text`, `facilities_text`, `global_presence_text`, `created_at`) VALUES
-(1, 'ABT143276SRHDSH', 'Damiano traces its origin as early as 1922. The company was representing the European companies for their procurement activities in India and was a part of the CTC Group which was a dominant player in the jute industry in India. Damiano underwent restructuring in late 1960\'s and re-established itself i', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano underwent restructuring in late 1960\'s and re established itself in its present from by diversifying into manufacturing in 1968 and has been manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', '2024-05-11 17:53:22');
+INSERT INTO `home_about_text` (`id`, `uid`, `about_text`, `vision_text`, `mission_text`, `products_text`, `facilities_text`, `global_presence_text`, `address`, `email`, `phone`, `created_at`) VALUES
+(1, 'ABT143276SRHDSH', 'Damiano traces its origin as early as 1922. The company was representing the European companies for their procurement activities in India and was a part of the CTC Group which was a dominant player in the jute industry in India. Damiano underwent restructuring in late 1960\'s and re-established itself i', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano underwent restructuring in late 1960\'s and re established itself in its present from by diversifying into manufacturing in 1968 and has been manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', 'Damiano was established in 1968 for manufacturing Pole Line Hardware\'s, Steel structures, Insulator and Conductor accessories, Clamps and Connectors, ABC accessories...', '53, Dr. Meghnad Saha Sarani, Southern Avenue\r\nKolkata-700 029, West Bengal, US.', 'info@adamiano.com', '91 33 4063 0070\r\n', '2024-05-11 17:53:22');
 
 -- --------------------------------------------------------
 
@@ -298,7 +301,7 @@ CREATE TABLE `home_infrastructure` (
 
 INSERT INTO `home_infrastructure` (`id`, `uid`, `title`, `img_path`, `details`, `created_at`) VALUES
 (9, 'INF71E81FAB20240518', 'text_1', '/uploads/home_infrastructure_img/0c5bcae1b3f9cd95557bedc82c3cedcc.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2024-05-18 15:49:55'),
-(10, 'INFE57AA7D220240518', 'text_2', '/uploads/home_infrastructure_img/960a6537a0805c17d7894b73a6e3a4f7.jpeg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2024-05-18 15:50:11'),
+(10, 'INFE57AA7D220240518', 'text_2', '/uploads/home_infrastructure_img/fd4bf136b70314fc752fe4155ea4d462.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.fgdf', '2024-05-18 15:50:11'),
 (11, 'INF4DD1BB7120240518', 'text_3', '/uploads/home_infrastructure_img/1d19876c8f6454a13368fd431df535a3.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2024-05-18 15:50:22');
 
 -- --------------------------------------------------------
@@ -419,7 +422,7 @@ CREATE TABLE `quality` (
 
 INSERT INTO `quality` (`id`, `uid`, `title`, `description`, `img_path`, `created_at`) VALUES
 (1, 'QLT8D4BC95020240518', 'text 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '/uploads/quality_img/c20f3855d0ffddb7010a72e83884bbba.jpeg', '2024-05-18 17:34:37'),
-(3, 'QLT194B5B0E20240518', 'text 2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '/uploads/quality_img/6feed7267176108c80903178910fa57b.jpg', '2024-05-18 17:49:29');
+(3, 'QLT194B5B0E20240518', 'text 2dfsrgedrg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.rtgrgtyer', '/uploads/quality_img/5028806f27b771a769ce37e1a9560f1e.jpg', '2024-05-18 17:49:29');
 
 -- --------------------------------------------------------
 

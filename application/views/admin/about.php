@@ -63,6 +63,21 @@
                                         required><?= $about_text['global_presence_text'] ?></textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label for="formGroupExampleInput2">Address </label>
+                                    <textarea type="text" class="form-control" name="address"
+                                        required><?= $about_text['address'] ?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Email</label>
+                                    <textarea type="text" class="form-control" name="email"
+                                        required><?= $about_text['email'] ?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Phone</label>
+                                    <textarea type="text" class="form-control" name="phone"
+                                        required><?= $about_text['phone'] ?></textarea>
+                                </div>
+                                <div class="form-group">
                                     <input type="submit" class="btn btn-success" id="" value="Update">
                                 </div>
                             </form>

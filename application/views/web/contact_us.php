@@ -452,22 +452,23 @@
                                 padding: 10px 30px 13px !important;
                             }
                         </style>
-                        <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
+                          <div class="allpagesview-bottom newleftsidecss" data-aos="fade-up" data-aos-duration="1000">
                             <p>Damiano</p>
                             <ul>
                                 <li><a href="https://www.google.com/maps/place/South+City+International+School+(SCIS)/@22.5002609,88.356794,17z/data=!4m6!3m5!1s0x3a0270d89963ea53:0x878e218b8963f14b!8m2!3d22.5001841!4d88.3624578!16s%2Fg%2F11bx5613b_?authuser=0&hl=en"
                                         target="_blank"><img src="<?= base_url() ?>assets/images/location.png"
-                                            alt="location" />53, Dr. Meghnad Saha Sarani, Southern Avenue Kolkata-700
-                                        029, West Bengal, India.</a></li>
+                                            alt="location" /><?=$about_text['address']?></a></li>
                                 <li>
                                     <a href="tel:+913340630070"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="#"> +91 33
-                                        4063 0070</a>
-                                    <a href="mailto:info@adamiano.com"><img
-                                            src="<?= base_url() ?>assets/images/mail.png" alt="#"> info@adamiano.com</a>
+                                            src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="#"><?=$about_text['phone']?></a>
+                                    <a href="mailto:<?=$about_text['email']?>"><img
+                                            src="<?= base_url() ?>assets/images/mail.png" alt="#"><?=$about_text['email']?></a>
                                 </li>
-                                <li class="lastbtnapply"><a href="" target="_blank">Contact us</a></li>
+                                <li class="lastbtnapply"><a href="<?= base_url('contact-us') ?>" target="_blank">Contact us</a></li>
+                                
                             </ul>
+                            <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a href="<?= base_url().$flyers[0]['img_path'] ?>"
+                                target="_blank"><img src="<?= base_url().$flyers[0]['img_path'] ?>" /></a></div>
                         </div>
                     </div>
                 </div>
@@ -560,25 +561,17 @@
                     <div class="footerlogo">
                         <a href="/"><img src="<?= base_url() ?>assets/images/logo.png" alt="#" /></a>
                     </div>
-                    <p>Damiano was established in 1968 for manufacturing Pole Line Hardware's, Steel structures,
-                        Insulator and Conductor accessories, Clamps and Connectors, ABC accessories, Fuse Cutouts and
-                        Telecommunication OSP Hardware's.
-
-                        The export performance dates back to 1972 and is continuing till date with exports spread out
-                        across the globe touching more than 32 countries besides domestic acceptance.</p>
-                    <div class="mobilecenter">
-                        <a href="visionmission.html" class="allbtnview"><span>View More</span></a>
-                    </div>
+                    <p><?=$about_text['about_text']?></p>
                 </div>
                 <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                     <div class="quicklinks">
                         <div class="footerheading quicklinkview">Quick Links</div>
                         <ul>
-                        <li><a href="<?=base_url('about')?>">About</a></li>
-                            <li><a href="<?=base_url('updates')?>">Updates</a></li>
-                            <li><a href="<?=base_url('quality')?>">Quality</a></li>
-                            <li><a href="<?=base_url('infrastructure')?>">Infrastructure</a></li>
-                            <li><a href="<?=base_url('contact-us')?>">Contact</a></li>
+                            <li><a href="<?= base_url('about') ?>">About</a></li>
+                            <li><a href="<?= base_url('updates') ?>">Updates</a></li>
+                            <li><a href="<?= base_url('quality') ?>">Quality</a></li>
+                            <li><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                            <li><a href="<?= base_url('contact-us') ?>">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -588,16 +581,12 @@
                         <ul>
 
                             <li><a href="#" target="_blank"><img class="addressview"
-                                        src="<?= base_url() ?>assets/images/location.png" alt="#">53, Dr. Meghnad Saha
-                                    Sarani, Southern Avenue
-                                    <br>Kolkata-700 029, West Bengal, India.</a></li>
+                                        src="<?= base_url() ?>assets/images/location.png" alt="#"><?=$about_text['address']?></a></li>
                             <li>
-                                Inquiry Number & Email<br />
                                 <a href="#" target="_blank"><img
-                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> +91 33 4063
-                                    0070</a>
-                                <a href="mailto: info@adamiano.com"><img src="<?= base_url() ?>assets/images/mail.png"
-                                        alt="#"> info@adamiano.com</a>
+                                        src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#"> <?=$about_text['phone']?></a>
+                                <a href="mailto: <?=$about_text['email']?>"><img src="<?= base_url() ?>assets/images/mail.png"
+                                        alt="#"> <?=$about_text['email']?></a>
                             </li>
 
 
@@ -632,7 +621,6 @@
                     <div class="col-lg-6 col-sm-4">
                         <ul>
                             <li><a href="#">Sitemap</a></li>
-
                         </ul>
                     </div>
                 </div>
