@@ -1,17 +1,91 @@
-<!-- 404 Start -->
-<div class="container-fluid py-5"
-    style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); object-fit: cover;">
-    <div class="container py-5 text-center">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-                <h1 class="display-1">404</h1>
-                <h1 class="mb-4 text-dark">Page Not Found</h1>
-                <p class="mb-4 text-dark">We’re sorry, the page you have looked for does not exist in our website!
-                    Maybe go to our home page or try to use a search?</p>
-                <a class="btn btn-primary btn-hover-bg py-3 px-5" href="home">Go Back To Home</a>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 72px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        button,
+        .home-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .home-link {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .home-link:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Oops!</h1>
+        <h2>404 - Page Not Found</h2>
+        <p>It seems the page you are looking for doesn't exist.</p>
+        <button onclick="goBack()">Go Back</button>
+        <a href="<?=base_url()?>" class="home-link">Go to Homepage</a>
     </div>
-</div>
-<!-- 404 End -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>

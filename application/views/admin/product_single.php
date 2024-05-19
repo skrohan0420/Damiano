@@ -109,7 +109,6 @@
                             <thead>
                                 <tr>
                                     <th>Title</th>
-                                    <th>Details</th>
                                     <th>Image</th>
                                     <th>Delete</th>
                                 </tr>
@@ -122,9 +121,6 @@
                                             <tr>
                                                 <td>
                                                     <?= $item['title'] ?>
-                                                </td>
-                                                <td>
-                                                    <?= $item['details'] ?>
                                                 </td>
                                                 <td>
                                                     <img src="<?= base_url() . $item['img_path'] ?>" alt="" height="100px">

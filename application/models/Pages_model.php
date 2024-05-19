@@ -161,6 +161,23 @@ class Pages_model extends Admin_model
         return $update;
     }
 
+    public function update_infrastructure($data){
+        
+        $update = $this->db->where(['uid' => $data['uid']])
+            ->update('home_infrastructure', $data);
+        return $update;
+    }
+
+    public function update_infrastructure_img($path ,$uid){
+        $insert_data = [
+            'img_path' => $path,
+        ];
+        $update = $this->db->where(['uid' => $uid])
+            ->update('home_infrastructure', $insert_data);
+        return $update;
+
+    }
+
     public function update_banner_text($data)
     {
         $update = $this->db->where(['uid' => 'BNR90678546498'])
@@ -505,6 +522,12 @@ class Pages_model extends Admin_model
 
     }
 
+    public function get_infrastructure_by_id($uid){
+        $this->db->where('uid', $uid);
+        $query = $this->db->get('home_infrastructure');
+        $query = $query->result_array();
+        return !empty($query) ? $query[0] : [];
+    }
 
     public function delete_banner_img($uid)
     {

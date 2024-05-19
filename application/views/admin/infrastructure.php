@@ -115,6 +115,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Title</th>
+                                <th>details</th>
                                 <th>Image</th>
                                 <th>Delete</th>
                             </tr>
@@ -128,11 +129,18 @@
                                         <td><?= $index + 1 ?></td>
                                         <td><?= $item['title'] ?></td>
                                         <td>
+                                            <?= $item['details'] ?>
+                                        </td>
+                                        <td>
                                             <img src="<?= base_url() . $item['img_path'] ?>" alt="" height="100px">
                                         </td>
                                         <td>
+                                            <a href="<?= base_url('admin/pages/view_infrastructure?uid=') . $item['uid'] ?>"
+                                                class="btn btn-info m-2">
+                                                VIEW
+                                            </a>
                                             <a href="<?= base_url('admin/pages/delete_infrastructure?uid=') . $item['uid'] ?>"
-                                                class="btn btn-danger">
+                                                class="btn btn-danger m-2">
                                                 DELETE
                                             </a>
                                         </td>

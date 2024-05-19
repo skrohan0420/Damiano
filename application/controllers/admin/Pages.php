@@ -97,7 +97,17 @@ class Pages extends Admin
         $this->is_auth('admin/product_feature_add.php', $data);
     }
 
+    public function view_infrastructure(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['infrastructure_single_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['product'] = true;
+        $data['data_page']['infrastructure'] = $this->Pages_model->get_infrastructure_by_id($this->input->get('uid'));
 
+        $this->is_auth('admin/infrastructure_single.php', $data);
+    }
 
 
     public function save_user_message(){
@@ -177,6 +187,21 @@ class Pages extends Admin
         }
         $this->Pages_model->update_alerts($this->input->post());
         redirect('/admin/alerts');
+    }
+
+    public function update_infrastructure(){
+
+        $this->init_model(MODEL_PAGES);
+        $uid = $this->input->post('uid');
+        if(!empty($_FILES['home_infrastructure_img']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/home_infrastructure_img/', 'home_infrastructure_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $this->Pages_model->update_infrastructure_img('/uploads/home_infrastructure_img/' . $upload_data['file_name'], $uid);
+            }
+        }
+        $this->Pages_model->update_infrastructure($this->input->post());
+        redirect('/admin/pages/view_infrastructure?uid='.$uid);
+
     }
 
 
