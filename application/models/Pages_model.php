@@ -26,6 +26,18 @@ class Pages_model extends Admin_model
         return isset($banner) ? $banner[0] : [];
     }
 
+    public function get_jobs(){
+        $data = $this->db
+            ->select('*')
+            ->from('job_openings')
+            ->get();
+
+
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];
+    }
+
     public function get_all_about_text()
     {
         $about = $this->db
@@ -408,6 +420,16 @@ class Pages_model extends Admin_model
         $this->db->insert('product_banner_img', $banner_insert_data);
     }
 
+    public function add_job($data){
+        $insert_data = [
+            'uid' => $this->generate_uid('JOB'),
+            'title' =>  $data['title'],
+            'details' => $data['details']
+        ];
+        $this->db->insert('job_openings', $insert_data);
+    }
+
+
     public function add_new_about_banner($path)
     {
         $banner_insert_data = [
@@ -698,6 +720,12 @@ class Pages_model extends Admin_model
 
         $this->db->where('uid', $uid);
         $this->db->delete('flyers');
+        return $this->db->affected_rows() > 0;
+    }
+
+    public function delete_job($uid){
+        $this->db->where('uid', $uid);
+        $this->db->delete('job_openings');
         return $this->db->affected_rows() > 0;
     }
 

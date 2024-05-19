@@ -74,6 +74,13 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link"
+                    href="<?= base_url('/admin/jobs') ?>">
+                    <i class="fas fa-briefcase mr-1"></i>
+                    <span>Jobs</span>   
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
                     href="<?= base_url('/admin/updates') ?>">
                     <i class="fas fa-fw fa-info mr-1"></i>
                     <span>Updates</span>

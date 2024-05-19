@@ -194,6 +194,19 @@ class Admin extends Common
         $this->is_auth('admin/flyers.php', $data);
     }
 
+    public function jobs(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['jobs_js.php'];
+        $data['data_header']['title'] = 'Admin | Dashboard';
+        $data['data_header']['sidebar']['jobs'] = true;
+        $data['data_page']['jobs'] = $this->Pages_model->get_jobs();
+
+       
+
+        $this->is_auth('admin/jobs.php', $data);
+    }
+
 
     public function is_auth($page, $data)
     {

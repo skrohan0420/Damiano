@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2024 at 12:37 PM
+-- Generation Time: May 19, 2024 at 03:53 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -157,8 +157,8 @@ CREATE TABLE `home_about_img` (
 --
 
 INSERT INTO `home_about_img` (`id`, `uid`, `img_path`, `created_at`) VALUES
-(1, 'IMG_1', '/uploads/home_about_img/69bc7a61a7b6c67eeb394733434e4c43.jpg', '2024-05-11 18:50:50'),
-(2, 'IMG_2', '/uploads/home_about_img/1d1799cc7da7976097ef22e1c08d457c.jpg', '2024-05-11 18:51:29'),
+(1, 'IMG_1', '/uploads/home_about_img/0b1ff826a82c59c26091fb2c61b1b6cd.JPG', '2024-05-11 18:50:50'),
+(2, 'IMG_2', '/uploads/home_about_img/2f83bdc27dc53f1ba0344ebaaea49531.JPG', '2024-05-11 18:51:29'),
 (3, 'IMG_3', '/uploads/home_about_img/aa178c2b8c6ce9715a1ca4dd2b612f97.jpg', '2024-05-11 18:51:29');
 
 -- --------------------------------------------------------
@@ -198,6 +198,7 @@ INSERT INTO `home_about_text` (`id`, `uid`, `about_text`, `vision_text`, `missio
 CREATE TABLE `home_announcement_file` (
   `id` int(11) NOT NULL,
   `uid` varchar(255) NOT NULL,
+  `title` text NOT NULL,
   `path` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -206,9 +207,10 @@ CREATE TABLE `home_announcement_file` (
 -- Dumping data for table `home_announcement_file`
 --
 
-INSERT INTO `home_announcement_file` (`id`, `uid`, `path`, `created_at`) VALUES
-(7, 'BNHU0AFB1F9D20240513', '/uploads/home_announcement_file/b0f52f87b65b4e73161d4ccf4d135369.pdf', '2024-05-13 16:53:28'),
-(8, 'BNHU2D5104C120240516', '/uploads/home_announcement_file/ca28efdf54c57ef7a91ea233179d1245.pdf', '2024-05-16 23:11:42');
+INSERT INTO `home_announcement_file` (`id`, `uid`, `title`, `path`, `created_at`) VALUES
+(7, 'BNHU0AFB1F9D20240513', 'af', '/uploads/home_announcement_file/b0f52f87b65b4e73161d4ccf4d135369.pdf', '2024-05-13 16:53:28'),
+(8, 'BNHU2D5104C120240516', 'sfas', '/uploads/home_announcement_file/ca28efdf54c57ef7a91ea233179d1245.pdf', '2024-05-16 23:11:42'),
+(9, 'BNHU5FB20AD520240519', 'fdg', '/uploads/home_announcement_file/dc139d9d1fc0d8be06f3a1093019a484.jpg', '2024-05-19 17:18:45');
 
 -- --------------------------------------------------------
 
@@ -348,6 +350,28 @@ INSERT INTO `infrastructure_page_banner` (`id`, `uid`, `img_path`, `created_at`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `job_openings`
+--
+
+CREATE TABLE `job_openings` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `title` text NOT NULL,
+  `details` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `job_openings`
+--
+
+INSERT INTO `job_openings` (`id`, `uid`, `title`, `details`, `created_at`) VALUES
+(1, 'JOB57D395A320240519', 'fdsg', 'ghsfh', '2024-05-19 19:08:29'),
+(2, 'JOB4454D93520240519', 'ftdsh', '<p>dtyjy</p>\r\n', '2024-05-19 19:13:49');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -399,7 +423,11 @@ INSERT INTO `product_banner_img` (`id`, `uid`, `product_id`, `img_path`, `create
 (6, 'PRBNDA2D219020240516', 'PRD482FF27F20240516', '/uploads/product_banner_img/0c6cfee2d6dc1f34a51800c3b7a5744d.png', '2024-05-16 18:47:35'),
 (7, 'PRBNBBD569FE20240516', 'PRDB814E4DF20240516', '/uploads/product_banner_img/11affdb384cebf3d4677764c37337893.jpg', '2024-05-16 19:44:32'),
 (8, 'PRBNFB0F45F620240516', 'PRDB814E4DF20240516', '/uploads/product_banner_img/af962c303218672779cd7e8528b707b9.JPG', '2024-05-16 19:44:32'),
-(16, 'PRBN500BE8EC20240517', 'PRDF9C2FF6720240515', '/uploads/product_banner_img/f29058ef30c8bbdb658f0e87d35a36c9.jpg', '2024-05-17 15:51:27');
+(16, 'PRBN500BE8EC20240517', 'PRDF9C2FF6720240515', '/uploads/product_banner_img/f29058ef30c8bbdb658f0e87d35a36c9.jpg', '2024-05-17 15:51:27'),
+(17, 'PRBNB255088A20240519', 'PRD80352AD620240519', '/uploads/product_banner_img/a2def7fdb0a28b768062d6ab4bb1c79d.jpg', '2024-05-19 16:53:04'),
+(18, 'PRBN8A34D11820240519', 'PRD80352AD620240519', '/uploads/product_banner_img/037b0718e4baa0f3aafa3daf5b2be33c.jpg', '2024-05-19 16:53:04'),
+(19, 'PRBN8E09FD9920240519', 'PRD2AEDB4C420240519', '/uploads/product_banner_img/05777ae3f889ed34a0f12c4367b83301.jpg', '2024-05-19 16:56:53'),
+(20, 'PRBN661A8C7F20240519', 'PRDF4631A5C20240519', '/uploads/product_banner_img/b25e5ae07f14fe404936a6b27cb1f3ad.jpg', '2024-05-19 16:57:00');
 
 -- --------------------------------------------------------
 
@@ -604,6 +632,12 @@ ALTER TABLE `infrastructure_page_banner`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `job_openings`
+--
+ALTER TABLE `job_openings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -695,7 +729,7 @@ ALTER TABLE `home_about_text`
 -- AUTO_INCREMENT for table `home_announcement_file`
 --
 ALTER TABLE `home_announcement_file`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `home_appreciation_img`
@@ -734,16 +768,22 @@ ALTER TABLE `infrastructure_page_banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `job_openings`
+--
+ALTER TABLE `job_openings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `product_banner_img`
 --
 ALTER TABLE `product_banner_img`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `quality`

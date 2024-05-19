@@ -30,6 +30,7 @@ $route['admin/updates']                 = 'admin/Admin/updates';
 $route['admin/quality']                 = 'admin/Admin/quality';
 $route['admin/about']                   = 'admin/Admin/about';
 $route['admin/flyers']                  = 'admin/Admin/flyers';
+$route['admin/jobs']                    = 'admin/Admin/jobs';
 $route['admin/product/features/add']    = 'admin/pages/product_feature_add';
 
 

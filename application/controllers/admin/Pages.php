@@ -235,6 +235,11 @@ class Pages extends Admin
         redirect('/admin/alerts');
     }
 
+    public function add_job(){
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->add_job($this->input->post());
+        redirect('/admin/jobs');
+    }
 
 
     public function update_banner_text()
@@ -491,6 +496,13 @@ class Pages extends Admin
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_flyer_img($uid);
         redirect('/admin/flyers');
+    }
+
+    public function delete_job(){
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_job($uid);
+        redirect('/admin/jobs');
     }
 
 }
