@@ -168,6 +168,17 @@ class Pages_model extends Admin_model
         return $update;
     }
 
+    public function update_quality($data){
+        $insert_data = [
+            'title' => $data['title'],
+            'description' => $data['details']  
+        ];
+
+        $update = $this->db->where(['uid' => $data['uid']])
+            ->update('quality', $insert_data);
+        return $update;
+    }
+
     public function update_infrastructure_img($path ,$uid){
         $insert_data = [
             'img_path' => $path,
@@ -176,6 +187,15 @@ class Pages_model extends Admin_model
             ->update('home_infrastructure', $insert_data);
         return $update;
 
+    }
+
+    public function update_quality_img($path, $uid){
+        $insert_data = [
+            'img_path' => $path,
+        ];
+        $update = $this->db->where(['uid' => $uid])
+            ->update('quality', $insert_data);
+        return $update;
     }
 
     public function update_banner_text($data)
@@ -527,6 +547,14 @@ class Pages_model extends Admin_model
         $query = $this->db->get('home_infrastructure');
         $query = $query->result_array();
         return !empty($query) ? $query[0] : [];
+    }
+
+
+    public function get_quality_by_id($uid){
+        $this->db->where('uid', $uid);
+        $query = $this->db->get('quality');
+        $query = $query->result_array();
+        return !empty($query) ? $query[0] : [];   
     }
 
     public function delete_banner_img($uid)

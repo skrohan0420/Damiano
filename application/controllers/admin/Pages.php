@@ -109,6 +109,18 @@ class Pages extends Admin
         $this->is_auth('admin/infrastructure_single.php', $data);
     }
 
+    public function view_quality(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['quality_single_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['product'] = true;
+        $data['data_page']['quality'] = $this->Pages_model->get_quality_by_id($this->input->get('uid'));
+
+        $this->is_auth('admin/quality_single.php', $data);
+    }
+
 
     public function save_user_message(){
         $data = $this->input->post();
@@ -204,6 +216,18 @@ class Pages extends Admin
 
     }
 
+    public function update_quality(){
+        $this->init_model(MODEL_PAGES);
+        $uid = $this->input->post('uid');
+        if(!empty($_FILES['quality_img']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/quality_img/', 'quality_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $this->Pages_model->update_quality_img('/uploads/quality_img/' . $upload_data['file_name'], $uid);
+            }
+        }
+        $this->Pages_model->update_quality($this->input->post());
+        redirect('/admin/pages/view_quality?uid='.$uid);
+    }
 
     public function add_alert(){
         $this->init_model(MODEL_PAGES);
