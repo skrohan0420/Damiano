@@ -381,7 +381,7 @@ if (false) {
         </div>
         <div class="bannertextviewcurve">
             <div id="curved2" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-                <?= $product_details['name'] ?>
+              
             </div>
         </div>
 

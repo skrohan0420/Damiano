@@ -38,6 +38,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <input type="text" class="form-control" name="product_uid" value="<?=$product['uid']?>"placeholder="Product Name" hidden>
                                 <input type="submit" class="btn btn-success" id="" value="Update">
                             </div>
                         </form>

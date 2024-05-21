@@ -473,6 +473,26 @@
                     .details-wrapper {
                         flex: 1;
                     }
+
+                    
+                    .card_img {
+                        cursor: pointer;
+                        opacity: 0.9;
+                        transition:  0.2s ease-in-out;
+                    }
+                    .content-wrapper{
+                        transition:  0.2s ease-in-out;
+                    }
+                    .content-wrapper:hover .card_img {
+                        opacity: 1; 
+                        transform: scale(1.05);
+                    }
+                    .content-wrapper:hover  .details-wrapper p{
+                        color: #fff;
+                    } 
+                    .content-wrapper:hover{
+                        background-color: #2596be;
+                    }
                 </style>
                 <div class="col-lg-9">
                     <div class="allpagesview-right">
@@ -491,13 +511,13 @@
                                                 <p><?= $item['description'] ?></p>
                                             </div>
                                             <div class="img-wrapper" style="margin-left: 20px;">
-                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image">
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image" class="card_img">
                                             </div>
                                             <?php
                                         } else {
                                             ?>
                                             <div class="img-wrapper" style="margin-right: 20px;">
-                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image">
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image" class="card_img">
                                             </div>
                                             <div class="details-wrapper">
                                                 <p><?= $item['description'] ?></p>

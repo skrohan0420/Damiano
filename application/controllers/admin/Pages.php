@@ -169,7 +169,7 @@ class Pages extends Admin
 
 
     public function update_product(){
-        //$this->prd($_FILES);
+        //$this->prd($this->input->post());
         $this->init_model(MODEL_PAGES);
 
         if(!empty($_FILES['product_img']['name'][0])){
@@ -186,7 +186,7 @@ class Pages extends Admin
         }
 
         $update = $this->Pages_model->update_product($this->input->post());
-        redirect('/admin/products');
+        redirect('admin/pages/view_product?uid=' . $this->input->post('product_uid'));
     }
 
     public function update_alert(){
@@ -416,7 +416,7 @@ class Pages extends Admin
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->delete_announcement_file($uid);
 
-        redirect('/admin/home');
+        redirect('/admin/updates');
     }
 
     public function delete_infrastructure(){

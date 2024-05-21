@@ -303,7 +303,8 @@
                             </li>
                             <li class="nav__item"><a href="<?= base_url('infrastructure') ?>"
                                     class="nav__link">Infrastructure</a></li>
-                            <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a></li>
+                            <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a>
+                            </li>
                             <li class="nav__item"><a href="<?= base_url('career') ?>">Careers</a></li>
 
                             <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact
@@ -434,19 +435,22 @@
                             <ul>
                                 <li><a href="https://www.google.com/maps/place/South+City+International+School+(SCIS)/@22.5002609,88.356794,17z/data=!4m6!3m5!1s0x3a0270d89963ea53:0x878e218b8963f14b!8m2!3d22.5001841!4d88.3624578!16s%2Fg%2F11bx5613b_?authuser=0&hl=en"
                                         target="_blank"><img src="<?= base_url() ?>assets/images/location.png"
-                                            alt="location" /><?=$about_text['address']?></a></li>
+                                            alt="location" /><?= $about_text['address'] ?></a></li>
                                 <li>
                                     <a href="tel:+913340630070"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="#"><?=$about_text['phone']?></a>
-                                    <a href="mailto:<?=$about_text['email']?>"><img
-                                            src="<?= base_url() ?>assets/images/mail.png" alt="#"><?=$about_text['email']?></a>
+                                            src="https://cdn-icons-png.flaticon.com/512/159/159832.png"
+                                            alt="#"><?= $about_text['phone'] ?></a>
+                                    <a href="mailto:<?= $about_text['email'] ?>"><img
+                                            src="<?= base_url() ?>assets/images/mail.png"
+                                            alt="#"><?= $about_text['email'] ?></a>
                                 </li>
                                 <li class="lastbtnapply"><a href="<?= base_url('contact-us') ?>" target="_blank">Contact
                                         us</a></li>
                             </ul>
                         </div>
-                        <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a href="<?= base_url().$flyers[0]['img_path'] ?>"
-                                target="_blank"><img src="<?= base_url().$flyers[0]['img_path'] ?>" /></a></div>
+                        <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a
+                                href="<?= base_url() . $flyers[0]['img_path'] ?>" target="_blank"><img
+                                    src="<?= base_url() . $flyers[0]['img_path'] ?>" /></a></div>
                     </div>
                 </div>
                 <style>
@@ -473,6 +477,25 @@
                     .details-wrapper {
                         flex: 1;
                     }
+
+                    .card_img {
+                        cursor: pointer;
+                        opacity: 0.9;
+                        transition:  0.2s ease-in-out;
+                    }
+                    .content-wrapper,.details-wrapper p{
+                        transition:  0.2s ease-in-out;
+                    }
+                    .content-wrapper:hover .card_img {
+                        opacity: 1; 
+                        transform: scale(1.05);
+                    }
+                    .content-wrapper:hover  .details-wrapper p{
+                        color: #fff;
+                    } 
+                    .content-wrapper:hover{
+                        background-color: #2596be;
+                    }
                 </style>
                 <div class="col-lg-9">
                     <div class="allpagesview-right">
@@ -491,13 +514,13 @@
                                                 <p><?= $item['details'] ?></p>
                                             </div>
                                             <div class="img-wrapper" style="margin-left: 20px;">
-                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image">
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image" class="card_img">
                                             </div>
                                             <?php
                                         } else {
                                             ?>
                                             <div class="img-wrapper" style="margin-right: 20px;">
-                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image">
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image" class="card_img">
                                             </div>
                                             <div class="details-wrapper">
                                                 <p><?= $item['details'] ?></p>
