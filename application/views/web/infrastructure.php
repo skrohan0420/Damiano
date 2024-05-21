@@ -68,7 +68,9 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
     <link href="https://cdn.materialdesignicons.com/2.1.99/css/materialdesignicons.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.wizemen.net/fontawesome5-15-3/css/all.css" />
+    <link rel="stylesheet" href="https://cdn.wizemen.net/fontawesome5-15-3/css/v4-shims.css" />
+    <script src="<?= base_url() ?>assets/js/magnific-popup.min.js"></script>
     <style type="text/css">
         .error_message {
             color: red;
@@ -481,19 +483,24 @@
                     .card_img {
                         cursor: pointer;
                         opacity: 0.9;
-                        transition:  0.2s ease-in-out;
+                        transition: 0.2s ease-in-out;
                     }
-                    .content-wrapper,.details-wrapper p{
-                        transition:  0.2s ease-in-out;
+
+                    .content-wrapper,
+                    .details-wrapper p {
+                        transition: 0.2s ease-in-out;
                     }
+
                     .content-wrapper:hover .card_img {
-                        opacity: 1; 
+                        opacity: 1;
                         transform: scale(1.05);
                     }
-                    .content-wrapper:hover  .details-wrapper p{
+
+                    .content-wrapper:hover .details-wrapper p {
                         color: #fff;
-                    } 
-                    .content-wrapper:hover{
+                    }
+
+                    .content-wrapper:hover {
                         background-color: #2596be;
                     }
                 </style>
@@ -514,13 +521,15 @@
                                                 <p><?= $item['details'] ?></p>
                                             </div>
                                             <div class="img-wrapper" style="margin-left: 20px;">
-                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image" class="card_img">
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image" class="card_img"
+                                                    onclick="openModel('<?= base_url() . $item['img_path'] ?>','<?= $item['title'] ?>')">
                                             </div>
                                             <?php
                                         } else {
                                             ?>
                                             <div class="img-wrapper" style="margin-right: 20px;">
-                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image" class="card_img">
+                                                <img src="<?= base_url() . $item['img_path'] ?>" alt="Image" class="card_img"
+                                                    onclick="openModel('<?= base_url() . $item['img_path'] ?>','<?= $item['title'] ?>')">
                                             </div>
                                             <div class="details-wrapper">
                                                 <p><?= $item['details'] ?></p>
@@ -539,8 +548,141 @@
             </div>
         </div>
     </div>
+    <style>
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 100000;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <h4 id="caption" class="mt-2"></h4>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        function openModel(path, title) {
+            modal.style.display = "block";
+            modalImg.src = path;
+            captionText.innerHTML = title;
+        }
 
 
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
 
 
     <!--footer-->
