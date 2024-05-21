@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2024 at 03:53 PM
+-- Generation Time: May 21, 2024 at 12:38 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -366,8 +366,35 @@ CREATE TABLE `job_openings` (
 --
 
 INSERT INTO `job_openings` (`id`, `uid`, `title`, `details`, `created_at`) VALUES
-(1, 'JOB57D395A320240519', 'fdsg', 'ghsfh', '2024-05-19 19:08:29'),
-(2, 'JOB4454D93520240519', 'ftdsh', '<p>dtyjy</p>\r\n', '2024-05-19 19:13:49');
+(4, 'JOB9408CE7420240521', 'job 2', '<p>Argatroban is a direct anti-IIa (thrombin) anticoagulant, administered as a continuous intravenous infusion; it has been approved in many countries for the anticoagulant management of heparin-induced thrombocytopaenia (HIT). Argatroban was recently proposed as the non-heparin anticoagulant of choice for the management of patients diagnosed with Vaccine-induced Immune Thrombotic Thrombocytopaenia (VITT). Immunoglobulins are also promptly intravenously</p>\r\n', '2024-05-21 15:23:24'),
+(5, 'JOBB53363AC20240521', 'job 3', '<p>Argatroban is a direct anti-IIa (thrombin) anticoagulant, administered as a continuous intravenous infusion; it has been approved in many countries for the anticoagulant management of heparin-induced thrombocytopaenia (HIT). Argatroban was recently proposed as the non-heparin anticoagulant of choice for the management of patients diagnosed with Vaccine-induced Immune Thrombotic Thrombocytopaenia (VITT). Immunoglobulins are also promptly intravenously</p>\r\n', '2024-05-21 15:23:30'),
+(6, 'JOBE9DCC8FA20240521', 'job -4', '<p>Argatroban is a direct anti-IIa (thrombin) anticoagulant, administered as a continuous intravenous infusion; it has been approved in many countries for the anticoagulant management of heparin-induced thrombocytopaenia (HIT). Argatroban was recently proposed as the non-heparin anticoagulant of choice for the management of patients diagnosed with Vaccine-induced Immune Thrombotic Thrombocytopaenia (VITT). Immunoglobulins are also promptly intravenously</p>\r\n', '2024-05-21 15:23:35'),
+(7, 'JOB6FBDE9B620240521', 'job -5', '<p>Argatroban is a direct anti-IIa (thrombin) anticoagulant, administered as a continuous intravenous infusion; it has been approved in many countries for the anticoagulant management of heparin-induced thrombocytopaenia (HIT). Argatroban was recently proposed as the non-heparin anticoagulant of choice for the management of patients diagnosed with Vaccine-induced Immune Thrombotic Thrombocytopaenia (VITT). Immunoglobulins are also promptly intravenously</p>\r\n', '2024-05-21 15:23:41'),
+(8, 'JOB38A4CE4720240521', 'job -6', '<p>Argatroban is a direct anti-IIa (thrombin) anticoagulant, administered as a continuous intravenous infusion; it has been approved in many countries for the anticoagulant management of heparin-induced thrombocytopaenia (HIT). Argatroban was recently proposed as the non-heparin anticoagulant of choice for the management of patients diagnosed with Vaccine-induced Immune Thrombotic Thrombocytopaenia (VITT). Immunoglobulins are also promptly intravenously</p>\r\n', '2024-05-21 15:23:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `job_requests`
+--
+
+CREATE TABLE `job_requests` (
+  `id` int(11) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `file_path` text NOT NULL,
+  `name` text NOT NULL,
+  `email` text NOT NULL,
+  `phone` text NOT NULL,
+  `job` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `job_requests`
+--
+
+INSERT INTO `job_requests` (`id`, `uid`, `file_path`, `name`, `email`, `phone`, `job`, `created_at`) VALUES
+(1, 'JBRE53125DC20240521', '/uploads/cv_file/0009b1313e30e29a2c56a4ffb326ee9d.pdf', 'Rohan ', 'admin@gmail.com', '9078563412', 'job 3', '2024-05-21 15:59:15');
 
 -- --------------------------------------------------------
 
@@ -541,7 +568,8 @@ CREATE TABLE `user_message` (
 INSERT INTO `user_message` (`id`, `uid`, `name`, `email`, `phone`, `subject`, `message`, `created_at`, `updated_at`) VALUES
 (4, 'MSG4D2D332020240513', 'fvgdg fgdsgd', 'admin@gmail.com', '43554', '', 'fhdshg', '2024-05-13 19:06:30', '2024-05-13 19:06:30'),
 (5, 'MSGBA0FDC3020240514', ' ', '', '', '', '', '2024-05-14 13:06:30', '2024-05-14 13:06:30'),
-(6, 'MSGB41BE60C20240514', 'fvgdg fgdsgd', 'admin@gmail.com', '1234567', '', 'fghdhghdfh', '2024-05-14 15:14:29', '2024-05-14 15:14:29');
+(6, 'MSGB41BE60C20240514', 'fvgdg fgdsgd', 'admin@gmail.com', '1234567', '', 'fghdhghdfh', '2024-05-14 15:14:29', '2024-05-14 15:14:29'),
+(7, 'MSG3187BF4D20240521', ' ', 'admin@gmail.com', '12345678', '', '', '2024-05-21 15:39:11', '2024-05-21 15:39:11');
 
 --
 -- Indexes for dumped tables
@@ -635,6 +663,12 @@ ALTER TABLE `infrastructure_page_banner`
 -- Indexes for table `job_openings`
 --
 ALTER TABLE `job_openings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `job_requests`
+--
+ALTER TABLE `job_requests`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -771,7 +805,13 @@ ALTER TABLE `infrastructure_page_banner`
 -- AUTO_INCREMENT for table `job_openings`
 --
 ALTER TABLE `job_openings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `job_requests`
+--
+ALTER TABLE `job_requests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -813,7 +853,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_message`
 --
 ALTER TABLE `user_message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

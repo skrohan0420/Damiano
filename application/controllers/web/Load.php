@@ -60,6 +60,35 @@ class Load extends Common
         $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
         $this->load_page('web/contact_us.php', $data);
     }
+    public function career()
+    {
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_WEB;        
+        $data['data_header']['career'] = true;
+        $data['data_page']['products'] = $this->Pages_model->get_product();
+        $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
+        $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
+        $data['data_page']['jobs'] = $this->Pages_model->get_jobs();
+
+        $this->load_page('web/career.php', $data);
+    }
+
+
+    public function career_apply(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_WEB;        
+        $uid = $this->input->get('uid');
+        $data['data_header']['career_apply'] = true;
+        $data['data_page']['products'] = $this->Pages_model->get_product();
+        $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
+        $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
+        $data['data_page']['job'] = $this->Pages_model->get_jobs_by_id( $uid);
+
+        $this->load_page('web/career_apply.php', $data);
+    }
+
 
     public function about()
     {

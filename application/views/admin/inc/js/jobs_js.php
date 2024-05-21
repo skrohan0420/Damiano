@@ -3,6 +3,9 @@
     $(document).ready(function () {
         $('#dataTable').DataTable();
     });
+    $(document).ready(function () {
+        $('#job_dataTable').DataTable();
+    });
     CKEDITOR.replace('editor');
     function submitForm() {
         // Update the textarea with the CKEditor data

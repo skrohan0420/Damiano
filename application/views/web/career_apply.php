@@ -1,13 +1,3 @@
-<?php
-if (false) {
-    echo "<pre>";
-    print_r($products);
-    exit();
-}
-
-
-?>
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -78,7 +68,6 @@ if (false) {
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
     <link href="https://cdn.materialdesignicons.com/2.1.99/css/materialdesignicons.min.css" rel="stylesheet">
-    <script src="<?= base_url() ?>assets/js/magnific-popup.min.js"></script>
 
     <style type="text/css">
         .error_message {
@@ -165,18 +154,6 @@ if (false) {
                 top: 250px;
                 transform: unset;
             }
-        }
-    </style>
-    <style>
-        .hero-banner {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            /* adjust height as needed */
-            overflow: hidden;
-            background-image: url('images/banner/slider9.jpg');
-            background-size: cover;
-            background-position: center;
         }
     </style>
 
@@ -362,39 +339,81 @@ if (false) {
     <!--header end-->
 
 
-    <!--banner start-->
-    <section class="banner_main">
-        <div class="bg-shadows"></div>
-        <div class="bannerslider owl-carousel owl-theme">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet"
+        media="screen">
+    <link rel="stylesheet" href=https://cdn.wizemen.net/plugins/datepicker/datepicker3.css />
+    <style>
+        .intl-tel-input {
+            display: block !important;
+        }
 
-            <?php
-            if (!empty($product_banner_images)) {
-                foreach ($product_banner_images as $index => $item) {
-                    ?>
-                    <div class="item">
-                        <img src="<?= base_url() . $item['img_path'] ?>" alt="SCIS-Banner" />
-                    </div>
-                    <?php
-                }
+        .contactus-right .form-control {
+            height: 42px;
+            resize: none;
+        }
+
+        .datepicker table tr td.disabled,
+        .datepicker table tr td.disabled:hover {
+            color: #e4e4e4;
+        }
+
+        ul.gitmainclass {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .contactus-left ul li {
+            font-size: 16px !important;
+        }
+
+        li.gitleftbox {
+            width: 50% !important;
+            padding-right: 5px;
+        }
+
+        li.gitrightbox {
+            width: 50% !important;
+            padding-left: 15px;
+        }
+
+        li.gitleftbox img,
+        li.gitrightbox img {
+            width: 17px !important;
+            top: 3px !important;
+        }
+
+        @media screen and (max-width:1124px) {
+            .contactus-main .contactus-left {
+                padding: 40px 24px;
             }
-            ?>
-        </div>
-        <div class="bannertextviewcurve">
-            <div id="curved2" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-                <?= $product_details['name'] ?>
+        }
+
+        @media screen and (max-width:991px) {
+            .contactus-left ul li {
+                font-size: 18px !important;
+                width: 100%;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <!--inner banner-->
+    <div class="inner-bannermain">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 rightpartbigimg">
+                <div class="rightinnerimg">
+                    <img src="<?= base_url() ?>assets/images/banner/slider2.JPG" />
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 alignviewbanner">
+                <div class="svgviewin5size" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="<?= base_url() ?>assets/images/round/1.png" />
+                </div>
             </div>
         </div>
 
-        <div class="toptobottomfixed">
-            <a href="#aboutus">
-                <div class="toptobottom pulse">
-                    <i class="fa fa-angle-left" aria-hidden="true"></i>
-                </div>
-            </a>
-        </div>
-    </section>
-    <!--banner end-->
-
+    </div>
+    <!--inner banner-->
     <!--overview section-->
     <div class="allpagesview">
         <div class="auto-container">
@@ -402,65 +421,19 @@ if (false) {
                 <div class="col-lg-3">
                     <div class="lefttopfixed">
                         <div class="allpagesview-left" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="left_subheading">All Products</div>
-                            <div class="leftmenupartbox">
+                            <div class="left_subheading">Contact Us</div>
+                            <!-- <div class="leftmenupartbox">
                                 <ul>
-                                    <?php
-                                    if (!empty($products)) {
-                                        foreach ($products as $index => $item) {
-                                            ?>
-                                            <li class="active_li">
-                                                <a href="<?= base_url('/product?p_id=') . $item['uid'] ?>">
-                                                    <?= $item['name'] ?>
-                                                </a>
-                                            </li>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
-
+                                    <li><a href="/getintouch">Get In touch</a></li>
+                                    <li><a href="/workwithus">Work with us</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
-
                         <style>
-                            .leftmenupartbox ul {
-                                border: 1px solid #2596be;
-                            }
-
-                            .leftmenupartbox ul li {
-                                background-color: white;
-
-                            }
-
-                            .leftmenupartbox ul li a {
-                                color: black;
-                            }
-
-                            .active_li {
-                                background-color: #2596be !important;
-                                outline: 1px solid #fff;
-                            }
-
-                            .active_li a {
-                                color: #fff !important;
-                            }
-
-                            #product_img_bx {
-                                width: 100%;
-                            }
-
-                            #product_img_bx img {
-                                object-fit: contain;
-                                width: 100%;
-                            }
-
-
                             .newleftsidecss ul li a {
                                 font-size: 16px;
                                 padding: 2px 10px;
                                 align-items: self-start;
-
                             }
 
                             .newleftsidecss ul li a img {
@@ -497,197 +470,87 @@ if (false) {
                                 </li>
                                 <li class="lastbtnapply"><a href="<?= base_url('contact-us') ?>" target="_blank">Contact
                                         us</a></li>
+
                             </ul>
+                            <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a
+                                    href="<?= base_url() . $flyers[0]['img_path'] ?>" target="_blank"><img
+                                        src="<?= base_url() . $flyers[0]['img_path'] ?>" /></a></div>
                         </div>
-                        <div class="admission_open_view" data-aos="fade-up" data-aos-duration="1000"><a
-                                href="<?= base_url() . $flyers[0]['img_path'] ?>" target="_blank"><img
-                                    src="<?= base_url() . $flyers[0]['img_path'] ?>" /></a></div>
                     </div>
                 </div>
-                <style>
-                    #myImg {
-                        border-radius: 5px;
-                        cursor: pointer;
-                        transition: 0.3s;
-                    }
-
-                    #myImg:hover {
-                        opacity: 0.7;
-                    }
-
-                    /* The Modal (background) */
-                    .modal {
-                        display: none;
-                        /* Hidden by default */
-                        position: fixed;
-                        /* Stay in place */
-                        z-index: 100000;
-                        /* Sit on top */
-                        padding-top: 100px;
-                        /* Location of the box */
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        /* Full width */
-                        height: 100%;
-                        /* Full height */
-                        overflow: auto;
-                        /* Enable scroll if needed */
-                        background-color: rgb(0, 0, 0);
-                        /* Fallback color */
-                        background-color: rgba(0, 0, 0, 0.9);
-                        /* Black w/ opacity */
-                    }
-
-                    /* Modal Content (image) */
-                    .modal-content {
-                        margin: auto;
-                        display: block;
-                        width: 80%;
-                        max-width: 700px;
-                    }
-
-                    /* Caption of Modal Image */
-                    #caption {
-                        margin: auto;
-                        display: block;
-                        width: 80%;
-                        max-width: 700px;
-                        text-align: center;
-                        color: #ccc;
-                        height: 150px;
-                    }
-
-                    /* Add Animation */
-                    .modal-content,
-                    #caption {
-                        -webkit-animation-name: zoom;
-                        -webkit-animation-duration: 0.6s;
-                        animation-name: zoom;
-                        animation-duration: 0.6s;
-                    }
-
-                    @-webkit-keyframes zoom {
-                        from {
-                            -webkit-transform: scale(0)
-                        }
-
-                        to {
-                            -webkit-transform: scale(1)
-                        }
-                    }
-
-                    @keyframes zoom {
-                        from {
-                            transform: scale(0)
-                        }
-
-                        to {
-                            transform: scale(1)
-                        }
-                    }
-
-                    /* The Close Button */
-                    .close {
-                        position: absolute;
-                        top: 15px;
-                        right: 35px;
-                        color: #f1f1f1;
-                        font-size: 40px;
-                        font-weight: bold;
-                        transition: 0.3s;
-                    }
-
-                    .close:hover,
-                    .close:focus {
-                        color: #bbb;
-                        text-decoration: none;
-                        cursor: pointer;
-                    }
-
-                    /* 100% Image Width on Smaller Screens */
-                    @media only screen and (max-width: 700px) {
-                        .modal-content {
-                            width: 100%;
-                        }
-                    }
-                </style>
                 <div class="col-lg-9">
-                    <div class="allpagesview-right" style="padding-bottom: 40px;">
-                        <h1 class="headingh1" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
-                            <?= $product_details['name'] ?>
-                        </h1>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <p><?= $product_details['details'] ?></p>
+                    <div class="allpagesview-right">
+                        <h1 class="headingh1" data-aos="fade-up" data-aos-duration="1000">Get In touch</h1>
+                        <div class="contactus-right">
+                            <form class="form" data-aos="fade-up" data-aos-duration="2400"
+                                action="<?= base_url('admin/pages/save_job_req') ?>" method="POST" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label class="form-label">applying for</label>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="" maxlength="100"
+                                            id="txtstudentname" name="job" readonly value="<?= $job['title'] ?>">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">full Name*</label>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="" maxlength="100"
+                                            id="txtparentname" name="name">
+                                        <div class="icon">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/9187/9187475.png"
+                                                alt="#" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Phone Number*</label>
+                                    <div>
+                                        <input type="tel" class="form-control" maxlength="10" id="txtmobile"
+                                            onkeypress="return isNumberKey(event)" name="mobile">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Email*</label>
+                                    <div>
+                                        <input type="email" class="form-control" placeholder="" maxlength="100"
+                                            id="txtemail" name="email">
+                                        <div class="icon">
+                                            <img style="width:27px;"
+                                                src="https://cdn-icons-png.flaticon.com/512/2549/2549872.png" alt="#" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Add Your Cv *(pdf file only)</label>
+                                    <div>
+                                        <input type="file" class="form-control" placeholder="" maxlength="100"
+                                            id="txtemail"  name="cv_file[]">
+                                    </div>
+                                </div>
+
+
+                                <div class="mb-3 fullviewpart text-center">
+                                    <button type="submit" class="allbtnview" onclick="getintouchValidate(this);">
+                                        <span>Submit</span>
+                                    </button>
+                                </div>
+
+                                <div class="mb-3 fullviewpart d-none" id="div_message">
+                                    <!--append validation message-->
+                                </div>
+
+                            </form>
                         </div>
                     </div>
-
-                    <div class="options-outer" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0"
-                        style="padding-bottom: 150px;">
-                        <div class="row clearfix">
-                            <div class="column col-lg-6 col-mg-12 col-sm-12">
-                                <ul class="list row">
-                                    <?php
-                                    if (!empty($product_features)) {
-                                        foreach ($product_features as $index => $item) {
-                                            ?>
-                                            <li onclick="openModel('<?= base_url() . $item['img_path'] ?>','<?= $item['title'] ?>')"
-                                                style="color:rgb(2,0,51); font-weight: 700; cursor: pointer;"
-                                                class="column col-lg-6 col-mg-6 col-sm-6">
-                                                <?= $item['title'] ?>
-                                            </li>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
-
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
-
-
-
-
             </div>
         </div>
     </div>
-
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <h4 id="caption" class="mt-2"></h4>
-    </div>
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-
-        function openModel(path, title) {
-            modal.style.display = "block";
-            modalImg.src = path;
-            captionText.innerHTML = title;
-        }
-
-
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-    </script>
-
-
-
-    <!--contactus-->
+    <!--overview section-->
 
     <!--footer-->
     <footer>
@@ -768,74 +631,10 @@ if (false) {
     </footer>
     <!--footer-->
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet"
-        media="screen">
-    <link rel="stylesheet" href=https://cdn.wizemen.net/plugins/datepicker/datepicker3.css />
-    <style>
-        .intl-tel-input {
-            display: block !important;
-        }
-
-        .contactus-right .form-control {
-            height: 42px;
-            resize: none;
-        }
-
-        .datepicker table tr td.disabled,
-        .datepicker table tr td.disabled:hover {
-            color: #e4e4e4;
-        }
-
-        ul.gitmainclass {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .contactus-left ul li {
-            font-size: 16px !important;
-        }
-
-        li.gitleftbox {
-            width: 50% !important;
-            padding-right: 5px;
-        }
-
-        li.gitrightbox {
-            width: 50% !important;
-            padding-left: 15px;
-        }
-
-        li.gitleftbox img,
-        li.gitrightbox img {
-            width: 17px !important;
-            top: 3px !important;
-        }
-
-        @media screen and (max-width:1124px) {
-            .contactus-main .contactus-left {
-                padding: 40px 24px;
-            }
-        }
-
-        @media screen and (max-width:991px) {
-            .contactus-left ul li {
-                font-size: 18px !important;
-                width: 100%;
-            }
-        }
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.min.js"></script>
     <script>
         $(() => {
             var disabledDates = [];
-
-
-            disabledDates.push("2024-04-25");
-
-
 
 
             disabledDates.push("2024-04-27");

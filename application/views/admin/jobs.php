@@ -57,10 +57,6 @@
                 <!-- Card Body -->
                 <div class="card-body row">
                     <div class="col-xl-12 col-lg-12 card shadow mb-4">
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Add Jobs</h6>
-                        </div>
-
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-info" id="dataTable" width="100%"
@@ -89,6 +85,69 @@
                                                             class="btn btn-danger">
                                                             DELETE
                                                         </a>
+                                                    </td>
+                                                </tr>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h5 class="m-0 font-weight-bold text-primary">Jobs Applications</h5>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body row">
+                    <div class="col-xl-12 col-lg-12 card shadow mb-4">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-info" id="job_dataTable" width="100%"
+                                    cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>date</th>
+                                            <th>name</th>
+                                            <th>email</th>
+                                            <th>phone</th>
+                                            <th>job</th>
+                                            <th>cv</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        if (!empty($jobs_req)) {
+                                            foreach ($jobs_req as $index => $item) {
+                                                ?>
+                                                <tr>
+                                                    <td>
+                                                        <?= $item['created_at'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $item['name'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $item['email'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $item['phone'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $item['job'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-success" href=" <?=base_url() . $item['file_path'] ?>">View cv</a>
                                                     </td>
                                                 </tr>
                                                 <?php

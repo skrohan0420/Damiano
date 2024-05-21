@@ -66,6 +66,19 @@ class Pages_model extends Admin_model
         return isset($data) ? $data : [];
     }
 
+    public function get_jobs_by_id($uid){
+        $data = $this->db
+            ->select('*')
+            ->from('job_openings')
+            ->where(['uid' => $uid])
+            ->get();
+
+
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data[0] : [];
+    }
+
     public function get_all_banner_img()
     {
         $banner = $this->db
@@ -118,6 +131,17 @@ class Pages_model extends Admin_model
         $banner = $banner->result_array();
         //$this->prd($banner);
         return isset($banner) ? $banner : [];
+    }
+
+    public function get_job_req()
+    {
+        $data = $this->db
+            ->select('*')
+            ->from('job_requests')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];
     }
 
     public function update_home_about_img($path, $uid)
@@ -270,6 +294,23 @@ class Pages_model extends Admin_model
             'img_path' => $path
         ];
         $add = $this->db->insert('features', $insert_data);
+        return $add;
+    }
+
+    public function save_job_req($path, $data){
+        //$this->pr($path);
+        //$this->prd($data);
+
+
+        $insert_data = [
+            'uid' => $this->generate_uid('JBR'),
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'phone' => $data['mobile'],
+            'job' => $data['job'],
+            'file_path' => $path
+        ];
+        $add = $this->db->insert('job_requests', $insert_data);
         return $add;
     }
 

@@ -234,6 +234,7 @@
                                 </li>
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li>
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('quality') ?>">Quality</a></li>
+                                <li data-tab="beyondclassroom"><a href="<?= base_url('career') ?>">Careers</a></li>
                                 <li data-tab="admissionmenu"><a
                                         href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
@@ -302,8 +303,9 @@
                             </li>
                             <li class="nav__item"><a href="<?= base_url('infrastructure') ?>"
                                     class="nav__link">Infrastructure</a></li>
-                            <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a>
-                            </li>
+                            <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a></li>
+                            <li class="nav__item"><a href="<?= base_url('career') ?>">Careers</a></li>
+
                             <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact
                                     us</a></li>
                         </ul>

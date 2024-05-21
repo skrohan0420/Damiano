@@ -50,7 +50,7 @@ define('PAGE_DATA_WEB', ['data_page' => [], 'data_header' => ['header_link' => [
 define('PAGE_DATA_ADMIN', ['data_page' => [], 'data_header' => ['header_link' => [], 'title' => '', 'header' => [], 'sidebar' => [], 'site' => 'admin'], 'data_footer' => ['footer_link' => [], 'footer' => [], 'site' => 'admin']]);
 
 /////////////////////////////////////////////__IMG_UPLOAD_CONFIG
-define('IMG_FILE_TYPES', 'gif|jpg|png|JPG|jpeg|JPEG|PNG|pdf');
+define('IMG_FILE_TYPES', 'gif|jpg|png|JPG|jpeg|JPEG|PNG|pdf|PDF');
 define('IMG_FILE_SIZE', 50000);
 
 /////////////////////////////////////////////__MODELS

@@ -87,7 +87,7 @@ class Common extends CI_Controller
 
 		$data = [];
 
-		//$this->prd($_FILES[$file_name]);
+		//$this->prd($_FILES);
 
 		if (count($_FILES[$file_name]['name']) == 1) {
 			$_FILES['userfile']['name'] 	= $_FILES[$file_name]['name'][0];

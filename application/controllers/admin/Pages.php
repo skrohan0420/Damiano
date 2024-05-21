@@ -390,6 +390,16 @@ class Pages extends Admin
 
     }
 
+    public function save_job_req(){
+        //$this->prd($_FILES);
+
+        $upload_data = $this->upload_files('./uploads/cv_file/', 'cv_file', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->save_job_req('/uploads/cv_file/' . $upload_data['file_name'], $this->input->post());
+        }
+        redirect('/');
+    }
 
 
     public function delete_banner_img()
@@ -504,5 +514,7 @@ class Pages extends Admin
         $this->Pages_model->delete_job($uid);
         redirect('/admin/jobs');
     }
+
+   
 
 }

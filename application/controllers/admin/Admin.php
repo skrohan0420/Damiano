@@ -201,6 +201,7 @@ class Admin extends Common
         $data['data_header']['title'] = 'Admin | Dashboard';
         $data['data_header']['sidebar']['jobs'] = true;
         $data['data_page']['jobs'] = $this->Pages_model->get_jobs();
+        $data['data_page']['jobs_req'] = $this->Pages_model->get_job_req();
 
        
 
